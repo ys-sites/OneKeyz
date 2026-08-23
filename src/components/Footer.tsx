@@ -115,11 +115,30 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom Bar: Copyright & Back To Top */}
+        {/* Bottom Bar: Copyright, YS Marketing Solutions Signature & Back To Top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 font-mono gap-4">
           <p>© {new Date().getFullYear()} {ARTIST_NAME}. All rights reserved.</p>
+          
+          {/* YS Marketing Solutions Signature Button */}
+          <a
+            href="https://www.instagram.com/ys.sites/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ys-signature-btn"
+            title="YS Marketing Solutions — Web Development & Marketing Agency"
+          >
+            <img
+              src="/YS.png"
+              alt="YS Logo"
+              className="ys-sig-logo"
+            />
+            <span className="ys-sig-text">
+              Made by <strong className="ys-sig-highlight">YS Marketing Solutions</strong> <span className="ys-sig-divider">|</span> Marketing Agency
+            </span>
+          </a>
+
           <div className="flex items-center gap-6">
-            <span className="text-pink-300">Montreal-Based Recording Artist</span>
+            <span className="text-pink-300 hidden md:inline">Montreal-Based Recording Artist</span>
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}

@@ -81,12 +81,12 @@ export default function Navbar() {
             href="#"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            className="group flex items-center gap-2 text-2xl sm:text-3xl font-display font-black tracking-tight text-white hover:text-[#E6007E] transition-colors"
+            className="group flex items-center gap-2.5 text-2xl sm:text-3xl font-display font-black tracking-tight text-white hover:text-[#E6007E] transition-colors leading-none"
           >
-            <span className="bg-[#E6007E] text-white px-2 py-0.5 rounded-sm text-xs font-mono font-bold tracking-widest shadow-md">
+            <span className="bg-[#E6007E] text-white px-2.5 py-1 rounded-md text-xs font-mono font-bold tracking-widest shadow-md inline-flex items-center justify-center shrink-0 self-center leading-none">
               1K
             </span>
-            <span className="uppercase tracking-wider font-extrabold">{ARTIST_NAME}</span>
+            <span className="uppercase tracking-wider font-extrabold leading-none">{ARTIST_NAME}</span>
           </motion.a>
 
           {/* Desktop Nav Links */}

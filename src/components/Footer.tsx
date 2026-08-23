@@ -16,8 +16,11 @@ export default function Footer() {
           
           {/* Brand Wordmark & Tagline */}
           <div className="md:col-span-6 space-y-4">
-            <a href="#" className="inline-block group">
-              <span className="text-4xl font-display font-black tracking-tight text-white uppercase group-hover:text-[#E6007E] transition-colors">
+            <a href="#" className="inline-flex items-center gap-2.5 group leading-none">
+              <span className="bg-[#E6007E] text-white px-2.5 py-1 rounded-md text-xs font-mono font-bold tracking-widest shadow-md inline-flex items-center justify-center shrink-0 self-center leading-none">
+                1K
+              </span>
+              <span className="text-3xl sm:text-4xl font-display font-black tracking-tight text-white uppercase group-hover:text-[#E6007E] transition-colors leading-none">
                 {ARTIST_NAME}
               </span>
             </a>

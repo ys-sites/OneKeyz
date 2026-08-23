@@ -5,7 +5,7 @@ import { ARTIST_NAME } from '../data/discography';
 
 export default function AboutSection() {
   const photo1 = '/image copy.png';
-  const photo2 = '/image.png';
+  const photo2 = '/The past is in your head, the future is in your hands.✨__#inspirationalquotes #elevation #levelu.jpg';
 
   const bioText = `[Artist bio goes here — 2–3 paragraphs]`;
 

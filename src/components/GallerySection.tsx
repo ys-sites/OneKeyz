@@ -1,16 +1,17 @@
 import { useState } from 'react';
-import { Play, X, ZoomIn, Film, Image as ImageIcon, Sparkles } from 'lucide-react';
+import { Play, X, ZoomIn, Film, Image as ImageIcon, Sparkles, Instagram, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { INSTAGRAM_URL } from '../data/discography';
 import { SoundwaveVisualizer } from './SoundwaveVisualizer';
 
 interface MediaItem {
   id: string;
   type: 'image' | 'video';
   url: string;
-  poster?: string;
   title: string;
   subtitle: string;
   aspectRatio?: string;
+  instagramUrl?: string;
 }
 
 const MEDIA_GALLERY: MediaItem[] = [
@@ -21,15 +22,16 @@ const MEDIA_GALLERY: MediaItem[] = [
     title: 'Studio Vocal Session',
     subtitle: 'Bedazzled Mic Vocal Recording • 2025',
     aspectRatio: 'aspect-[4/5]',
+    instagramUrl: INSTAGRAM_URL,
   },
   {
     id: 'm2',
     type: 'video',
     url: '/“If you’re ashamed of me then we can’t be ✌🏾”__🆕 music ‼️ 🎵Link in bio 🔥🚀___#real #homestud.mp4',
-    poster: '/image copy.png',
     title: 'REAL — Home Studio Session',
     subtitle: 'Live Single Recording Video Reel',
     aspectRatio: 'aspect-[4/5]',
+    instagramUrl: INSTAGRAM_URL,
   },
   {
     id: 'm3',
@@ -38,15 +40,16 @@ const MEDIA_GALLERY: MediaItem[] = [
     title: 'Concert & Stage Spotlight',
     subtitle: 'Chris Brown Concert Event Spotlight',
     aspectRatio: 'aspect-square',
+    instagramUrl: INSTAGRAM_URL,
   },
   {
     id: 'm4',
     type: 'video',
     url: '/Reminiscing about this semi acapella version recorded at @zeffirstudios with @kzbrowznbrushes __.mp4',
-    poster: '/image.png',
     title: 'Semi-Acapella @ Zeffir Studios',
     subtitle: 'Live Vocal Take with KZ Browznbrushes',
     aspectRatio: 'aspect-[4/5]',
+    instagramUrl: INSTAGRAM_URL,
   },
   {
     id: 'm5',
@@ -55,23 +58,16 @@ const MEDIA_GALLERY: MediaItem[] = [
     title: 'Fashion & Editorial Shoot',
     subtitle: 'Official Press & Editorial Photography',
     aspectRatio: 'aspect-[4/5]',
+    instagramUrl: INSTAGRAM_URL,
   },
   {
     id: 'm6',
     type: 'video',
     url: '/Do you know the difference  🤔____#vocals #vocalharmony #adlibs #adlib #music #diymusician #rnbs.mp4',
-    poster: '/image copy.png',
     title: 'Vocal Harmony & Ad-Libs Reel',
     subtitle: 'DIY Vocal Harmony Breakdown Video',
     aspectRatio: 'aspect-square',
-  },
-  {
-    id: 'm7',
-    type: 'image',
-    url: '/image.png',
-    title: 'Editorial Portrait Look',
-    subtitle: 'Official Studio Portrait Look',
-    aspectRatio: 'aspect-[4/5]',
+    instagramUrl: INSTAGRAM_URL,
   },
 ];
 
@@ -108,7 +104,7 @@ export default function GallerySection() {
             GALLERY
           </h2>
           <p className="text-gray-600 font-sans text-sm sm:text-base max-w-lg mx-auto">
-            Official editorial photography, studio recording sessions, and live vocal video reels from ONEKEYZ.
+            Official editorial photography, studio recording sessions, and live vocal video reels from ONEKEYZ. Click any post to watch or view on Instagram.
           </p>
           <div className="w-20 h-1 bg-[#E6007E] mx-auto rounded-full mt-3" />
         </motion.div>
@@ -135,7 +131,7 @@ export default function GallerySection() {
               }`}
             >
               <ImageIcon className="w-3.5 h-3.5" />
-              <span>Photos (4)</span>
+              <span>Photos (3)</span>
             </button>
             <button
               onClick={() => setActiveFilter('video')}
@@ -169,7 +165,7 @@ export default function GallerySection() {
                   onClick={() => setSelectedMedia(item)}
                   className={`relative w-full ${
                     item.aspectRatio || 'aspect-[4/5]'
-                  } rounded-3xl overflow-hidden cursor-pointer shadow-lg group-hover:shadow-2xl border-2 border-gray-100 group-hover:border-[#E6007E] transition-all duration-300 bg-zinc-900 flex flex-col justify-between p-5 text-white`}
+                  } rounded-3xl overflow-hidden cursor-pointer shadow-lg group-hover:shadow-2xl border-2 border-gray-100 group-hover:border-[#E6007E] transition-all duration-300 bg-black flex flex-col justify-between p-5 text-white`}
                 >
                   {item.type === 'image' ? (
                     <img
@@ -179,21 +175,20 @@ export default function GallerySection() {
                       referrerPolicy="no-referrer"
                     />
                   ) : (
-                    <div className="absolute inset-0 w-full h-full bg-black">
-                      <video
-                        src={item.url}
-                        muted
-                        loop
-                        playsInline
-                        className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                      />
-                    </div>
+                    /* Video rendered with #t=0.001 and preload="metadata" to display the first frame as the thumbnail */
+                    <video
+                      src={`${item.url}#t=0.001`}
+                      preload="metadata"
+                      playsInline
+                      muted
+                      className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
+                    />
                   )}
 
                   {/* Gradient Overlay for Legibility */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/20 pointer-events-none" />
 
-                  {/* Top Badge: Type Indicator */}
+                  {/* Top Badge: Type Indicator & Instagram Icon Direct Link */}
                   <div className="relative z-10 flex items-center justify-between">
                     <span className="bg-[#E6007E] text-white text-[10px] font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
                       {item.type === 'video' ? (
@@ -209,7 +204,16 @@ export default function GallerySection() {
                       )}
                     </span>
 
-                    {item.type === 'video' && <SoundwaveVisualizer color="bg-[#E6007E]" />}
+                    <a
+                      href={INSTAGRAM_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="bg-black/60 hover:bg-[#E6007E] text-white p-2 rounded-full backdrop-blur-md transition-colors shadow-md flex items-center gap-1 text-[10px] font-mono font-bold"
+                      title="View Post on Instagram @one_keyz"
+                    >
+                      <Instagram className="w-3.5 h-3.5" />
+                    </a>
                   </div>
 
                   {/* Video Center Play Button Overlay */}
@@ -224,8 +228,9 @@ export default function GallerySection() {
                     <h3 className="font-display font-black text-lg uppercase tracking-wide text-white leading-tight">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-pink-300 font-mono">
-                      {item.subtitle}
+                    <p className="text-xs text-pink-300 font-mono flex items-center gap-1">
+                      <Instagram className="w-3 h-3" />
+                      <span>@one_keyz • {item.subtitle}</span>
                     </p>
                   </div>
 
@@ -233,7 +238,7 @@ export default function GallerySection() {
                   <div className="absolute inset-0 bg-black/50 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-30 pointer-events-none">
                     <span className="bg-white text-black font-mono font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full shadow-2xl flex items-center gap-2 transform group-hover:scale-105 transition-transform">
                       {item.type === 'video' ? <Play className="w-4 h-4 text-[#E6007E] fill-current" /> : <ZoomIn className="w-4 h-4 text-[#E6007E]" />}
-                      <span>{item.type === 'video' ? 'Play Video' : 'Expand Photo'}</span>
+                      <span>{item.type === 'video' ? 'Watch Video' : 'Expand Photo'}</span>
                     </span>
                   </div>
 
@@ -242,6 +247,20 @@ export default function GallerySection() {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {/* Instagram Profile Feed Banner */}
+        <div className="mt-16 text-center">
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-[#111111] hover:bg-[#E6007E] text-white font-mono font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 border border-white/10"
+          >
+            <Instagram className="w-4 h-4 text-pink-400" />
+            <span>View Full Feed & Profile Posts @one_keyz</span>
+            <ExternalLink className="w-3.5 h-3.5" />
+          </a>
+        </div>
 
       </div>
 
@@ -286,7 +305,7 @@ export default function GallerySection() {
                 )}
               </div>
 
-              <div className="flex flex-col sm:flex-row items-center justify-between pt-2 text-xs text-gray-300 border-t border-white/10 font-mono gap-2 text-left">
+              <div className="flex flex-col sm:flex-row items-center justify-between pt-2 text-xs text-gray-300 border-t border-white/10 font-mono gap-3 text-left">
                 <div>
                   <h4 className="font-display font-black text-base text-white uppercase">
                     {selectedMedia.title}
@@ -294,10 +313,17 @@ export default function GallerySection() {
                   <p className="text-pink-300 text-xs">{selectedMedia.subtitle}</p>
                 </div>
 
-                <div className="flex items-center gap-2 shrink-0">
-                  <span className="bg-[#E6007E] text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase">
-                    ONEKEYZ Official
-                  </span>
+                <div className="flex items-center gap-3 shrink-0">
+                  <a
+                    href={INSTAGRAM_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#E6007E] hover:bg-[#C8006E] text-white px-4 py-2 rounded-full text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-2 shadow-md transition-colors"
+                  >
+                    <Instagram className="w-3.5 h-3.5" />
+                    <span>View on Instagram</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
                 </div>
               </div>
             </motion.div>

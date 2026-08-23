@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#FAF7F2] text-[#111111] flex flex-col font-sans selection:bg-[#E6007E] selection:text-white">
+    <div className="min-h-screen bg-[#111111] text-[#111111] flex flex-col font-sans selection:bg-[#E6007E] selection:text-white">
       {/* Fixed Sticky Header Navigation */}
       <Navbar />
 

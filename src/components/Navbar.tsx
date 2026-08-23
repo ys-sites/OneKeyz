@@ -70,8 +70,8 @@ export default function Navbar() {
       <div
         className={`transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#111111]/95 backdrop-blur-md shadow-2xl border-b border-[#E6007E]/40 py-3 text-white'
-            : 'bg-[#111111]/90 backdrop-blur-sm border-b border-[#E6007E]/30 py-4 text-white'
+            ? 'bg-[#111111] backdrop-blur-md shadow-2xl border-b border-[#E6007E]/40 py-3 text-white'
+            : 'bg-[#111111] backdrop-blur-sm border-b border-[#E6007E]/30 py-4 text-white'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">

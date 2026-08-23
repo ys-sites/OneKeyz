@@ -186,10 +186,11 @@ export default function ContactSection() {
                     <input
                       type="text"
                       required
+                      aria-required="true"
                       placeholder="e.g. Jane Doe / Venue Manager"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 bg-[#FAF7F2] border border-gray-200 rounded-2xl text-sm focus:outline-none focus:border-[#E6007E]"
+                      className="w-full px-4 py-3 bg-[#FAF7F2] border border-gray-200 rounded-2xl text-sm focus:outline-none focus:border-[#E6007E] focus:ring-2 focus:ring-[#E6007E]/20 transition-all"
                     />
                   </div>
 
@@ -201,10 +202,11 @@ export default function ContactSection() {
                     <input
                       type="email"
                       required
+                      aria-required="true"
                       placeholder="name@organization.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 bg-[#FAF7F2] border border-gray-200 rounded-2xl text-sm focus:outline-none focus:border-[#E6007E]"
+                      className="w-full px-4 py-3 bg-[#FAF7F2] border border-gray-200 rounded-2xl text-sm focus:outline-none focus:border-[#E6007E] focus:ring-2 focus:ring-[#E6007E]/20 transition-all"
                     />
                   </div>
                 </div>

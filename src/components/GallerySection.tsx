@@ -225,7 +225,7 @@ export default function GallerySection() {
                         controls
                         playsInline
                         preload="metadata"
-                        className="absolute inset-0 w-full h-full object-cover rounded-2xl z-0"
+                        className="absolute inset-0 w-full h-full object-cover rounded-2xl z-0 bg-zinc-950"
                       />
 
                       {/* Header Badge Strip Overlaid Top */}

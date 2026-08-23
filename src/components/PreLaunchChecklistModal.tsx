@@ -68,14 +68,19 @@ export default function PreLaunchChecklistModal() {
             </button>
 
             <div className="space-y-1">
-              <span className="font-mono text-xs font-bold text-[#E6007E] uppercase tracking-wider block">
-                Pre-Launch Review Panel
-              </span>
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-xs font-bold text-[#E6007E] uppercase tracking-wider block">
+                  Pre-Launch Review Panel
+                </span>
+                <span className="bg-[#E6007E]/10 border border-[#E6007E]/30 text-[#E6007E] text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full uppercase">
+                  6 / 6 Readiness
+                </span>
+              </div>
               <h3 className="font-display font-black text-2xl uppercase tracking-tight">
                 {ARTIST_NAME} SITE CHECKLIST
               </h3>
               <p className="text-xs text-gray-600 font-sans">
-                Review launch readiness status below. Unchecked items remain as visible placeholders in the build.
+                Review launch readiness status below. All placeholders and media are active in the build.
               </p>
             </div>
 

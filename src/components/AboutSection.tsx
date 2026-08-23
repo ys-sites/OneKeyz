@@ -10,7 +10,7 @@ export default function AboutSection() {
   const bioText = `[Artist bio goes here — 2–3 paragraphs]`;
 
   return (
-    <section id="about" className="py-20 lg:py-32 bg-[#FAF7F2] text-[#111111] relative overflow-hidden border-b border-gray-200">
+    <section id="about" className="py-20 lg:py-32 bg-[#FAF7F2] text-[#111111] relative overflow-hidden border-b border-gray-200 scroll-mt-24">
       
       {/* Background Watermark */}
       <div className="absolute right-4 top-1/2 -translate-y-1/2 rotate-90 origin-right pointer-events-none select-none opacity-[0.03] hidden xl:block">
@@ -113,7 +113,7 @@ export default function AboutSection() {
               <div className="absolute -inset-1 bg-[#E6007E] rounded-3xl opacity-80 group-hover:opacity-100 transition-opacity blur-xs" />
               <div className="relative aspect-[3/4] bg-[#111111] rounded-3xl overflow-hidden border-2 border-white shadow-xl flex flex-col justify-between p-4 text-white">
                 {photo1 ? (
-                  <img src={photo1} alt="ONEKEYZ Editorial Portrait 1" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={photo1} alt="ONEKEYZ Editorial Portrait 1" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-200 ease-out transform-gpu" />
                 ) : (
                   <div className="m-auto text-center space-y-2">
                     <ImageIcon className="w-8 h-8 text-pink-300 mx-auto" />
@@ -132,7 +132,7 @@ export default function AboutSection() {
               <div className="absolute -inset-1 bg-[#E6007E] rounded-3xl opacity-80 group-hover:opacity-100 transition-opacity blur-xs" />
               <div className="relative aspect-[3/4] bg-[#111111] rounded-3xl overflow-hidden border-2 border-white shadow-xl flex flex-col justify-between p-4 text-white">
                 {photo2 ? (
-                  <img src={photo2} alt="ONEKEYZ Editorial Portrait 2" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={photo2} alt="ONEKEYZ Editorial Portrait 2" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-200 ease-out transform-gpu" />
                 ) : (
                   <div className="m-auto text-center space-y-2">
                     <Mic className="w-8 h-8 text-[#E6007E] mx-auto" />

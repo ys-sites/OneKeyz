@@ -172,6 +172,7 @@ export default function MusicSection() {
                       frameBorder="0"
                       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                       loading="lazy"
+                      referrerPolicy="strict-origin-when-cross-origin"
                       title={`Spotify Player — ${release.title}`}
                       className="w-full rounded-xl"
                     />
@@ -250,6 +251,7 @@ export default function MusicSection() {
                 frameBorder="0"
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
                 title="ONEKEYZ Artist Profile Spotify Embed"
                 className="w-full rounded-xl"
               />

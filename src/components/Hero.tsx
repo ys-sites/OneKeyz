@@ -259,6 +259,7 @@ export default function Hero() {
                 frameBorder="0"
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
                 title="ONEKEYZ Real Spotify Preview"
                 className="w-full"
               />

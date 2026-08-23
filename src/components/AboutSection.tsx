@@ -105,45 +105,43 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="lg:col-span-6 grid grid-cols-2 gap-4 sm:gap-6 relative"
+            className="lg:col-span-6 grid grid-cols-2 gap-4 sm:gap-6 items-center"
           >
             
             {/* Photo Card 1 */}
             <div className="relative group">
-              <div className="absolute -inset-1.5 bg-[#E6007E] rounded-3xl transform -rotate-1 opacity-80 group-hover:rotate-0 transition-transform" />
+              <div className="absolute -inset-1 bg-[#E6007E] rounded-3xl opacity-80 group-hover:opacity-100 transition-opacity blur-xs" />
               <div className="relative aspect-[3/4] bg-[#111111] rounded-3xl overflow-hidden border-2 border-white shadow-xl flex flex-col justify-between p-4 text-white">
                 {photo1 ? (
-                  <img src={photo1} alt="ONEKEYZ Editorial Portrait 1" className="absolute inset-0 w-full h-full object-cover" />
+                  <img src={photo1} alt="ONEKEYZ Editorial Portrait 1" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 ) : (
                   <div className="m-auto text-center space-y-2">
                     <ImageIcon className="w-8 h-8 text-pink-300 mx-auto" />
                     <p className="font-display font-bold text-sm uppercase">PORTRAIT 01</p>
-                    <p className="text-[10px] font-mono text-pink-200">[Photo Slot 01]</p>
                   </div>
                 )}
                 
-                <div className="relative z-10 mt-auto bg-black/70 backdrop-blur-md p-2 rounded-2xl border border-white/10 flex items-center justify-between">
-                  <span className="text-[10px] font-mono font-bold uppercase text-white">ONEKEYZ</span>
+                <div className="relative z-10 mt-auto bg-black/75 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/20 inline-flex items-center self-start">
+                  <span className="text-[10px] font-mono font-bold uppercase text-white tracking-wider">ONEKEYZ</span>
                 </div>
               </div>
             </div>
 
             {/* Photo Card 2 */}
-            <div className="relative group pt-6 sm:pt-10">
-              <div className="absolute -inset-1.5 bg-[#111111] rounded-3xl transform rotate-1 opacity-80 group-hover:rotate-0 transition-transform" />
-              <div className="relative aspect-[3/4] bg-gradient-to-br from-[#111111] via-zinc-900 to-[#E6007E]/40 rounded-3xl overflow-hidden border-2 border-[#E6007E] shadow-xl flex flex-col justify-between p-4 text-white">
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-[#E6007E] rounded-3xl opacity-80 group-hover:opacity-100 transition-opacity blur-xs" />
+              <div className="relative aspect-[3/4] bg-[#111111] rounded-3xl overflow-hidden border-2 border-white shadow-xl flex flex-col justify-between p-4 text-white">
                 {photo2 ? (
-                  <img src={photo2} alt="ONEKEYZ Editorial Portrait 2" className="absolute inset-0 w-full h-full object-cover" />
+                  <img src={photo2} alt="ONEKEYZ Editorial Portrait 2" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 ) : (
                   <div className="m-auto text-center space-y-2">
                     <Mic className="w-8 h-8 text-[#E6007E] mx-auto" />
                     <p className="font-display font-bold text-sm uppercase">STUDIO & STAGE</p>
-                    <p className="text-[10px] font-mono text-pink-200">[Photo Slot 02]</p>
                   </div>
                 )}
 
-                <div className="relative z-10 mt-auto bg-black/70 backdrop-blur-md p-2 rounded-2xl border border-white/10 flex items-center justify-between">
-                  <span className="text-[10px] font-mono font-bold uppercase text-white">STUDIO</span>
+                <div className="relative z-10 mt-auto bg-black/75 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/20 inline-flex items-center self-start">
+                  <span className="text-[10px] font-mono font-bold uppercase text-white tracking-wider">STUDIO & EDITORIAL</span>
                 </div>
               </div>
             </div>

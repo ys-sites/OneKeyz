@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Play, X, ZoomIn, Film, Image as ImageIcon, Sparkles, Instagram, ExternalLink } from 'lucide-react';
+import { X, ZoomIn, Film, Image as ImageIcon, Sparkles, Instagram, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { INSTAGRAM_URL } from '../data/discography';
 import { SoundwaveVisualizer } from './SoundwaveVisualizer';
@@ -73,7 +73,7 @@ const MEDIA_GALLERY: MediaItem[] = [
 
 export default function GallerySection() {
   const [activeFilter, setActiveFilter] = useState<'all' | 'image' | 'video'>('all');
-  const [selectedMedia, setSelectedMedia] = useState<MediaItem | null>(null);
+  const [selectedImage, setSelectedImage] = useState<MediaItem | null>(null);
 
   const filteredItems = MEDIA_GALLERY.filter((item) => {
     if (activeFilter === 'all') return true;
@@ -103,8 +103,8 @@ export default function GallerySection() {
           <h2 className="text-4xl sm:text-6xl font-display font-black text-[#111111] uppercase tracking-tight">
             GALLERY
           </h2>
-          <p className="text-gray-600 font-sans text-sm sm:text-base max-w-lg mx-auto">
-            Official editorial photography, studio recording sessions, and live vocal video reels from ONEKEYZ. Click any post to watch or view on Instagram.
+          <p className="text-gray-600 font-sans text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
+            Official editorial photography and live studio recording video reels from {`ONEKEYZ`}. Watch videos directly on the cards below or view profile posts on Instagram.
           </p>
           <div className="w-20 h-1 bg-[#E6007E] mx-auto rounded-full mt-3" />
         </motion.div>
@@ -154,93 +154,113 @@ export default function GallerySection() {
               <motion.div
                 key={item.id}
                 layout
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
+                exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4, delay: index * 0.08 }}
-                whileHover={{ y: -6 }}
                 className="group relative"
               >
                 <div
-                  onClick={() => setSelectedMedia(item)}
                   className={`relative w-full ${
                     item.aspectRatio || 'aspect-[4/5]'
-                  } rounded-3xl overflow-hidden cursor-pointer shadow-lg group-hover:shadow-2xl border-2 border-gray-100 group-hover:border-[#E6007E] transition-all duration-300 bg-black flex flex-col justify-between p-5 text-white`}
+                  } rounded-3xl overflow-hidden shadow-lg group-hover:shadow-2xl border-2 border-gray-100 group-hover:border-[#E6007E] transition-all duration-300 bg-black flex flex-col justify-between p-4 text-white`}
                 >
                   {item.type === 'image' ? (
-                    <img
-                      src={item.url}
-                      alt={item.title}
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      referrerPolicy="no-referrer"
-                    />
-                  ) : (
-                    /* Video rendered with #t=0.001 and preload="metadata" to display the first frame as the thumbnail */
-                    <video
-                      src={`${item.url}#t=0.001`}
-                      preload="metadata"
-                      playsInline
-                      muted
-                      className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
-                    />
-                  )}
+                    <>
+                      <img
+                        src={item.url}
+                        alt={item.title}
+                        onClick={() => setSelectedImage(item)}
+                        className="absolute inset-0 w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-700"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/20 pointer-events-none" />
 
-                  {/* Gradient Overlay for Legibility */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/20 pointer-events-none" />
-
-                  {/* Top Badge: Type Indicator & Instagram Icon Direct Link */}
-                  <div className="relative z-10 flex items-center justify-between">
-                    <span className="bg-[#E6007E] text-white text-[10px] font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
-                      {item.type === 'video' ? (
-                        <>
-                          <Film className="w-3 h-3" />
-                          <span>Video Reel</span>
-                        </>
-                      ) : (
-                        <>
+                      {/* Header Badge */}
+                      <div className="relative z-10 flex items-center justify-between pointer-events-none">
+                        <span className="bg-[#E6007E] text-white text-[10px] font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
                           <ImageIcon className="w-3 h-3" />
                           <span>Editorial Photo</span>
-                        </>
-                      )}
-                    </span>
+                        </span>
 
-                    <a
-                      href={INSTAGRAM_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="bg-black/60 hover:bg-[#E6007E] text-white p-2 rounded-full backdrop-blur-md transition-colors shadow-md flex items-center gap-1 text-[10px] font-mono font-bold"
-                      title="View Post on Instagram @one_keyz"
-                    >
-                      <Instagram className="w-3.5 h-3.5" />
-                    </a>
-                  </div>
+                        <a
+                          href={INSTAGRAM_URL}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-black/60 hover:bg-[#E6007E] text-white p-2 rounded-full backdrop-blur-md transition-colors shadow-md flex items-center gap-1 text-[10px] font-mono font-bold pointer-events-auto"
+                          title="View Post on Instagram @one_keyz"
+                        >
+                          <Instagram className="w-3.5 h-3.5" />
+                        </a>
+                      </div>
 
-                  {/* Video Center Play Button Overlay */}
-                  {item.type === 'video' && (
-                    <div className="absolute inset-0 m-auto w-16 h-16 rounded-full bg-[#E6007E]/90 text-white flex items-center justify-center shadow-2xl backdrop-blur-xs transition-transform transform group-hover:scale-110 z-20">
-                      <Play className="w-7 h-7 fill-current ml-1" />
+                      {/* Photo Bottom Captions */}
+                      <div className="relative z-10 space-y-1 text-left cursor-pointer" onClick={() => setSelectedImage(item)}>
+                        <h3 className="font-display font-black text-lg uppercase tracking-wide text-white leading-tight">
+                          {item.title}
+                        </h3>
+                        <p className="text-xs text-pink-300 font-mono flex items-center gap-1">
+                          <Instagram className="w-3 h-3" />
+                          <span>@one_keyz • {item.subtitle}</span>
+                        </p>
+                      </div>
+
+                      {/* Photo Expand Overlay Button */}
+                      <div
+                        onClick={() => setSelectedImage(item)}
+                        className="absolute inset-0 bg-black/40 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-20 cursor-pointer"
+                      >
+                        <span className="bg-white text-black font-mono font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full shadow-2xl flex items-center gap-2 transform group-hover:scale-105 transition-transform">
+                          <ZoomIn className="w-4 h-4 text-[#E6007E]" />
+                          <span>Expand Photo</span>
+                        </span>
+                      </div>
+                    </>
+                  ) : (
+                    /* Video rendered with Native HTML5 Controls directly in Card - Watch Inline without popup! */
+                    <div className="relative w-full h-full flex flex-col justify-between">
+                      {/* Video Player Element */}
+                      <video
+                        src={item.url}
+                        controls
+                        playsInline
+                        preload="metadata"
+                        className="absolute inset-0 w-full h-full object-cover rounded-2xl z-0"
+                      />
+
+                      {/* Header Badge Strip Overlaid Top */}
+                      <div className="relative z-10 flex items-center justify-between p-1 pointer-events-none">
+                        <span className="bg-[#E6007E] text-white text-[10px] font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                          <Film className="w-3 h-3" />
+                          <span>Studio Video Reel</span>
+                        </span>
+
+                        <div className="flex items-center gap-2 pointer-events-auto">
+                          <SoundwaveVisualizer color="bg-[#E6007E]" />
+                          <a
+                            href={INSTAGRAM_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-black/80 hover:bg-[#E6007E] text-white p-2 rounded-full backdrop-blur-md transition-colors shadow-md flex items-center gap-1 text-[10px] font-mono font-bold"
+                            title="View Post on Instagram @one_keyz"
+                          >
+                            <Instagram className="w-3.5 h-3.5" />
+                          </a>
+                        </div>
+                      </div>
+
+                      {/* Video Title Label Bar Overlaid Bottom */}
+                      <div className="relative z-10 bg-black/80 backdrop-blur-md p-2.5 rounded-xl border border-white/10 mt-auto text-left pointer-events-none">
+                        <h3 className="font-display font-bold text-xs uppercase tracking-wide text-white truncate">
+                          {item.title}
+                        </h3>
+                        <p className="text-[10px] text-pink-300 font-mono flex items-center gap-1">
+                          <Instagram className="w-3 h-3" />
+                          <span>@one_keyz • Watch Reel Above</span>
+                        </p>
+                      </div>
                     </div>
                   )}
-
-                  {/* Bottom Captions */}
-                  <div className="relative z-10 space-y-1 text-left">
-                    <h3 className="font-display font-black text-lg uppercase tracking-wide text-white leading-tight">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs text-pink-300 font-mono flex items-center gap-1">
-                      <Instagram className="w-3 h-3" />
-                      <span>@one_keyz • {item.subtitle}</span>
-                    </p>
-                  </div>
-
-                  {/* Overlaid Hover Expand Button */}
-                  <div className="absolute inset-0 bg-black/50 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-30 pointer-events-none">
-                    <span className="bg-white text-black font-mono font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full shadow-2xl flex items-center gap-2 transform group-hover:scale-105 transition-transform">
-                      {item.type === 'video' ? <Play className="w-4 h-4 text-[#E6007E] fill-current" /> : <ZoomIn className="w-4 h-4 text-[#E6007E]" />}
-                      <span>{item.type === 'video' ? 'Watch Video' : 'Expand Photo'}</span>
-                    </span>
-                  </div>
 
                 </div>
               </motion.div>
@@ -264,11 +284,11 @@ export default function GallerySection() {
 
       </div>
 
-      {/* Lightbox / Video Modal */}
+      {/* Photo Lightbox Modal */}
       <AnimatePresence>
-        {selectedMedia && (
+        {selectedImage && (
           <div
-            onClick={() => setSelectedMedia(null)}
+            onClick={() => setSelectedImage(null)}
             className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 animate-in fade-in duration-200"
           >
             <motion.div
@@ -279,7 +299,7 @@ export default function GallerySection() {
               className="relative max-w-4xl w-full bg-[#111111] rounded-3xl overflow-hidden border-2 border-[#E6007E] shadow-2xl p-6 text-white text-center space-y-4"
             >
               <button
-                onClick={() => setSelectedMedia(null)}
+                onClick={() => setSelectedImage(null)}
                 className="absolute top-4 right-4 z-30 p-2 rounded-full bg-white/10 hover:bg-[#E6007E] text-white transition-colors"
                 title="Close"
               >
@@ -287,30 +307,20 @@ export default function GallerySection() {
               </button>
 
               <div className="relative aspect-video sm:aspect-[16/10] rounded-2xl overflow-hidden bg-black flex items-center justify-center border border-white/10">
-                {selectedMedia.type === 'video' ? (
-                  <video
-                    src={selectedMedia.url}
-                    controls
-                    autoPlay
-                    playsInline
-                    className="w-full h-full object-contain"
-                  />
-                ) : (
-                  <img
-                    src={selectedMedia.url}
-                    alt={selectedMedia.title}
-                    className="w-full h-full object-contain"
-                    referrerPolicy="no-referrer"
-                  />
-                )}
+                <img
+                  src={selectedImage.url}
+                  alt={selectedImage.title}
+                  className="w-full h-full object-contain"
+                  referrerPolicy="no-referrer"
+                />
               </div>
 
               <div className="flex flex-col sm:flex-row items-center justify-between pt-2 text-xs text-gray-300 border-t border-white/10 font-mono gap-3 text-left">
                 <div>
                   <h4 className="font-display font-black text-base text-white uppercase">
-                    {selectedMedia.title}
+                    {selectedImage.title}
                   </h4>
-                  <p className="text-pink-300 text-xs">{selectedMedia.subtitle}</p>
+                  <p className="text-pink-300 text-xs">{selectedImage.subtitle}</p>
                 </div>
 
                 <div className="flex items-center gap-3 shrink-0">
@@ -321,7 +331,7 @@ export default function GallerySection() {
                     className="bg-[#E6007E] hover:bg-[#C8006E] text-white px-4 py-2 rounded-full text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-2 shadow-md transition-colors"
                   >
                     <Instagram className="w-3.5 h-3.5" />
-                    <span>View on Instagram</span>
+                    <span>View Post on Instagram</span>
                     <ExternalLink className="w-3 h-3" />
                   </a>
                 </div>

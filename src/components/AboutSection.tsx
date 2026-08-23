@@ -80,17 +80,17 @@ export default function AboutSection() {
 
             {/* Badges / Highlights */}
             <div className="grid grid-cols-3 gap-4 pt-2">
-              <div className="bg-[#111111] text-white p-4 rounded-2xl border border-gray-800 text-center space-y-1">
+              <div className="bg-[#111111] text-white p-4 rounded-2xl border-2 border-[#E6007E] text-center space-y-1 shadow-md">
                 <p className="font-display font-black text-xl text-[#E6007E]">100%</p>
-                <p className="text-[10px] font-mono text-gray-300 uppercase tracking-wider">Independent</p>
+                <p className="text-[10px] font-mono text-pink-200 uppercase tracking-wider">Independent</p>
               </div>
-              <div className="bg-[#111111] text-white p-4 rounded-2xl border border-gray-800 text-center space-y-1">
-                <p className="font-display font-black text-xl text-[#E6007E]">VOCALS</p>
-                <p className="text-[10px] font-mono text-gray-300 uppercase tracking-wider">R&B / Soul</p>
+              <div className="bg-[#111111] text-white p-4 rounded-2xl border-2 border-[#1DB954] text-center space-y-1 shadow-md">
+                <p className="font-display font-black text-xl text-[#1DB954]">VOCALS</p>
+                <p className="text-[10px] font-mono text-green-200 uppercase tracking-wider">R&B / Soul</p>
               </div>
-              <div className="bg-[#111111] text-white p-4 rounded-2xl border border-gray-800 text-center space-y-1">
+              <div className="bg-[#111111] text-white p-4 rounded-2xl border-2 border-[#E6007E] text-center space-y-1 shadow-md">
                 <p className="font-display font-black text-xl text-[#E6007E]">SPOTIFY</p>
-                <p className="text-[10px] font-mono text-gray-300 uppercase tracking-wider">Artist Page</p>
+                <p className="text-[10px] font-mono text-pink-200 uppercase tracking-wider">Verified Artist</p>
               </div>
             </div>
 

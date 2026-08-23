@@ -1,5 +1,7 @@
-import { Instagram, Music, ArrowUp } from 'lucide-react';
+import { Instagram, ArrowUp } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { ARTIST_NAME, INSTAGRAM_URL, SPOTIFY_ARTIST_URL } from '../data/discography';
+import { SpotifyLogo } from './icons/SpotifyLogo';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -7,8 +9,8 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#111111] text-white pt-16 pb-12 border-t-4 border-[#E6007E] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-[#111111] text-white pt-16 pb-12 border-t-4 border-[#E6007E] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
           
@@ -20,27 +22,31 @@ export default function Footer() {
               </span>
             </a>
             <p className="text-sm text-gray-400 font-sans max-w-md leading-relaxed">
-              Official music portfolio and artist home base for independent recording artist ONEKEYZ. Stream official releases on Spotify and connect on Instagram.
+              Official music portfolio and artist home base for Montreal-based independent recording artist ONEKEYZ. Stream official releases on Spotify and connect on Instagram.
             </p>
             <div className="flex items-center space-x-3 pt-2">
-              <a
+              <motion.a
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
                 href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#E6007E] text-white flex items-center justify-center transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#E6007E] text-white flex items-center justify-center transition-colors shadow-md"
                 title="Instagram @one_keyz"
               >
                 <Instagram className="w-5 h-5" />
-              </a>
-              <a
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.1, rotate: -5 }}
+                whileTap={{ scale: 0.9 }}
                 href={SPOTIFY_ARTIST_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#E6007E] text-white flex items-center justify-center transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#1DB954] text-white flex items-center justify-center transition-colors shadow-md"
                 title="Spotify Artist Page"
               >
-                <Music className="w-5 h-5" />
-              </a>
+                <SpotifyLogo className="w-5 h-5" />
+              </motion.a>
             </div>
           </div>
 
@@ -84,9 +90,9 @@ export default function Footer() {
                   href={SPOTIFY_ARTIST_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#E6007E] transition-colors flex items-center gap-1.5"
+                  className="hover:text-[#1DB954] transition-colors flex items-center gap-2"
                 >
-                  <Music className="w-4 h-4 text-[#E6007E]" />
+                  <SpotifyLogo className="w-4 h-4 text-[#1DB954]" />
                   <span>Spotify Artist Profile</span>
                 </a>
               </li>
@@ -95,7 +101,7 @@ export default function Footer() {
                   href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#E6007E] transition-colors flex items-center gap-1.5"
+                  className="hover:text-[#E6007E] transition-colors flex items-center gap-2"
                 >
                   <Instagram className="w-4 h-4 text-[#E6007E]" />
                   <span>Instagram @one_keyz</span>
@@ -110,14 +116,16 @@ export default function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 font-mono gap-4">
           <p>© {new Date().getFullYear()} {ARTIST_NAME}. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <span>Independent Recording Artist</span>
-            <button
+            <span className="text-pink-300">Montreal-Based Recording Artist</span>
+            <motion.button
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
               onClick={scrollToTop}
               className="flex items-center gap-1.5 text-white hover:text-[#E6007E] font-bold uppercase transition-colors"
             >
               <span>Back to top</span>
               <ArrowUp className="w-4 h-4 text-[#E6007E]" />
-            </button>
+            </motion.button>
           </div>
         </div>
 

@@ -5,7 +5,7 @@
     font-family: 'Syne', sans-serif;
   }
   .font-script {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
     font-style: italic;
   }
   .font-cursive {
@@ -16,7 +16,7 @@
   }
 }
 
-/* Custom scrollbar and smooth transitions */
+/* Custom animations & scrollbar */
 html {
   scroll-behavior: smooth;
 }
@@ -26,7 +26,7 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #FAF8F5;
+  background: #FAF7F2;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -36,4 +36,26 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #C8006E;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
+}
+
+/* Hide scrollbar for clean horizontal pill row */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Instagram, Music, Menu, X, ExternalLink, Mail, Disc } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ARTIST_NAME, INSTAGRAM_URL, SPOTIFY_ARTIST_URL } from '../data/discography';
 
 export default function Navbar() {
@@ -8,30 +9,28 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#' },
     { name: 'About', href: '#about' },
-    { name: 'Discography', href: '#music' },
+    { name: 'Music', href: '#music' },
     { name: 'Gallery', href: '#gallery' },
-    { name: 'Newsletter', href: '#newsletter' },
     { name: 'Contact', href: '#contact' },
   ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-      {/* Top Info Bar (Inspired by top bar in reference layout) */}
-      <div className="bg-[#121212] text-white py-1.5 px-4 text-xs border-b border-[#E6007E]/30 hidden sm:block">
+      {/* Top Banner Notice */}
+      <div className="bg-[#111111] text-white py-1.5 px-4 text-xs border-b border-[#E6007E]/30 hidden md:block">
         <div className="max-w-7xl mx-auto flex items-center justify-between font-mono">
           <div className="flex items-center gap-4 text-gray-300">
             <span className="flex items-center gap-1.5 text-pink-300 font-bold">
               <Mail className="w-3.5 h-3.5 text-[#E6007E]" />
-              BOOKINGS & PRESS: [insert booking email]
+              BOOKINGS & PRESS: <span className="underline decoration-[#E6007E]">[insert booking email]</span>
             </span>
             <span className="text-gray-600">|</span>
             <span className="text-gray-400">INDEPENDENT RECORDING ARTIST</span>
@@ -42,84 +41,101 @@ export default function Navbar() {
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#E6007E] transition-colors flex items-center gap-1"
+              className="hover:text-[#E6007E] transition-colors flex items-center gap-1 text-xs"
             >
-              <Instagram className="w-3.5 h-3.5" />
+              <Instagram className="w-3.5 h-3.5 text-[#E6007E]" />
               <span>@one_keyz</span>
             </a>
             <a
               href={SPOTIFY_ARTIST_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#E6007E] transition-colors flex items-center gap-1"
+              className="hover:text-[#E6007E] transition-colors flex items-center gap-1 text-xs"
             >
               <Music className="w-3.5 h-3.5 text-[#E6007E]" />
-              <span>Spotify Artist</span>
-            </a>
-            <a
-              href="#contact"
-              className="bg-[#E6007E] hover:bg-[#C8006E] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded transition-colors"
-            >
-              Booking
+              <span>Spotify</span>
             </a>
           </div>
         </div>
       </div>
 
-      {/* Main Navbar */}
+      {/* Main Nav Bar */}
       <div
         className={`transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#121212]/95 backdrop-blur-md shadow-xl border-b border-[#E6007E]/30 py-3 text-white'
-            : 'bg-[#121212]/90 backdrop-blur-sm border-b border-white/10 py-4 text-white'
+            ? 'bg-[#111111]/95 backdrop-blur-md shadow-2xl border-b border-[#E6007E]/40 py-3 text-white'
+            : 'bg-[#111111]/90 backdrop-blur-sm border-b border-white/10 py-4 text-white'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           
-          {/* Wordmark */}
+          {/* ONEKEYZ Wordmark */}
           <a
             href="#"
-            className="group flex items-center gap-2.5 text-2xl sm:text-3xl font-display font-extrabold tracking-tight text-white hover:text-[#E6007E] transition-colors"
+            className="group flex items-center gap-2 text-2xl sm:text-3xl font-display font-black tracking-tight text-white hover:text-[#E6007E] transition-colors"
           >
-            <span className="bg-[#E6007E] text-white px-2.5 py-0.5 rounded-sm text-base font-mono font-bold tracking-widest group-hover:scale-105 transition-transform">
+            <span className="bg-[#E6007E] text-white px-2 py-0.5 rounded-sm text-xs font-mono font-bold tracking-widest">
               1K
             </span>
-            <span className="uppercase tracking-wider">{ARTIST_NAME}</span>
+            <span className="uppercase tracking-wider font-extrabold">{ARTIST_NAME}</span>
           </a>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-xs font-bold tracking-widest text-gray-300 hover:text-[#E6007E] transition-colors uppercase py-1"
+                className="text-xs font-mono font-bold tracking-widest text-gray-300 hover:text-[#E6007E] transition-colors uppercase py-1 relative group"
               >
                 {link.name}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#E6007E] transition-all duration-200 group-hover:w-full" />
               </a>
             ))}
           </nav>
 
-          {/* Right Action CTA */}
-          <div className="hidden lg:flex items-center gap-4">
+          {/* Desktop Right CTA + Social Icons */}
+          <div className="hidden md:flex items-center gap-4">
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#E6007E] text-white flex items-center justify-center transition-colors"
+              title="Instagram @one_keyz"
+            >
+              <Instagram className="w-4 h-4" />
+            </a>
             <a
               href={SPOTIFY_ARTIST_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#E6007E] hover:bg-[#C8006E] text-white text-xs font-bold uppercase tracking-widest px-6 py-2.5 rounded-sm shadow-md transition-all duration-200 border border-pink-400/30 flex items-center gap-2"
+              className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#E6007E] text-white flex items-center justify-center transition-colors"
+              title="Spotify Artist Page"
+            >
+              <Music className="w-4 h-4" />
+            </a>
+
+            {/* Bold Pill-shaped CTA Button */}
+            <a
+              href={SPOTIFY_ARTIST_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#E6007E] hover:bg-[#C8006E] text-white text-xs font-mono font-bold uppercase tracking-widest px-6 py-2.5 rounded-full shadow-lg hover:shadow-pink-500/25 transition-all duration-200 border border-pink-400/30 flex items-center gap-2"
             >
               <Music className="w-3.5 h-3.5 fill-current" />
-              <span>Stream Spotify</span>
+              <span>Listen Now</span>
             </a>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center gap-3 lg:hidden">
+          <div className="flex items-center gap-3 md:hidden">
             <a
-              href="#music"
-              className="bg-[#E6007E] text-white text-xs font-bold uppercase px-3 py-1.5 rounded-sm"
+              href={SPOTIFY_ARTIST_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#E6007E] text-white text-xs font-mono font-bold uppercase px-3.5 py-1.5 rounded-full"
             >
-              Stream
+              Listen
             </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -132,48 +148,57 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Drawer */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden bg-[#121212] border-b border-[#E6007E]/30 px-4 pt-4 pb-6 shadow-2xl animate-in fade-in slide-in-from-top-4 duration-200 text-white">
-            <div className="flex flex-col space-y-4 pt-2 pb-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-base font-display font-bold uppercase tracking-widest text-gray-200 hover:text-[#E6007E] py-1.5 border-b border-white/10"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden bg-[#111111] border-b border-[#E6007E]/40 px-4 pt-4 pb-6 shadow-2xl text-white"
+            >
+              <div className="flex flex-col space-y-4 pt-2 pb-4">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-base font-display font-bold uppercase tracking-widest text-gray-200 hover:text-[#E6007E] py-2 border-b border-white/10"
+                  >
+                    {link.name}
+                  </a>
+                ))}
+              </div>
 
-            <div className="flex flex-col space-y-3 pt-4 border-t border-white/10 text-xs">
-              <a
-                href={INSTAGRAM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gray-300 hover:text-[#E6007E]"
-              >
-                <Instagram className="w-4 h-4 text-[#E6007E]" /> @one_keyz on Instagram
-              </a>
-              <a
-                href={SPOTIFY_ARTIST_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gray-300 hover:text-[#E6007E]"
-              >
-                <Music className="w-4 h-4 text-[#E6007E]" /> Spotify Artist Page <ExternalLink className="w-3 h-3" />
-              </a>
-              <a
-                href="#contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className="bg-[#E6007E] text-white text-center text-xs font-bold uppercase py-3 rounded-sm mt-2"
-              >
-                Booking & Press Inquiries
-              </a>
-            </div>
-          </div>
-        )}
+              <div className="flex flex-col space-y-3 pt-4 border-t border-white/10 text-xs">
+                <a
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-gray-300 hover:text-[#E6007E]"
+                >
+                  <Instagram className="w-4 h-4 text-[#E6007E]" /> @one_keyz on Instagram
+                </a>
+                <a
+                  href={SPOTIFY_ARTIST_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-gray-300 hover:text-[#E6007E]"
+                >
+                  <Music className="w-4 h-4 text-[#E6007E]" /> Spotify Artist Page <ExternalLink className="w-3 h-3" />
+                </a>
+                <a
+                  href={SPOTIFY_ARTIST_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="bg-[#E6007E] text-white text-center text-xs font-mono font-bold uppercase py-3 rounded-full mt-2 shadow-md"
+                >
+                  Listen Now on Spotify
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </header>
   );

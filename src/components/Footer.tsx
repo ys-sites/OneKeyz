@@ -7,15 +7,15 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#121212] text-white pt-16 pb-12 border-t-4 border-[#E6007E] relative">
+    <footer className="bg-[#111111] text-white pt-16 pb-12 border-t-4 border-[#E6007E] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
           
           {/* Brand Wordmark & Tagline */}
           <div className="md:col-span-6 space-y-4">
-            <a href="#" className="inline-block">
-              <span className="text-4xl font-display font-black tracking-tight text-white uppercase">
+            <a href="#" className="inline-block group">
+              <span className="text-4xl font-display font-black tracking-tight text-white uppercase group-hover:text-[#E6007E] transition-colors">
                 {ARTIST_NAME}
               </span>
             </a>
@@ -57,17 +57,12 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#music" className="hover:text-[#E6007E] transition-colors">
-                  Discography & Music
+                  Music & Discography
                 </a>
               </li>
               <li>
                 <a href="#gallery" className="hover:text-[#E6007E] transition-colors">
-                  Gallery & Visuals
-                </a>
-              </li>
-              <li>
-                <a href="#newsletter" className="hover:text-[#E6007E] transition-colors">
-                  Newsletter Signup
+                  Visual Gallery
                 </a>
               </li>
               <li>
@@ -81,7 +76,7 @@ export default function Footer() {
           {/* Streaming & Social Channels */}
           <div className="md:col-span-3 space-y-3">
             <p className="font-mono text-xs font-bold text-[#E6007E] uppercase tracking-wider">
-              Official Links
+              Official Platforms
             </p>
             <ul className="space-y-2 text-sm font-sans text-gray-300">
               <li>
@@ -89,9 +84,10 @@ export default function Footer() {
                   href={SPOTIFY_ARTIST_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#E6007E] transition-colors"
+                  className="hover:text-[#E6007E] transition-colors flex items-center gap-1.5"
                 >
-                  Spotify Artist Profile
+                  <Music className="w-4 h-4 text-[#E6007E]" />
+                  <span>Spotify Artist Profile</span>
                 </a>
               </li>
               <li>
@@ -99,9 +95,10 @@ export default function Footer() {
                   href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#E6007E] transition-colors"
+                  className="hover:text-[#E6007E] transition-colors flex items-center gap-1.5"
                 >
-                  Instagram @one_keyz
+                  <Instagram className="w-4 h-4 text-[#E6007E]" />
+                  <span>Instagram @one_keyz</span>
                 </a>
               </li>
             </ul>
@@ -113,13 +110,13 @@ export default function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 font-mono gap-4">
           <p>© {new Date().getFullYear()} {ARTIST_NAME}. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <span>Independent Artist Site</span>
+            <span>Independent Recording Artist</span>
             <button
               onClick={scrollToTop}
               className="flex items-center gap-1.5 text-white hover:text-[#E6007E] font-bold uppercase transition-colors"
             >
               <span>Back to top</span>
-              <ArrowUp className="w-4 h-4" />
+              <ArrowUp className="w-4 h-4 text-[#E6007E]" />
             </button>
           </div>
         </div>

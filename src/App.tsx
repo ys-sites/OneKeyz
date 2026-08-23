@@ -6,7 +6,6 @@ import GallerySection from './components/GallerySection';
 import NewsletterSection from './components/NewsletterSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
-import PreLaunchChecklistModal from './components/PreLaunchChecklistModal';
 
 export default function App() {
   return (
@@ -26,9 +25,6 @@ export default function App() {
 
       {/* Footer */}
       <Footer />
-
-      {/* Helper Pre-Launch Review Panel */}
-      <PreLaunchChecklistModal />
     </div>
   );
 }

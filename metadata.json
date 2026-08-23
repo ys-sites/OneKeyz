@@ -1,0 +1,6 @@
+{
+  "name": "ONEKEYZ — Official Artist Portfolio",
+  "description": "Official music portfolio and artist home base for independent recording artist ONEKEYZ. Stream releases on Spotify, view gallery, sign up for newsletter, and submit booking inquiries.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

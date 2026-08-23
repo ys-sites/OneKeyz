@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ARTIST_NAME, INSTAGRAM_URL, SPOTIFY_ARTIST_URL } from '../data/discography';
 import { SpotifyLogo } from './icons/SpotifyLogo';
 import { SoundwaveVisualizer } from './SoundwaveVisualizer';
+import MoltenMetal from './MoltenMetal';
 
 export default function Hero() {
   const [isPlayingPreview, setIsPlayingPreview] = useState(false);
@@ -34,24 +35,48 @@ export default function Hero() {
       {/* Editorial Split Hero Stage */}
       <section className="relative bg-[#111111] text-white pt-12 pb-16 lg:pt-20 lg:pb-28 overflow-hidden border-b-4 border-[#E6007E]">
         
-        {/* Ambient Glow Effects */}
+        {/* React Bits High-Performance MoltenMetal Liquid Background */}
+        <div className="absolute inset-0 z-0 pointer-events-none opacity-60">
+          <MoltenMetal
+            color1="#6E003B"
+            color2="#E6007E"
+            color3="#FFD1EB"
+            speed={0.25}
+            scale={3.5}
+            detail={3}
+            glow={1.6}
+            coreSize={0.1}
+            swirl={1}
+            fold={-0.2}
+            blackPoint={0.05}
+            brightness={1.3}
+            colorMode="molten"
+            grain={true}
+            grainIntensity={0.04}
+            mouseInteraction={true}
+            mouseStrength={0.25}
+            opacity={0.65}
+          />
+        </div>
+
+        {/* Ambient Glow Effects Overlay */}
         <motion.div
           animate={{
             scale: [1, 1.25, 1],
-            opacity: [0.25, 0.45, 0.25],
+            opacity: [0.2, 0.35, 0.2],
           }}
           transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-1/4 -left-20 w-96 h-96 bg-[#E6007E]/30 rounded-full blur-3xl pointer-events-none"
+          className="absolute top-1/4 -left-20 w-96 h-96 bg-[#E6007E]/30 rounded-full blur-3xl pointer-events-none z-0"
         />
         <motion.div
           animate={{
             scale: [1, 1.3, 1],
-            opacity: [0.2, 0.4, 0.2],
+            opacity: [0.15, 0.3, 0.15],
           }}
           transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
-          className="absolute bottom-10 right-0 w-96 h-96 bg-[#E6007E]/25 rounded-full blur-3xl pointer-events-none"
+          className="absolute bottom-10 right-0 w-96 h-96 bg-[#E6007E]/25 rounded-full blur-3xl pointer-events-none z-0"
         />
-        <div className="absolute inset-0 bg-[radial-gradient(#E6007E_1px,transparent_1px)] [background-size:36px_36px] opacity-[0.08] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(#E6007E_1px,transparent_1px)] [background-size:36px_36px] opacity-[0.06] pointer-events-none z-0" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -110,7 +135,7 @@ export default function Hero() {
                   href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 bg-transparent hover:bg-white/10 text-white border-2 border-white/80 font-mono font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full transition-all"
+                  className="inline-flex items-center gap-2.5 bg-black/40 backdrop-blur-md hover:bg-white/10 text-white border-2 border-white/80 font-mono font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full transition-all"
                 >
                   <Instagram className="w-4 h-4 text-pink-400" />
                   <span>Follow @one_keyz</span>

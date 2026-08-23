@@ -163,7 +163,7 @@ export default function GallerySection() {
                 <div
                   className={`relative w-full ${
                     item.aspectRatio || 'aspect-[4/5]'
-                  } rounded-3xl overflow-hidden shadow-lg group-hover:shadow-2xl border-2 border-gray-100 group-hover:border-[#E6007E] transition-all duration-300 bg-black flex flex-col justify-between p-4 text-white`}
+                  } rounded-3xl overflow-hidden shadow-lg group-hover:shadow-2xl border-2 border-gray-100 group-hover:border-[#E6007E] transition-all duration-200 ease-out transform-gpu bg-black flex flex-col justify-between p-4 text-white`}
                 >
                   {item.type === 'image' ? (
                     <>
@@ -171,7 +171,7 @@ export default function GallerySection() {
                         src={item.url}
                         alt={item.title}
                         onClick={() => setSelectedImage(item)}
-                        className="absolute inset-0 w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-700"
+                        className="absolute inset-0 w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-200 ease-out transform-gpu"
                         referrerPolicy="no-referrer"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/20 pointer-events-none" />

@@ -136,9 +136,9 @@ export default function MusicSection() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.15 }}
-                  whileHover={{ y: -8, scale: 1.02 }}
-                  className={`group bg-[#111111] text-white rounded-3xl border-2 ${theme.border} p-6 shadow-2xl ${theme.glow} transition-all duration-300 relative flex flex-col justify-between overflow-hidden`}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  whileHover={{ y: -6, scale: 1.015 }}
+                  className={`group bg-[#111111] text-white rounded-3xl border-2 ${theme.border} p-6 shadow-2xl ${theme.glow} transition-all duration-200 ease-out transform-gpu relative flex flex-col justify-between overflow-hidden`}
                 >
                   {/* Card Header Bar */}
                   <div className={`${theme.badgeBg} ${theme.badgeText} p-5 -mx-6 -mt-6 mb-6 rounded-t-3xl flex items-center justify-between shadow-lg`}>

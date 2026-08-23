@@ -154,8 +154,8 @@ export default function Hero() {
               
               {/* Outer Glow Wrapper with Hover Motion */}
               <motion.div
-                whileHover={{ scale: 1.025, rotateY: 3 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                whileHover={{ scale: 1.02, y: -4 }}
+                transition={{ duration: 0.2, ease: 'easeOut' }}
                 className="relative p-3 bg-gradient-to-tr from-[#E6007E] via-pink-600/40 to-black rounded-3xl shadow-2xl"
               >
                 
@@ -166,7 +166,7 @@ export default function Hero() {
                     <img
                       src={heroPhoto}
                       alt="ONEKEYZ Editorial Artist Portrait"
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-200 ease-out group-hover:scale-105 transform-gpu"
                       referrerPolicy="no-referrer"
                     />
                   ) : (

@@ -82,18 +82,18 @@ export default function AboutSection() {
             </div>
 
             {/* Badges / Highlights */}
-            <div className="grid grid-cols-3 gap-4 pt-2">
-              <div className="bg-[#111111] text-white p-4 rounded-2xl border-2 border-[#E6007E] text-center space-y-1 shadow-md">
-                <p className="font-display font-black text-xl text-[#E6007E]">100%</p>
-                <p className="text-[10px] font-mono text-pink-200 uppercase tracking-wider">Independent</p>
+            <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-2">
+              <div className="bg-[#111111] text-white p-3.5 sm:p-4 rounded-2xl border-2 border-[#E6007E] text-center flex flex-col items-center justify-center space-y-1 shadow-md hover:border-pink-400 transition-colors">
+                <p className="font-display font-black text-lg sm:text-xl text-[#E6007E] leading-none">100%</p>
+                <p className="text-[10px] font-mono text-pink-200 uppercase tracking-wider leading-tight">Independent</p>
               </div>
-              <div className="bg-[#111111] text-white p-4 rounded-2xl border-2 border-[#E6007E] text-center space-y-1 shadow-md">
-                <p className="font-display font-black text-xl text-[#E6007E]">VOCALS</p>
-                <p className="text-[10px] font-mono text-pink-200 uppercase tracking-wider">R&B / Soul</p>
+              <div className="bg-[#111111] text-white p-3.5 sm:p-4 rounded-2xl border-2 border-[#E6007E] text-center flex flex-col items-center justify-center space-y-1 shadow-md hover:border-pink-400 transition-colors">
+                <p className="font-display font-black text-lg sm:text-xl text-[#E6007E] leading-none">VOCALS</p>
+                <p className="text-[10px] font-mono text-pink-200 uppercase tracking-wider leading-tight">R&B / Soul</p>
               </div>
-              <div className="bg-[#111111] text-white p-4 rounded-2xl border-2 border-[#E6007E] text-center space-y-1 shadow-md">
-                <p className="font-display font-black text-xl text-[#E6007E]">SPOTIFY</p>
-                <p className="text-[10px] font-mono text-pink-200 uppercase tracking-wider">Verified Artist</p>
+              <div className="bg-[#111111] text-white p-3.5 sm:p-4 rounded-2xl border-2 border-[#E6007E] text-center flex flex-col items-center justify-center space-y-1 shadow-md hover:border-pink-400 transition-colors">
+                <p className="font-display font-black text-lg sm:text-xl text-[#E6007E] leading-none">SPOTIFY</p>
+                <p className="text-[10px] font-mono text-pink-200 uppercase tracking-wider leading-tight">Verified Artist</p>
               </div>
             </div>
 

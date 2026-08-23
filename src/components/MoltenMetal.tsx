@@ -217,17 +217,23 @@ export default function MoltenMetal({
     const targetMouse = [0.5, 0.5];
     const currentMouse = [0.5, 0.5];
 
+    let cachedRect = canvas.getBoundingClientRect();
+    const updateRect = () => {
+      cachedRect = canvas.getBoundingClientRect();
+    };
+
     const handleMouseMove = (e: MouseEvent) => {
-      const rect = canvas.getBoundingClientRect();
-      targetMouse[0] = (e.clientX - rect.left) / rect.width;
-      targetMouse[1] = 1.0 - (e.clientY - rect.top) / rect.height;
+      targetMouse[0] = (e.clientX - cachedRect.left) / (cachedRect.width || 1);
+      targetMouse[1] = 1.0 - (e.clientY - cachedRect.top) / (cachedRect.height || 1);
     };
     const handleMouseLeave = () => {
       targetMouse[0] = 0.5;
       targetMouse[1] = 0.5;
     };
-    canvas.addEventListener('mousemove', handleMouseMove);
-    canvas.addEventListener('mouseleave', handleMouseLeave);
+
+    window.addEventListener('resize', updateRect, { passive: true });
+    canvas.addEventListener('mousemove', handleMouseMove, { passive: true });
+    canvas.addEventListener('mouseleave', handleMouseLeave, { passive: true });
 
     let raf = 0;
     let isVisible = true;
@@ -276,6 +282,7 @@ export default function MoltenMetal({
       ro.disconnect();
       io.disconnect();
       document.removeEventListener('visibilitychange', onVisibility);
+      window.removeEventListener('resize', updateRect);
       canvas.removeEventListener('mousemove', handleMouseMove);
       canvas.removeEventListener('mouseleave', handleMouseLeave);
       ctxMap.delete(container);

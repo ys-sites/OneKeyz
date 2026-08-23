@@ -27,7 +27,7 @@ const MEDIA_GALLERY: MediaItem[] = [
   {
     id: 'm2',
     type: 'video',
-    url: '/“If you’re ashamed of me then we can’t be ✌🏾”__🆕 music ‼️ 🎵Link in bio 🔥🚀___#real #homestud.mp4',
+    url: '/video-real-session.mp4',
     title: 'REAL — Home Studio Session',
     subtitle: 'Live Single Recording Video Reel',
     aspectRatio: 'aspect-[4/5]',
@@ -36,7 +36,7 @@ const MEDIA_GALLERY: MediaItem[] = [
   {
     id: 'm3',
     type: 'image',
-    url: '/Thank you for sharing your talent 🔥 @chrisbrownofficial.jpg',
+    url: '/chris-brown-concert.jpg',
     title: 'Concert & Stage Spotlight',
     subtitle: 'Chris Brown Concert Event Spotlight',
     aspectRatio: 'aspect-square',
@@ -45,7 +45,7 @@ const MEDIA_GALLERY: MediaItem[] = [
   {
     id: 'm4',
     type: 'video',
-    url: '/Reminiscing about this semi acapella version recorded at @zeffirstudios with @kzbrowznbrushes __.mp4',
+    url: '/video-acapella-zeffir.mp4',
     title: 'Semi-Acapella @ Zeffir Studios',
     subtitle: 'Live Vocal Take with KZ Browznbrushes',
     aspectRatio: 'aspect-[4/5]',
@@ -54,7 +54,7 @@ const MEDIA_GALLERY: MediaItem[] = [
   {
     id: 'm5',
     type: 'image',
-    url: '/The past is in your head, the future is in your hands.✨__#inspirationalquotes #elevation #levelu.jpg',
+    url: '/editorial-fashion-shoot.jpg',
     title: 'Fashion & Editorial Shoot',
     subtitle: 'Official Press & Editorial Photography',
     aspectRatio: 'aspect-[4/5]',
@@ -63,7 +63,7 @@ const MEDIA_GALLERY: MediaItem[] = [
   {
     id: 'm6',
     type: 'video',
-    url: '/Do you know the difference  🤔____#vocals #vocalharmony #adlibs #adlib #music #diymusician #rnbs.mp4',
+    url: '/video-vocal-harmony.mp4',
     title: 'Vocal Harmony & Ad-Libs Reel',
     subtitle: 'DIY Vocal Harmony Breakdown Video',
     aspectRatio: 'aspect-square',

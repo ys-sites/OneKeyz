@@ -143,16 +143,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center gap-3 md:hidden">
-            <a
-              href={SPOTIFY_ARTIST_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#E6007E] text-white text-xs font-mono font-bold uppercase px-3.5 py-1.5 rounded-full flex items-center gap-1.5"
-            >
-              <SpotifyLogo className="w-3.5 h-3.5" />
-              <span>Listen</span>
-            </a>
+          <div className="flex items-center md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 text-white hover:text-[#E6007E] focus:outline-none"

@@ -34,7 +34,13 @@ export default function Navbar() {
               BOOKINGS & PRESS: <span className="underline decoration-[#E6007E]">[insert booking email]</span>
             </span>
             <span className="text-gray-600">|</span>
-            <span className="text-pink-300 font-bold">MONTREAL-BASED RECORDING ARTIST</span>
+            <span className="text-pink-300 font-bold flex items-center gap-1.5">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#1DB954] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#1DB954]" />
+              </span>
+              MONTREAL-BASED RECORDING ARTIST
+            </span>
           </div>
 
           <div className="flex items-center gap-4 text-gray-300">
@@ -51,9 +57,9 @@ export default function Navbar() {
               href={SPOTIFY_ARTIST_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#1DB954] transition-colors flex items-center gap-1 text-xs"
+              className="hover:text-[#E6007E] transition-colors flex items-center gap-1 text-xs"
             >
-              <SpotifyLogo className="w-3.5 h-3.5 text-[#1DB954]" />
+              <SpotifyLogo className="w-3.5 h-3.5 text-[#E6007E]" />
               <span>Spotify</span>
             </a>
           </div>
@@ -116,7 +122,7 @@ export default function Navbar() {
               href={SPOTIFY_ARTIST_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#1DB954] text-white flex items-center justify-center transition-colors"
+              className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#E6007E] text-white flex items-center justify-center transition-colors"
               title="Spotify Artist Page"
             >
               <SpotifyLogo className="w-4 h-4" />
@@ -192,9 +198,9 @@ export default function Navbar() {
                   href={SPOTIFY_ARTIST_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-gray-300 hover:text-[#1DB954]"
+                  className="flex items-center gap-2 text-gray-300 hover:text-[#E6007E]"
                 >
-                  <SpotifyLogo className="w-4 h-4 text-[#1DB954]" /> Spotify Artist Page <ExternalLink className="w-3 h-3" />
+                  <SpotifyLogo className="w-4 h-4 text-[#E6007E]" /> Spotify Artist Page <ExternalLink className="w-3 h-3" />
                 </a>
                 <a
                   href={SPOTIFY_ARTIST_URL}

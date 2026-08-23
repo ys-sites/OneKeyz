@@ -42,7 +42,7 @@ export default function Footer() {
                 href={SPOTIFY_ARTIST_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#1DB954] text-white flex items-center justify-center transition-colors shadow-md"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#E6007E] text-white flex items-center justify-center transition-colors shadow-md"
                 title="Spotify Artist Page"
               >
                 <SpotifyLogo className="w-5 h-5" />
@@ -90,9 +90,9 @@ export default function Footer() {
                   href={SPOTIFY_ARTIST_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#1DB954] transition-colors flex items-center gap-2"
+                  className="hover:text-[#E6007E] transition-colors flex items-center gap-2"
                 >
-                  <SpotifyLogo className="w-4 h-4 text-[#1DB954]" />
+                  <SpotifyLogo className="w-4 h-4 text-[#E6007E]" />
                   <span>Spotify Artist Profile</span>
                 </a>
               </li>

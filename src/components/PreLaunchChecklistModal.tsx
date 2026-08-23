@@ -85,13 +85,13 @@ export default function PreLaunchChecklistModal() {
                   key={index}
                   className={`p-3.5 rounded-2xl border text-xs flex items-start gap-3 ${
                     item.done
-                      ? 'bg-green-50/60 border-green-200 text-green-900'
+                      ? 'bg-pink-50/80 border-[#E6007E]/40 text-[#E6007E]'
                       : 'bg-pink-50/60 border-[#E6007E]/30 text-gray-900'
                   }`}
                 >
                   <div
                     className={`w-5 h-5 rounded-full shrink-0 flex items-center justify-center text-xs font-bold mt-0.5 ${
-                      item.done ? 'bg-green-600 text-white' : 'bg-[#E6007E] text-white'
+                      item.done ? 'bg-[#E6007E] text-white' : 'bg-[#111111] text-white'
                     }`}
                   >
                     {item.done ? <Check className="w-3.5 h-3.5" /> : '!'}

@@ -3,6 +3,7 @@ import { Play, Instagram, Image as ImageIcon, Disc, X, Sparkles } from 'lucide-r
 import { motion } from 'framer-motion';
 import { ARTIST_NAME, INSTAGRAM_URL, SPOTIFY_ARTIST_URL } from '../data/discography';
 import { SpotifyLogo } from './icons/SpotifyLogo';
+import { SoundwaveVisualizer } from './SoundwaveVisualizer';
 
 export default function Hero() {
   const [isPlayingPreview, setIsPlayingPreview] = useState(false);
@@ -36,19 +37,19 @@ export default function Hero() {
         {/* Ambient Glow Effects */}
         <motion.div
           animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.25, 0.4, 0.25],
+            scale: [1, 1.25, 1],
+            opacity: [0.25, 0.45, 0.25],
           }}
-          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+          transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
           className="absolute top-1/4 -left-20 w-96 h-96 bg-[#E6007E]/30 rounded-full blur-3xl pointer-events-none"
         />
         <motion.div
           animate={{
             scale: [1, 1.3, 1],
-            opacity: [0.2, 0.35, 0.2],
+            opacity: [0.2, 0.4, 0.2],
           }}
-          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
-          className="absolute bottom-10 right-0 w-96 h-96 bg-[#1DB954]/20 rounded-full blur-3xl pointer-events-none"
+          transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+          className="absolute bottom-10 right-0 w-96 h-96 bg-[#E6007E]/25 rounded-full blur-3xl pointer-events-none"
         />
         <div className="absolute inset-0 bg-[radial-gradient(#E6007E_1px,transparent_1px)] [background-size:36px_36px] opacity-[0.08] pointer-events-none" />
 
@@ -64,19 +65,23 @@ export default function Hero() {
             >
               
               {/* Italic Script Accent Line */}
-              <motion.div variants={itemVariants} className="space-y-1">
+              <motion.div variants={itemVariants} className="space-y-2">
                 <span className="font-script text-3xl sm:text-4xl text-pink-300 block">
                   Montreal-Based Recording Artist
                 </span>
-                <span className="inline-flex items-center gap-2 bg-[#E6007E] text-white text-[11px] font-mono font-bold tracking-widest px-3.5 py-1.5 rounded-full uppercase shadow-md">
+                <div className="inline-flex items-center gap-2 bg-[#E6007E] text-white text-[11px] font-mono font-bold tracking-widest px-3.5 py-1.5 rounded-full uppercase shadow-md">
                   <Sparkles className="w-3 h-3 text-pink-200" />
                   <span>Montreal, QC • Vocalist • Songwriter</span>
-                </span>
+                  <div className="flex items-center gap-1 pl-1">
+                    <span className="w-2 h-2 rounded-full bg-[#1DB954] animate-ping" />
+                    <span className="w-2 h-2 rounded-full bg-[#1DB954]" />
+                  </div>
+                </div>
               </motion.div>
 
-              {/* Artist Name Wordmark Headline */}
+              {/* Artist Name Wordmark Headline with Shimmering Gradient Animation */}
               <motion.div variants={itemVariants} className="space-y-3">
-                <h1 className="text-4xl sm:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-display font-black tracking-normal text-white uppercase leading-[0.95] drop-shadow-md">
+                <h1 className="text-4xl sm:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-display font-black tracking-normal uppercase leading-[0.95] drop-shadow-md bg-gradient-to-r from-white via-pink-100 to-[#E6007E] bg-clip-text text-transparent">
                   {ARTIST_NAME}
                 </h1>
                 <p className="text-base sm:text-lg lg:text-xl font-sans text-gray-200 max-w-xl leading-relaxed pt-1">
@@ -87,20 +92,21 @@ export default function Hero() {
               {/* Primary CTA "Stream Now" (Spotify) + Secondary CTA "Follow" */}
               <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 pt-4">
                 <motion.a
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.96 }}
+                  whileHover={{ scale: 1.06, y: -3 }}
+                  whileTap={{ scale: 0.95 }}
                   href={SPOTIFY_ARTIST_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 bg-[#E6007E] hover:bg-[#C8006E] text-white font-mono font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full shadow-2xl shadow-pink-500/30 border border-pink-400/30 transition-all"
+                  className="inline-flex items-center gap-3 bg-[#E6007E] hover:bg-[#C8006E] text-white font-mono font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full shadow-2xl shadow-pink-500/30 border border-pink-400/30 transition-all group"
                 >
-                  <SpotifyLogo className="w-4 h-4 text-white" />
+                  <SpotifyLogo className="w-4 h-4 text-white group-hover:rotate-12 transition-transform" />
                   <span>Stream Now</span>
+                  <SoundwaveVisualizer color="bg-white" />
                 </motion.a>
 
                 <motion.a
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.96 }}
+                  whileHover={{ scale: 1.06, y: -3 }}
+                  whileTap={{ scale: 0.95 }}
                   href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -123,8 +129,8 @@ export default function Hero() {
               
               {/* Outer Glow Wrapper with Hover Motion */}
               <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.4 }}
+                whileHover={{ scale: 1.025, rotateY: 3 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                 className="relative p-3 bg-gradient-to-tr from-[#E6007E] via-pink-600/40 to-black rounded-3xl shadow-2xl"
               >
                 
@@ -163,14 +169,21 @@ export default function Hero() {
                     <Play className="w-7 h-7 fill-current ml-1 text-[#E6007E] group-hover/btn:text-white transition-colors" />
                   </motion.button>
 
-                  {/* Overlaid Bottom Title Strip */}
-                  <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/80 to-transparent p-5 flex items-center justify-between text-left z-20">
+                  {/* Overlaid Bottom Title Strip with FLASHING GREEN LIVE DOT */}
+                  <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/85 to-transparent p-5 flex items-center justify-between text-left z-20">
                     <div>
-                      <p className="font-display font-bold text-sm tracking-wide text-white flex items-center gap-2">
-                        <span>ONEKEYZ — "REAL"</span>
-                        <span className="w-2 h-2 rounded-full bg-[#1DB954] animate-ping" />
+                      <div className="flex items-center gap-2">
+                        <p className="font-display font-bold text-sm tracking-wide text-white">ONEKEYZ — "REAL"</p>
+                        {/* Flashing Green Live Dot */}
+                        <span className="relative flex h-2.5 w-2.5">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#1DB954] opacity-75" />
+                          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#1DB954]" />
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-pink-300 font-mono flex items-center gap-2 mt-0.5">
+                        <span>Latest Official Single • 2025</span>
+                        <SoundwaveVisualizer color="bg-[#1DB954]" />
                       </p>
-                      <p className="text-[11px] text-pink-300 font-mono">Latest Official Single • 2025</p>
                     </div>
                   </div>
 
@@ -202,7 +215,13 @@ export default function Hero() {
             <div className="flex items-center gap-3 pb-3 border-b border-white/10">
               <Disc className="w-6 h-6 text-[#E6007E] animate-spin-slow" />
               <div>
-                <h4 className="font-display font-black text-lg uppercase">ONEKEYZ — "REAL"</h4>
+                <h4 className="font-display font-black text-lg uppercase flex items-center gap-2">
+                  <span>ONEKEYZ — "REAL"</span>
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#1DB954] opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#1DB954]" />
+                  </span>
+                </h4>
                 <p className="text-xs text-pink-300 font-mono">2025 Release • Streaming on Spotify</p>
               </div>
             </div>

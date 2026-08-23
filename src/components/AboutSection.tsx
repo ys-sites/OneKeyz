@@ -54,7 +54,10 @@ export default function AboutSection() {
               {/* Header Bar */}
               <div className="flex items-center justify-between pb-4 border-b border-gray-100 mb-6">
                 <span className="text-xs font-mono font-bold text-[#E6007E] uppercase tracking-wider flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#E6007E] animate-pulse" />
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#1DB954] opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#1DB954]" />
+                  </span>
                   Official Bio
                 </span>
               </div>
@@ -84,9 +87,9 @@ export default function AboutSection() {
                 <p className="font-display font-black text-xl text-[#E6007E]">100%</p>
                 <p className="text-[10px] font-mono text-pink-200 uppercase tracking-wider">Independent</p>
               </div>
-              <div className="bg-[#111111] text-white p-4 rounded-2xl border-2 border-[#1DB954] text-center space-y-1 shadow-md">
-                <p className="font-display font-black text-xl text-[#1DB954]">VOCALS</p>
-                <p className="text-[10px] font-mono text-green-200 uppercase tracking-wider">R&B / Soul</p>
+              <div className="bg-[#111111] text-white p-4 rounded-2xl border-2 border-[#E6007E] text-center space-y-1 shadow-md">
+                <p className="font-display font-black text-xl text-[#E6007E]">VOCALS</p>
+                <p className="text-[10px] font-mono text-pink-200 uppercase tracking-wider">R&B / Soul</p>
               </div>
               <div className="bg-[#111111] text-white p-4 rounded-2xl border-2 border-[#E6007E] text-center space-y-1 shadow-md">
                 <p className="font-display font-black text-xl text-[#E6007E]">SPOTIFY</p>

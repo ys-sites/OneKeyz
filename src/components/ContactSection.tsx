@@ -94,7 +94,7 @@ export default function ContactSection() {
                     className="p-2.5 rounded-xl bg-white border border-gray-200 hover:bg-[#E6007E] hover:text-white text-gray-700 transition-colors shrink-0 shadow-xs"
                     title="Copy email address"
                   >
-                    {copiedEmail ? <Check className="w-4 h-4 text-green-600" /> : <Copy className="w-4 h-4" />}
+                    {copiedEmail ? <Check className="w-4 h-4 text-[#E6007E]" /> : <Copy className="w-4 h-4" />}
                   </button>
                 </div>
               </div>

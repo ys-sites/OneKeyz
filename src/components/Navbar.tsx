@@ -72,7 +72,17 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           
-          <div className="w-8 md:w-0" />
+          {/* Brand Wordmark Logo */}
+          <motion.a
+            href="#"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
+            className="font-display font-black text-2xl sm:text-3xl tracking-tight uppercase leading-none select-none group"
+            aria-label="ONEKEYZ Home"
+          >
+            <span className="text-white group-hover:text-pink-100 transition-colors">ONE</span>
+            <span className="text-[#E6007E]">KEYZ</span>
+          </motion.a>
 
           {/* Desktop Nav Links */}
           <nav className="hidden md:flex items-center gap-8">

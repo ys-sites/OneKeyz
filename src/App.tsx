@@ -20,7 +20,7 @@ export default function App() {
         <AboutSection />
         <MusicSection />
         <GallerySection />
-        <MerchSection />
+        {/* <MerchSection /> - Hidden for now per client request */}
         <NewsletterSection />
         <ContactSection />
       </main>

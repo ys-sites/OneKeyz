@@ -68,11 +68,6 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#merch" className="hover:text-[#E6007E] transition-colors">
-                  Official Merch
-                </a>
-              </li>
-              <li>
                 <a href="#contact" className="hover:text-[#E6007E] transition-colors">
                   Bookings & Contact
                 </a>

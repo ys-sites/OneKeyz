@@ -20,7 +20,6 @@ export default function Navbar() {
     { name: 'About', href: '#about' },
     { name: 'Music', href: '#music' },
     { name: 'Gallery', href: '#gallery' },
-    { name: 'Merch', href: '#merch' },
     { name: 'Contact', href: '#contact' },
   ];
 

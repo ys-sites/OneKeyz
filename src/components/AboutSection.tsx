@@ -1,85 +1,291 @@
-import { Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { ARTIST_NAME } from '../data/discography';
+import { Sparkles, Disc3, Quote, ArrowRight, Instagram, Mic2, Compass, Radio } from 'lucide-react';
+import { ARTIST_NAME, INSTAGRAM_URL } from '../data/discography';
+import { SoundwaveVisualizer } from './SoundwaveVisualizer';
 
 export default function AboutSection() {
-  const bioText = `Soulful vocals, raw emotion, and atmospheric sonics from Montreal-based independent recording artist ${ARTIST_NAME}.\n\n[Full 2–3 paragraph artist bio pending from client prior to launch]`;
+  const coreBioIntro = `Soulful vocals, raw emotion, and atmospheric sonics from Montreal-based independent recording artist ${ARTIST_NAME}.`;
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] },
+    },
+  };
 
   return (
-    <section id="about" className="py-20 lg:py-32 bg-[#FAF7F2] text-[#111111] relative overflow-hidden border-b border-gray-200 scroll-mt-24">
+    <section id="about" className="py-24 lg:py-36 bg-[#0E0E10] text-white relative overflow-hidden border-b border-white/10 scroll-mt-24">
       
-      {/* Background Watermark */}
-      <div className="absolute right-4 top-1/2 -translate-y-1/2 rotate-90 origin-right pointer-events-none select-none opacity-[0.03] hidden xl:block">
-        <span className="font-display font-black text-9xl tracking-widest text-[#111111] uppercase whitespace-nowrap">
-          {ARTIST_NAME}
+      {/* Background Architectural Grid & Ambient Halos */}
+      <div className="absolute inset-0 bg-[radial-gradient(#E6007E_1px,transparent_1px)] [background-size:40px_40px] opacity-[0.04] pointer-events-none" />
+      <div className="absolute top-1/4 -left-36 w-96 h-96 bg-[#E6007E]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-12 -right-36 w-96 h-96 bg-[#E6007E]/10 rounded-full blur-3xl pointer-events-none" />
+
+      {/* Massive Background Typographic Watermark (Drake OVO / Luxury Noir Aesthetic) */}
+      <div className="absolute right-4 top-1/2 -translate-y-1/2 rotate-90 origin-right pointer-events-none select-none opacity-[0.018] hidden 2xl:block">
+        <span className="font-display font-black text-[12rem] tracking-widest text-white uppercase whitespace-nowrap">
+          MONTRÉAL
         </span>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Header with Script Accent Line + Bold Headline */}
+        {/* Section Header: Cursive Accent + Heavyweight Display Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="space-y-2 mb-16 text-center max-w-2xl mx-auto"
+          className="text-center max-w-3xl mx-auto space-y-3 mb-16 lg:mb-24"
         >
+          {/* Studio Archive Eyebrow Tag */}
+          <div className="inline-flex items-center gap-2 bg-[#E6007E]/10 border border-[#E6007E]/30 px-4 py-1.5 rounded-full text-xs font-mono font-bold text-[#E6007E] uppercase tracking-wider mb-1 shadow-xs">
+            <Disc3 className="w-3.5 h-3.5 text-[#E6007E] animate-spin-slow" />
+            <span>Studio Dossier • Archive Ref 514</span>
+          </div>
+
           <p className="font-script text-3xl sm:text-4xl text-[#E6007E]">
-            Her story
+            The Midnight Sessions
           </p>
-          <h2 className="text-4xl sm:text-6xl font-display font-black text-[#111111] uppercase tracking-tight">
-            ABOUT {ARTIST_NAME}
+          <h2 className="text-4xl sm:text-6xl font-display font-black text-white uppercase tracking-tight">
+            BEHIND THE <span className="text-[#E6007E]">ATMOSPHERE</span>
           </h2>
-          <div className="w-24 h-1 bg-[#E6007E] rounded-full mx-auto" />
+          <p className="text-gray-400 font-sans text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
+            The creative DNA, sonic discipline, and unapologetic vision powering the world of {ARTIST_NAME}.
+          </p>
+          <div className="w-20 h-1 bg-[#E6007E] mx-auto rounded-full mt-3" />
         </motion.div>
 
-        <div className="max-w-4xl mx-auto">
+        {/* Asymmetrical Haute Couture Layout: Studio Portrait Card vs. Narrative Liner Notes */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
           
-          {/* Bio Copy Block */}
+          {/* Left Column: High-Fashion Studio Portrait Showcase (5 cols) */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="space-y-6"
+            transition={{ duration: 0.7, ease: [0.215, 0.61, 0.355, 1] }}
+            className="lg:col-span-5 space-y-6"
           >
             
-            <div className="bg-white border-2 border-[#111111] p-6 sm:p-12 rounded-3xl shadow-xl relative">
+            {/* Framed Editorial Card with 1px fine-border trick and corner crosshairs */}
+            <div className="relative p-3 bg-gradient-to-b from-white/10 via-white/5 to-black/80 rounded-3xl border border-white/15 shadow-2xl group">
               
-              {/* Header Bar */}
-              <div className="flex items-center justify-between pb-4 border-b border-gray-100 mb-6">
-                <span className="text-xs font-mono font-bold text-[#E6007E] uppercase tracking-wider flex items-center gap-2">
-                  <span className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#1DB954] opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#1DB954]" />
+              {/* Corner Crosshair Accents (+) — Haute Horlogerie / OVO Streetwear Signature */}
+              <span className="absolute -top-1.5 -left-1.5 font-mono text-[10px] text-pink-400/80 pointer-events-none select-none">+</span>
+              <span className="absolute -top-1.5 -right-1.5 font-mono text-[10px] text-pink-400/80 pointer-events-none select-none">+</span>
+              <span className="absolute -bottom-1.5 -left-1.5 font-mono text-[10px] text-pink-400/80 pointer-events-none select-none">+</span>
+              <span className="absolute -bottom-1.5 -right-1.5 font-mono text-[10px] text-pink-400/80 pointer-events-none select-none">+</span>
+
+              {/* Photo Frame */}
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-black shadow-inner border border-white/10">
+                <img
+                  src="/editorial-fashion-shoot.jpg"
+                  alt="ONEKEYZ Editorial Studio Portrait"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out transform-gpu"
+                  referrerPolicy="no-referrer"
+                />
+
+                {/* Dark Cinematic Vignette */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/20 pointer-events-none" />
+
+                {/* Top Overlay Badge: Live Studio Session Status */}
+                <div className="absolute top-4 inset-x-4 flex items-center justify-between pointer-events-none z-10">
+                  <div className="bg-black/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/15 flex items-center gap-2">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E6007E] opacity-75" />
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-[#E6007E]" />
+                    </span>
+                    <span className="font-mono text-[10px] font-bold tracking-widest text-pink-200 uppercase">
+                      STUDIO LOG • 03:42 AM
+                    </span>
+                  </div>
+
+                  <span className="bg-white/10 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 text-[10px] font-mono text-gray-300 uppercase">
+                    514 QC
                   </span>
-                  Official Bio
-                </span>
-              </div>
+                </div>
 
-              {/* Bio Content */}
-              <div className="font-sans text-gray-800 space-y-4 text-base sm:text-lg leading-relaxed">
-                {bioText.split('\n\n').map((paragraph, index) => (
-                  <p key={index} className="text-gray-800 font-medium">
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-
-              {/* Pre-launch Note */}
-              <div className="mt-8 p-4 bg-pink-50 border border-[#E6007E]/30 rounded-2xl flex items-start gap-3 text-xs text-[#111111]">
-                <Sparkles className="w-4 h-4 text-[#E6007E] shrink-0 mt-0.5" />
-                <p>
-                  <strong className="text-[#E6007E] uppercase font-mono">Pre-Launch Placeholder:</strong> Official 2–3 paragraph artist bio to replace this text prior to launch.
-                </p>
+                {/* Bottom Overlay Strip: Live Audio EQ & Master Track Tag */}
+                <div className="absolute bottom-4 inset-x-4 p-3.5 bg-black/80 backdrop-blur-md rounded-xl border border-white/15 z-10 flex items-center justify-between">
+                  <div className="space-y-0.5">
+                    <p className="font-display font-bold text-xs uppercase tracking-wider text-white">
+                      VOCAL SESSION TAPE
+                    </p>
+                    <p className="font-mono text-[10px] text-pink-300 flex items-center gap-1.5">
+                      <span>24-BIT / 96KHZ ANALOG MASTER</span>
+                    </p>
+                  </div>
+                  <SoundwaveVisualizer color="bg-[#E6007E]" />
+                </div>
               </div>
 
             </div>
 
+            {/* Executive Studio Memo Card (French Montana Luxury meets Drake Engineering) */}
+            <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md space-y-3">
+              <div className="flex items-center justify-between border-b border-white/10 pb-2.5">
+                <span className="font-mono text-[11px] font-bold text-pink-300 uppercase tracking-wider flex items-center gap-1.5">
+                  <Mic2 className="w-3.5 h-3.5 text-[#E6007E]" />
+                  <span>Acoustic Profile</span>
+                </span>
+                <span className="font-mono text-[10px] text-gray-400 uppercase">
+                  MASTER SPEC
+                </span>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3 text-xs font-mono">
+                <div>
+                  <span className="text-gray-500 block text-[10px]">ORIGIN</span>
+                  <span className="text-white font-bold">MONTRÉAL, QC</span>
+                </div>
+                <div>
+                  <span className="text-gray-500 block text-[10px]">CADENCE</span>
+                  <span className="text-pink-300 font-bold">ATMOSPHERIC SOUL</span>
+                </div>
+                <div>
+                  <span className="text-gray-500 block text-[10px]">VOCAL CHAIN</span>
+                  <span className="text-white font-bold">PURE HARMONIC RANGE</span>
+                </div>
+                <div>
+                  <span className="text-gray-500 block text-[10px]">CATALOG RIGHT</span>
+                  <span className="text-[#E6007E] font-bold">100% INDEPENDENT</span>
+                </div>
+              </div>
+            </div>
+
+          </motion.div>
+
+          {/* Right Column: Editorial Narrative & Liner Notes (7 cols) */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="lg:col-span-7 space-y-6 text-left"
+          >
+            
+            {/* Core Lead Copy (incorporating client's mandatory revision text) */}
+            <motion.div variants={itemVariants} className="space-y-4">
+              <p className="text-lg sm:text-2xl font-sans text-gray-100 font-medium leading-relaxed">
+                {coreBioIntro}
+              </p>
+              
+              <p className="text-sm sm:text-base font-sans text-gray-300 leading-relaxed">
+                Born out of Montréal’s bilingual creative underground, {ARTIST_NAME} exists in the nocturnal stillness where raw introspection meets world-class songwriting. Blending the hypnotic cadences of modern R&B with cinematic synth textures and heavy low-end rhythm, she crafts soundscapes designed to be felt as much as heard.
+              </p>
+
+              <p className="text-sm sm:text-base font-sans text-gray-300 leading-relaxed">
+                From intimate vocal arrangements tracked at 3:00 AM to expansive, stadium-ready hooks, every frequency is guided by an uncompromising commitment to artistic sovereignty. No ghostwriters, no artificial fillers—just pure vocal range and undeniable emotional resonance.
+              </p>
+            </motion.div>
+
+            {/* Drake-Style Introspective Pull Quote Card */}
+            <motion.div
+              variants={itemVariants}
+              className="relative p-6 sm:p-7 rounded-2xl bg-white/[0.04] border-l-4 border-[#E6007E] border-y border-r border-white/10 backdrop-blur-md shadow-xl space-y-3"
+            >
+              <Quote className="w-8 h-8 text-[#E6007E]/40" />
+              <blockquote className="font-script italic text-xl sm:text-2xl text-white font-normal leading-snug">
+                "I don’t make disposable records for an algorithm. I capture 3:00 AM confessions—moments when the city stops talking and the real emotion has nowhere to hide."
+              </blockquote>
+              <div className="pt-2 border-t border-white/10 flex items-center justify-between text-xs font-mono">
+                <span className="text-pink-300 font-bold uppercase tracking-widest">
+                  — {ARTIST_NAME}
+                </span>
+                <span className="text-gray-500 uppercase tracking-wider text-[11px]">
+                  Montréal Studio Notes
+                </span>
+              </div>
+            </motion.div>
+
+            {/* Three Executive Sonic Identity Tiles (French Montana Grandeur x OVO Precision) */}
+            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#E6007E]/50 transition-colors space-y-1">
+                <span className="text-2xl font-display font-black text-white block">
+                  514
+                </span>
+                <span className="text-xs font-mono font-bold uppercase text-pink-300 tracking-wider block">
+                  MONTRÉAL ROOTS
+                </span>
+                <p className="text-[11px] text-gray-400 font-sans leading-tight">
+                  Nocturnal, cosmopolitan soundscapes inspired by Canada's cultural capital.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#E6007E]/50 transition-colors space-y-1">
+                <span className="text-2xl font-display font-black text-white block">
+                  100%
+                </span>
+                <span className="text-xs font-mono font-bold uppercase text-pink-300 tracking-wider block">
+                  INDIE OWNERSHIP
+                </span>
+                <p className="text-[11px] text-gray-400 font-sans leading-tight">
+                  Complete master sovereignty and uncompromised executive control.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#E6007E]/50 transition-colors space-y-1">
+                <span className="text-2xl font-display font-black text-white block">
+                  R&B / SOUL
+                </span>
+                <span className="text-xs font-mono font-bold uppercase text-pink-300 tracking-wider block">
+                  HYPNOTIC CADENCE
+                </span>
+                <p className="text-[11px] text-gray-400 font-sans leading-tight">
+                  Velvet harmonies layered over atmospheric trap-soul production.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Navigation & Connect Actions */}
+            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 pt-4">
+              <a
+                href="#music"
+                className="inline-flex items-center gap-2.5 bg-[#E6007E] hover:bg-[#C8006E] text-white font-mono font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full shadow-xl shadow-pink-500/20 border border-pink-400/30 transition-all transform hover:-translate-y-0.5"
+              >
+                <span>Experience The Catalog</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
+
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-mono font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-full border border-white/15 transition-all"
+              >
+                <Instagram className="w-4 h-4 text-pink-400" />
+                <span>Follow Behind-The-Scenes</span>
+              </a>
+            </motion.div>
+
+            {/* Pre-launch Status Chip */}
+            <motion.div variants={itemVariants} className="pt-2">
+              <div className="p-3 rounded-xl bg-pink-950/30 border border-[#E6007E]/30 flex items-center gap-2.5 text-xs text-pink-200">
+                <Sparkles className="w-4 h-4 text-[#E6007E] shrink-0" />
+                <span className="font-mono text-[11px]">
+                  <strong>Pre-Launch Dossier:</strong> Official extended artist biography in final review before public release.
+                </span>
+              </div>
+            </motion.div>
+
           </motion.div>
 
         </div>
+
       </div>
     </section>
   );

@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import AboutSection from './components/AboutSection';
 import MusicSection from './components/MusicSection';
 import GallerySection from './components/GallerySection';
+import MerchSection from './components/MerchSection';
 import NewsletterSection from './components/NewsletterSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
@@ -19,6 +20,7 @@ export default function App() {
         <AboutSection />
         <MusicSection />
         <GallerySection />
+        <MerchSection />
         <NewsletterSection />
         <ContactSection />
       </main>

@@ -20,6 +20,7 @@ export default function Navbar() {
     { name: 'About', href: '#about' },
     { name: 'Music', href: '#music' },
     { name: 'Gallery', href: '#gallery' },
+    { name: 'Merch', href: '#merch' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -29,18 +30,13 @@ export default function Navbar() {
       <div className="bg-[#111111] text-white py-1.5 px-4 text-xs border-b border-[#E6007E]/30 hidden md:block">
         <div className="max-w-7xl mx-auto flex items-center justify-between font-mono">
           <div className="flex items-center gap-4 text-gray-300">
-            <span className="flex items-center gap-1.5 text-pink-300 font-bold">
+            <a
+              href="mailto:onekeyzmusic1@gmail.com"
+              className="flex items-center gap-1.5 text-pink-300 font-bold hover:text-white transition-colors"
+            >
               <Mail className="w-3.5 h-3.5 text-[#E6007E]" />
-              BOOKINGS & PRESS: <span className="underline decoration-[#E6007E]">[insert booking email]</span>
-            </span>
-            <span className="text-gray-600">|</span>
-            <span className="text-pink-300 font-bold flex items-center gap-1.5">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#1DB954] opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#1DB954]" />
-              </span>
-              MONTREAL-BASED RECORDING ARTIST
-            </span>
+              BOOKINGS & PRESS: <span className="underline decoration-[#E6007E]">onekeyzmusic1@gmail.com</span>
+            </a>
           </div>
 
           <div className="flex items-center gap-4 text-gray-300">
@@ -76,18 +72,7 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           
-          {/* ONEKEYZ Wordmark */}
-          <motion.a
-            href="#"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            className="group flex items-center gap-2.5 text-2xl sm:text-3xl font-display font-black tracking-tight text-white hover:text-[#E6007E] transition-colors leading-none"
-          >
-            <span className="bg-[#E6007E] text-white px-2.5 py-1 rounded-md text-xs font-mono font-bold tracking-widest shadow-md inline-flex items-center justify-center shrink-0 self-center leading-none">
-              1K
-            </span>
-            <span className="uppercase tracking-wider font-extrabold leading-none">{ARTIST_NAME}</span>
-          </motion.a>
+          <div className="w-8 md:w-0" />
 
           {/* Desktop Nav Links */}
           <nav className="hidden md:flex items-center gap-8">

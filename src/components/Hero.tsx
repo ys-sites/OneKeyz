@@ -1,14 +1,10 @@
-import { useState } from 'react';
-import { Play, Instagram, Image as ImageIcon, Disc, X, Sparkles } from 'lucide-react';
+import { Instagram, Image as ImageIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { ARTIST_NAME, INSTAGRAM_URL, SPOTIFY_ARTIST_URL } from '../data/discography';
-import { SpotifyLogo } from './icons/SpotifyLogo';
-import { SoundwaveVisualizer } from './SoundwaveVisualizer';
+import { ARTIST_NAME, INSTAGRAM_URL } from '../data/discography';
 import MoltenMetal from './MoltenMetal';
 
 export default function Hero() {
-  const [isPlayingPreview, setIsPlayingPreview] = useState(false);
-  const heroPhoto = '/image copy.png';
+  const heroPhoto = null;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -81,7 +77,7 @@ export default function Hero() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             
-            {/* Left Column: Script Accent + Wordmark + Tagline + CTAs */}
+            {/* Left Column: Wordmark + Follow CTA */}
             <motion.div
               variants={containerVariants}
               initial="hidden"
@@ -89,62 +85,31 @@ export default function Hero() {
               className="lg:col-span-7 space-y-6 text-left"
             >
               
-              {/* Italic Script Accent Line */}
-              <motion.div variants={itemVariants} className="space-y-2">
-                <span className="font-script text-3xl sm:text-4xl text-pink-300 block">
-                  Montreal-Based Recording Artist
-                </span>
-                <div className="inline-flex items-center gap-2 bg-[#E6007E] text-white text-[11px] font-mono font-bold tracking-widest px-3.5 py-1.5 rounded-full uppercase shadow-md">
-                  <Sparkles className="w-3 h-3 text-pink-200" />
-                  <span>Montreal, QC • Vocalist • Songwriter</span>
-                  <div className="flex items-center gap-1 pl-1">
-                    <span className="w-2 h-2 rounded-full bg-[#1DB954] animate-ping" />
-                    <span className="w-2 h-2 rounded-full bg-[#1DB954]" />
-                  </div>
-                </div>
-              </motion.div>
-
               {/* Artist Name Wordmark Headline with Shimmering Gradient Animation */}
               <motion.div variants={itemVariants} className="space-y-3">
                 <h1 className="text-4xl sm:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-display font-black tracking-normal uppercase leading-[0.95] drop-shadow-md bg-gradient-to-r from-white via-pink-100 to-[#E6007E] bg-clip-text text-transparent">
                   {ARTIST_NAME}
                 </h1>
-                <p className="text-base sm:text-lg lg:text-xl font-sans text-gray-200 max-w-xl leading-relaxed pt-1">
-                  Soulful vocals, raw emotion, and atmospheric sonics from Montreal-based independent recording artist <strong className="text-white font-bold">{ARTIST_NAME}</strong>.
-                </p>
               </motion.div>
 
-              {/* Primary CTA "Stream Now" (Spotify) + Secondary CTA "Follow" */}
-              <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 pt-4">
-                <motion.a
-                  whileHover={{ scale: 1.06, y: -3 }}
-                  whileTap={{ scale: 0.95 }}
-                  href={SPOTIFY_ARTIST_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 bg-[#E6007E] hover:bg-[#C8006E] text-white font-mono font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full shadow-2xl shadow-pink-500/30 border border-pink-400/30 transition-all group"
-                >
-                  <SpotifyLogo className="w-4 h-4 text-white group-hover:rotate-12 transition-transform" />
-                  <span>Stream Now</span>
-                  <SoundwaveVisualizer color="bg-white" />
-                </motion.a>
-
+              {/* CTA: Follow on Instagram */}
+              <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 pt-2">
                 <motion.a
                   whileHover={{ scale: 1.06, y: -3 }}
                   whileTap={{ scale: 0.95 }}
                   href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 bg-black/40 backdrop-blur-md hover:bg-white/10 text-white border-2 border-white/80 font-mono font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full transition-all"
+                  className="inline-flex items-center gap-2.5 bg-black/40 backdrop-blur-md hover:bg-[#E6007E] text-white border-2 border-white/80 hover:border-[#E6007E] font-mono font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full transition-all shadow-xl"
                 >
-                  <Instagram className="w-4 h-4 text-pink-400" />
+                  <Instagram className="w-4 h-4 text-pink-300" />
                   <span>Follow @one_keyz</span>
                 </motion.a>
               </motion.div>
 
             </motion.div>
 
-            {/* Right Column: Editorial Photo Container (Soft-rounded 3xl corners) */}
+            {/* Right Column: Editorial Artist Showcase Container (Soft-rounded 3xl corners) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.92, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -159,7 +124,7 @@ export default function Hero() {
                 className="relative p-3 bg-gradient-to-tr from-[#E6007E] via-pink-600/40 to-black rounded-3xl shadow-2xl"
               >
                 
-                {/* Photo Container with soft rounded corners */}
+                {/* Photo Showcase Container */}
                 <div className="relative aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] rounded-2xl overflow-hidden bg-zinc-900 flex flex-col items-center justify-center text-center text-white group shadow-inner border border-white/10">
                   
                   {heroPhoto ? (
@@ -183,90 +148,13 @@ export default function Hero() {
                     </div>
                   )}
 
-                  {/* Play Overlay Button for Spotify Track */}
-                  <motion.button
-                    whileHover={{ scale: 1.15 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => setIsPlayingPreview(!isPlayingPreview)}
-                    className="absolute inset-0 m-auto w-16 h-16 rounded-full bg-white/90 hover:bg-[#E6007E] text-black hover:text-white flex items-center justify-center shadow-2xl backdrop-blur-md transition-colors z-20 group/btn"
-                    title="Play Latest Single 'REAL' Preview"
-                  >
-                    <Play className="w-7 h-7 fill-current ml-1 text-[#E6007E] group-hover/btn:text-white transition-colors" />
-                  </motion.button>
-
-                  {/* Overlaid Bottom Title Strip with FLASHING GREEN LIVE DOT */}
-                  <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/85 to-transparent p-5 flex items-center justify-between text-left z-20">
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <p className="font-display font-bold text-sm tracking-wide text-white">ONEKEYZ — "REAL"</p>
-                        {/* Flashing Green Live Dot */}
-                        <span className="relative flex h-2.5 w-2.5">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#1DB954] opacity-75" />
-                          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#1DB954]" />
-                        </span>
-                      </div>
-                      <p className="text-[11px] text-pink-300 font-mono flex items-center gap-2 mt-0.5">
-                        <span>Latest Official Single • 2025</span>
-                        <SoundwaveVisualizer color="bg-[#1DB954]" />
-                      </p>
-                    </div>
-                  </div>
-
                 </div>
-
               </motion.div>
-
             </motion.div>
 
           </div>
         </div>
       </section>
-
-      {/* Audio Player Modal Overlay */}
-      {isPlayingPreview && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-200">
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            className="bg-[#18181b] text-white border-2 border-[#E6007E] rounded-3xl max-w-lg w-full p-6 shadow-2xl relative space-y-4"
-          >
-            <button
-              onClick={() => setIsPlayingPreview(false)}
-              className="absolute top-4 right-4 p-1.5 rounded-full bg-white/10 hover:bg-[#E6007E] text-white transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            <div className="flex items-center gap-3 pb-3 border-b border-white/10">
-              <Disc className="w-6 h-6 text-[#E6007E] animate-spin-slow" />
-              <div>
-                <h4 className="font-display font-black text-lg uppercase flex items-center gap-2">
-                  <span>ONEKEYZ — "REAL"</span>
-                  <span className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#1DB954] opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#1DB954]" />
-                  </span>
-                </h4>
-                <p className="text-xs text-pink-300 font-mono">2025 Release • Streaming on Spotify</p>
-              </div>
-            </div>
-
-            <div className="rounded-2xl overflow-hidden border border-white/10">
-              <iframe
-                src="https://open.spotify.com/embed/album/78lu4WSbmRbb7BWck0a5OK"
-                width="100%"
-                height="152"
-                frameBorder="0"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-                referrerPolicy="strict-origin-when-cross-origin"
-                title="ONEKEYZ Real Spotify Preview"
-                className="w-full"
-              />
-            </div>
-          </motion.div>
-        </div>
-      )}
     </div>
   );
 }

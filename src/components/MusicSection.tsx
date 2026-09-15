@@ -77,16 +77,6 @@ export default function MusicSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto space-y-3 mb-14"
         >
-          {/* Badge with Flashing Green Live Dot */}
-          <div className="inline-flex items-center gap-2.5 bg-[#E6007E]/10 border border-[#E6007E]/30 px-4 py-1.5 rounded-full text-xs font-mono font-bold text-[#E6007E] uppercase tracking-wider mb-1 shadow-xs">
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#1DB954] opacity-75" />
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#1DB954]" />
-            </span>
-            <span>Official Spotify Catalog</span>
-            <SoundwaveVisualizer color="bg-[#E6007E]" />
-          </div>
-
           <p className="font-script text-3xl sm:text-4xl text-[#E6007E]">
             Now streaming
           </p>

@@ -35,7 +35,7 @@ export default function NewsletterSection() {
               Stay connected
             </span>
             <h2 className="text-4xl sm:text-6xl font-display font-black uppercase tracking-tight text-white">
-              JOIN THE INNER CIRCLE
+              DON'T MISS OUT.
             </h2>
             <p className="text-sm sm:text-lg text-pink-100 max-w-xl mx-auto leading-relaxed font-sans pt-1">
               Be the first to hear new music drops, exclusive behind-the-scenes content, live performances, and private VIP updates from {ARTIST_NAME}.

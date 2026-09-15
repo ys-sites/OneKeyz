@@ -20,16 +20,7 @@ const MEDIA_GALLERY: MediaItem[] = [
     type: 'image',
     url: '/image copy.png',
     title: 'Studio Vocal Session',
-    subtitle: 'Bedazzled Mic Vocal Recording • 2025',
-    aspectRatio: 'aspect-[4/5]',
-    instagramUrl: INSTAGRAM_URL,
-  },
-  {
-    id: 'm2',
-    type: 'video',
-    url: '/video-real-session.mp4',
-    title: 'REAL — Home Studio Session',
-    subtitle: 'Live Single Recording Video Reel',
+    subtitle: 'Bedazzled Mic Vocal Recording',
     aspectRatio: 'aspect-[4/5]',
     instagramUrl: INSTAGRAM_URL,
   },
@@ -38,17 +29,8 @@ const MEDIA_GALLERY: MediaItem[] = [
     type: 'image',
     url: '/chris-brown-concert.jpg',
     title: 'Concert & Stage Spotlight',
-    subtitle: 'Chris Brown Concert Event Spotlight',
+    subtitle: 'Live Concert & Event Spotlight',
     aspectRatio: 'aspect-square',
-    instagramUrl: INSTAGRAM_URL,
-  },
-  {
-    id: 'm4',
-    type: 'video',
-    url: '/video-acapella-zeffir.mp4',
-    title: 'Semi-Acapella @ Zeffir Studios',
-    subtitle: 'Live Vocal Take with KZ Browznbrushes',
-    aspectRatio: 'aspect-[4/5]',
     instagramUrl: INSTAGRAM_URL,
   },
   {
@@ -58,15 +40,6 @@ const MEDIA_GALLERY: MediaItem[] = [
     title: 'Fashion & Editorial Shoot',
     subtitle: 'Official Press & Editorial Photography',
     aspectRatio: 'aspect-[4/5]',
-    instagramUrl: INSTAGRAM_URL,
-  },
-  {
-    id: 'm6',
-    type: 'video',
-    url: '/video-vocal-harmony.mp4',
-    title: 'Vocal Harmony & Ad-Libs Reel',
-    subtitle: 'DIY Vocal Harmony Breakdown Video',
-    aspectRatio: 'aspect-square',
     instagramUrl: INSTAGRAM_URL,
   },
 ];
@@ -104,48 +77,10 @@ export default function GallerySection() {
             GALLERY
           </h2>
           <p className="text-gray-600 font-sans text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
-            Official editorial photography and live studio recording video reels from {`ONEKEYZ`}. Watch videos directly on the cards below or view profile posts on Instagram.
+            Official editorial photography and visual moments from ONEKEYZ. Click any photo to preview or connect on Instagram.
           </p>
           <div className="w-20 h-1 bg-[#E6007E] mx-auto rounded-full mt-3" />
         </motion.div>
-
-        {/* Media Filter Tabs */}
-        <div className="flex justify-center mb-12">
-          <div className="bg-[#FAF7F2] p-1.5 rounded-full border border-gray-200 shadow-sm inline-flex gap-1">
-            <button
-              onClick={() => setActiveFilter('all')}
-              className={`px-5 py-2 rounded-full text-xs font-mono font-bold uppercase tracking-wider transition-all ${
-                activeFilter === 'all'
-                  ? 'bg-[#E6007E] text-white shadow-md'
-                  : 'text-gray-700 hover:text-black'
-              }`}
-            >
-              All Media ({MEDIA_GALLERY.length})
-            </button>
-            <button
-              onClick={() => setActiveFilter('image')}
-              className={`px-5 py-2 rounded-full text-xs font-mono font-bold uppercase tracking-wider transition-all flex items-center gap-1.5 ${
-                activeFilter === 'image'
-                  ? 'bg-[#E6007E] text-white shadow-md'
-                  : 'text-gray-700 hover:text-black'
-              }`}
-            >
-              <ImageIcon className="w-3.5 h-3.5" />
-              <span>Photos (3)</span>
-            </button>
-            <button
-              onClick={() => setActiveFilter('video')}
-              className={`px-5 py-2 rounded-full text-xs font-mono font-bold uppercase tracking-wider transition-all flex items-center gap-1.5 ${
-                activeFilter === 'video'
-                  ? 'bg-[#E6007E] text-white shadow-md'
-                  : 'text-gray-700 hover:text-black'
-              }`}
-            >
-              <Film className="w-3.5 h-3.5" />
-              <span>Studio Videos (3)</span>
-            </button>
-          </div>
-        </div>
 
         {/* Responsive Masonry/Grid of Media Containers */}
         <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

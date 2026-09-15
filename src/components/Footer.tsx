@@ -16,14 +16,7 @@ export default function Footer() {
           
           {/* Brand Wordmark & Tagline */}
           <div className="md:col-span-6 space-y-4">
-            <a href="#" className="inline-flex items-center gap-2.5 group leading-none">
-              <span className="bg-[#E6007E] text-white px-2.5 py-1 rounded-md text-xs font-mono font-bold tracking-widest shadow-md inline-flex items-center justify-center shrink-0 self-center leading-none">
-                1K
-              </span>
-              <span className="text-3xl sm:text-4xl font-display font-black tracking-tight text-white uppercase group-hover:text-[#E6007E] transition-colors leading-none">
-                {ARTIST_NAME}
-              </span>
-            </a>
+            
             <p className="text-sm text-gray-400 font-sans max-w-md leading-relaxed">
               Official music portfolio and artist home base for Montreal-based independent recording artist ONEKEYZ. Stream official releases on Spotify and connect on Instagram.
             </p>
@@ -72,6 +65,11 @@ export default function Footer() {
               <li>
                 <a href="#gallery" className="hover:text-[#E6007E] transition-colors">
                   Visual Gallery
+                </a>
+              </li>
+              <li>
+                <a href="#merch" className="hover:text-[#E6007E] transition-colors">
+                  Official Merch
                 </a>
               </li>
               <li>
@@ -138,7 +136,7 @@ export default function Footer() {
           </a>
 
           <div className="flex items-center gap-6">
-            <span className="text-pink-300 hidden md:inline">Montreal-Based Recording Artist</span>
+            
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}

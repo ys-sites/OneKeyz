@@ -5,7 +5,7 @@ import { INSTAGRAM_URL } from '../data/discography';
 import { BookingFormData } from '../types';
 
 export default function ContactSection() {
-  const bookingEmail = '[insert booking email]';
+  const bookingEmail = 'onekeyzmusic1@gmail.com';
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState<BookingFormData>({

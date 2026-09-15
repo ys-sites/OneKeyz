@@ -1,13 +1,9 @@
-import { useState } from 'react';
-import { Sparkles, Image as ImageIcon, Mic } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { ARTIST_NAME } from '../data/discography';
 
 export default function AboutSection() {
-  const photo1 = '/image copy.png';
-  const photo2 = '/editorial-fashion-shoot.jpg';
-
-  const bioText = `[Artist bio goes here — 2–3 paragraphs]`;
+  const bioText = `Soulful vocals, raw emotion, and atmospheric sonics from Montreal-based independent recording artist ${ARTIST_NAME}.\n\n[Full 2–3 paragraph artist bio pending from client prior to launch]`;
 
   return (
     <section id="about" className="py-20 lg:py-32 bg-[#FAF7F2] text-[#111111] relative overflow-hidden border-b border-gray-200 scroll-mt-24">
@@ -27,7 +23,7 @@ export default function AboutSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="space-y-2 mb-16 text-left"
+          className="space-y-2 mb-16 text-center max-w-2xl mx-auto"
         >
           <p className="font-script text-3xl sm:text-4xl text-[#E6007E]">
             Her story
@@ -35,21 +31,21 @@ export default function AboutSection() {
           <h2 className="text-4xl sm:text-6xl font-display font-black text-[#111111] uppercase tracking-tight">
             ABOUT {ARTIST_NAME}
           </h2>
-          <div className="w-24 h-1 bg-[#E6007E] rounded-full" />
+          <div className="w-24 h-1 bg-[#E6007E] rounded-full mx-auto" />
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="max-w-4xl mx-auto">
           
-          {/* Left Column: Bio Copy Block (6 cols) */}
+          {/* Bio Copy Block */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="lg:col-span-6 space-y-6"
+            className="space-y-6"
           >
             
-            <div className="bg-white border-2 border-[#111111] p-6 sm:p-10 rounded-3xl shadow-xl relative">
+            <div className="bg-white border-2 border-[#111111] p-6 sm:p-12 rounded-3xl shadow-xl relative">
               
               {/* Header Bar */}
               <div className="flex items-center justify-between pb-4 border-b border-gray-100 mb-6">
@@ -72,78 +68,13 @@ export default function AboutSection() {
               </div>
 
               {/* Pre-launch Note */}
-              <div className="mt-6 p-4 bg-pink-50 border border-[#E6007E]/30 rounded-2xl flex items-start gap-3 text-xs text-[#111111]">
+              <div className="mt-8 p-4 bg-pink-50 border border-[#E6007E]/30 rounded-2xl flex items-start gap-3 text-xs text-[#111111]">
                 <Sparkles className="w-4 h-4 text-[#E6007E] shrink-0 mt-0.5" />
                 <p>
                   <strong className="text-[#E6007E] uppercase font-mono">Pre-Launch Placeholder:</strong> Official 2–3 paragraph artist bio to replace this text prior to launch.
                 </p>
               </div>
 
-            </div>
-
-            {/* Badges / Highlights */}
-            <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-2">
-              <div className="bg-[#111111] text-white p-3.5 sm:p-4 rounded-2xl border-2 border-[#E6007E] text-center flex flex-col items-center justify-center space-y-1 shadow-md hover:border-pink-400 transition-colors">
-                <p className="font-display font-black text-lg sm:text-xl text-[#E6007E] leading-none">100%</p>
-                <p className="text-[10px] font-mono text-pink-200 uppercase tracking-wider leading-tight">Independent</p>
-              </div>
-              <div className="bg-[#111111] text-white p-3.5 sm:p-4 rounded-2xl border-2 border-[#E6007E] text-center flex flex-col items-center justify-center space-y-1 shadow-md hover:border-pink-400 transition-colors">
-                <p className="font-display font-black text-lg sm:text-xl text-[#E6007E] leading-none">VOCALS</p>
-                <p className="text-[10px] font-mono text-pink-200 uppercase tracking-wider leading-tight">R&B / Soul</p>
-              </div>
-              <div className="bg-[#111111] text-white p-3.5 sm:p-4 rounded-2xl border-2 border-[#E6007E] text-center flex flex-col items-center justify-center space-y-1 shadow-md hover:border-pink-400 transition-colors">
-                <p className="font-display font-black text-lg sm:text-xl text-[#E6007E] leading-none">SPOTIFY</p>
-                <p className="text-[10px] font-mono text-pink-200 uppercase tracking-wider leading-tight">Verified Artist</p>
-              </div>
-            </div>
-
-          </motion.div>
-
-          {/* Right Column: Editorial Photo Frame Layout (Soft-rounded 3xl corners) */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="lg:col-span-6 grid grid-cols-2 gap-4 sm:gap-6 items-center"
-          >
-            
-            {/* Photo Card 1 */}
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-[#E6007E] rounded-3xl opacity-80 group-hover:opacity-100 transition-opacity blur-xs" />
-              <div className="relative aspect-[3/4] bg-[#111111] rounded-3xl overflow-hidden border-2 border-white shadow-xl flex flex-col justify-between p-4 text-white">
-                {photo1 ? (
-                  <img src={photo1} alt="ONEKEYZ Editorial Portrait 1" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-200 ease-out transform-gpu" />
-                ) : (
-                  <div className="m-auto text-center space-y-2">
-                    <ImageIcon className="w-8 h-8 text-pink-300 mx-auto" />
-                    <p className="font-display font-bold text-sm uppercase">PORTRAIT 01</p>
-                  </div>
-                )}
-                
-                <div className="relative z-10 mt-auto bg-black/75 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/20 inline-flex items-center self-start">
-                  <span className="text-[10px] font-mono font-bold uppercase text-white tracking-wider">ONEKEYZ</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Photo Card 2 */}
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-[#E6007E] rounded-3xl opacity-80 group-hover:opacity-100 transition-opacity blur-xs" />
-              <div className="relative aspect-[3/4] bg-[#111111] rounded-3xl overflow-hidden border-2 border-white shadow-xl flex flex-col justify-between p-4 text-white">
-                {photo2 ? (
-                  <img src={photo2} alt="ONEKEYZ Editorial Portrait 2" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-200 ease-out transform-gpu" />
-                ) : (
-                  <div className="m-auto text-center space-y-2">
-                    <Mic className="w-8 h-8 text-[#E6007E] mx-auto" />
-                    <p className="font-display font-bold text-sm uppercase">STUDIO & STAGE</p>
-                  </div>
-                )}
-
-                <div className="relative z-10 mt-auto bg-black/75 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/20 inline-flex items-center self-start">
-                  <span className="text-[10px] font-mono font-bold uppercase text-white tracking-wider">STUDIO & EDITORIAL</span>
-                </div>
-              </div>
             </div>
 
           </motion.div>

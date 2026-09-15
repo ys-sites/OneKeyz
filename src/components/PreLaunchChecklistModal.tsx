@@ -8,9 +8,9 @@ export default function PreLaunchChecklistModal() {
   const checklistItems = [
     {
       title: 'Real Artist Bio Copy',
-      status: 'Placeholder active',
+      status: 'Intro active, final copy pending',
       done: false,
-      note: 'Replace [Artist bio goes here] in the About section prior to launch.'
+      note: 'Atmospheric sonics intro folded in; full 2–3 paragraph bio pending from client.'
     },
     {
       title: 'Real Editorial Photography',
@@ -20,9 +20,9 @@ export default function PreLaunchChecklistModal() {
     },
     {
       title: 'Official Booking Contact Email',
-      status: 'Placeholder active',
-      done: false,
-      note: 'Update [insert booking email] in the Contact section.'
+      status: 'Configured & live',
+      done: true,
+      note: 'Updated to onekeyzmusic1@gmail.com in Navbar and Contact section.'
     },
     {
       title: 'Spotify Discography Embeds',
@@ -38,9 +38,9 @@ export default function PreLaunchChecklistModal() {
     },
     {
       title: 'ONEKEYZ Wordmark & Layout',
-      status: 'Configured',
+      status: '1K mark removed / wordmark active',
       done: true,
-      note: 'All-caps ONEKEYZ wordmark with hot pink color-block theme.'
+      note: '"1K" badge removed from Navbar & Footer; clean Hero <h1> wordmark active.'
     }
   ];
 

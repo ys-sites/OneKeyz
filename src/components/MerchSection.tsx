@@ -13,7 +13,7 @@ interface MerchItem {
 const UPCOMING_MERCH: MerchItem[] = [
   {
     id: 'merch-1',
-    name: '1K Signature Heavyweight Hoodie',
+    name: 'ONEKEYZ Signature Heavyweight Hoodie',
     category: 'Apparel',
     badge: 'Limited Drop 01',
     description: 'Custom cut & sew fleece hoodie with embroidered ONEKEYZ insignia in hot pink & obsidian black.',

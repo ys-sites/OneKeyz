@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Check, Sparkles, X, Info, ExternalLink, ListChecks } from 'lucide-react';
+import { Check, Sparkles, X } from 'lucide-react';
 import { ARTIST_NAME } from '../data/discography';
 
 export default function PreLaunchChecklistModal() {
@@ -41,6 +41,12 @@ export default function PreLaunchChecklistModal() {
       status: '1K mark removed / wordmark active',
       done: true,
       note: '"1K" badge removed from Navbar & Footer; clean Hero <h1> wordmark active.'
+    },
+    {
+      title: 'Official Merch Showcase',
+      status: 'Coming Soon active',
+      done: true,
+      note: 'Merch drop preview section active with VIP early access waitlist.'
     }
   ];
 
@@ -73,7 +79,7 @@ export default function PreLaunchChecklistModal() {
                   Pre-Launch Review Panel
                 </span>
                 <span className="bg-[#E6007E]/10 border border-[#E6007E]/30 text-[#E6007E] text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full uppercase">
-                  6 / 6 Readiness
+                  7 / 7 Readiness
                 </span>
               </div>
               <h3 className="font-display font-black text-2xl uppercase tracking-tight">

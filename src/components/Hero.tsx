@@ -87,8 +87,9 @@ export default function Hero() {
               
               {/* Artist Name Wordmark Headline with Shimmering Gradient Animation */}
               <motion.div variants={itemVariants} className="space-y-3">
-                <h1 className="text-4xl sm:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-display font-black tracking-normal uppercase leading-[0.95] drop-shadow-md bg-gradient-to-r from-white via-pink-100 to-[#E6007E] bg-clip-text text-transparent">
-                  {ARTIST_NAME}
+                <h1 className="text-4xl sm:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-display font-black tracking-normal uppercase leading-[0.95] drop-shadow-md">
+                  <span className="text-white">ONE</span>
+                  <span className="text-[#E6007E]">KEYZ</span>
                 </h1>
               </motion.div>
 

@@ -203,8 +203,8 @@ export default function MusicSection() {
           >
             <div className="flex items-center justify-between pb-4 border-b border-white/10">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#E6007E] text-white flex items-center justify-center font-display font-bold text-sm shadow-md">
-                  1K
+                <div className="w-10 h-10 rounded-full bg-[#E6007E] text-white flex items-center justify-center shadow-md">
+                  <SpotifyLogo className="w-5 h-5 text-white" />
                 </div>
                 <div>
                   <h3 className="font-display font-black text-xl text-white uppercase flex items-center gap-2">

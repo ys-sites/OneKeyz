@@ -193,22 +193,34 @@ export default function AboutSection() {
               </p>
             </motion.div>
 
-            {/* Drake-Style Introspective Pull Quote Card */}
+            {/* Song-Driven Signature Lyric & Direct Music Push Card */}
             <motion.div
               variants={itemVariants}
-              className="relative p-6 sm:p-7 rounded-2xl bg-white/[0.04] border-l-4 border-[#E6007E] border-y border-r border-white/10 backdrop-blur-md shadow-xl space-y-3"
+              className="relative p-6 sm:p-7 rounded-2xl bg-white/[0.04] border-l-4 border-[#E6007E] border-y border-r border-white/10 backdrop-blur-md shadow-xl space-y-3 group hover:border-[#E6007E]/60 transition-all"
             >
-              <Quote className="w-8 h-8 text-[#E6007E]/40" />
+              <div className="flex items-center justify-between">
+                <Quote className="w-8 h-8 text-[#E6007E]/50" />
+                <span className="inline-flex items-center gap-1.5 bg-[#E6007E]/10 border border-[#E6007E]/30 text-pink-300 text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                  <Disc3 className="w-3 h-3 text-[#E6007E] animate-spin-slow" />
+                  Featured Lyric • "REAL" (2025)
+                </span>
+              </div>
               <blockquote className="font-script italic text-xl sm:text-2xl text-white font-normal leading-snug">
-                "I don’t make disposable records for an algorithm. I capture 3:00 AM confessions—moments when the city stops talking and the real emotion has nowhere to hide."
+                "Don’t give me the version you sell to the world. Strip it all back and give me something REAL."
               </blockquote>
-              <div className="pt-2 border-t border-white/10 flex items-center justify-between text-xs font-mono">
-                <span className="text-pink-300 font-bold uppercase tracking-widest">
-                  — {ARTIST_NAME}
+              <div className="pt-2 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
+                <span className="text-pink-300 font-bold uppercase tracking-widest flex items-center gap-1.5">
+                  <span>— ONEKEYZ</span>
+                  <span className="text-gray-500">•</span>
+                  <span className="text-gray-400">Official Single "REAL"</span>
                 </span>
-                <span className="text-gray-500 uppercase tracking-wider text-[11px]">
-                  Montréal Studio Notes
-                </span>
+                <a
+                  href="#music"
+                  className="text-pink-300 hover:text-white transition-colors underline decoration-[#E6007E] font-bold flex items-center gap-1"
+                >
+                  <span>Stream on Spotify</span>
+                  <ArrowRight className="w-3 h-3 text-[#E6007E]" />
+                </a>
               </div>
             </motion.div>
 

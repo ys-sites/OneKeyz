@@ -14,9 +14,9 @@ export default function PreLaunchChecklistModal() {
     },
     {
       title: 'Real Editorial Photography',
-      status: 'Color-block placeholders active',
-      done: false,
-      note: 'Drop high-res fashion/press photos into Hero & Gallery frames.'
+      status: 'Hero & Gallery live',
+      done: true,
+      note: 'Studio vocal session portrait active in Hero; editorial photography active in Gallery.'
     },
     {
       title: 'Official Booking Contact Email',

@@ -4,7 +4,7 @@ import { ARTIST_NAME, INSTAGRAM_URL } from '../data/discography';
 import MoltenMetal from './MoltenMetal';
 
 export default function Hero() {
-  const heroPhoto = null;
+  const heroPhoto = '/image copy.png';
 
   const containerVariants = {
     hidden: { opacity: 0 },

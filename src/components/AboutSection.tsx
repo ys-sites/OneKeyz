@@ -3,6 +3,7 @@ import { Sparkles, Disc3, Quote, ArrowRight, Mic2, Compass, Radio } from 'lucide
 import { ARTIST_NAME, INSTAGRAM_URL } from '../data/discography';
 import { InstagramLogo } from './icons/InstagramLogo';
 import { SoundwaveVisualizer } from './SoundwaveVisualizer';
+import MoltenMetal from './MoltenMetal';
 
 export default function AboutSection() {
   const coreBioIntro = `Soulful vocals, raw emotion, and atmospheric sonics from Montreal-based independent recording artist ${ARTIST_NAME}.`;
@@ -28,15 +29,53 @@ export default function AboutSection() {
   };
 
   return (
-    <section id="about" className="pt-16 pb-12 lg:pt-24 lg:pb-16 bg-[#0E0E10] text-white relative overflow-hidden scroll-mt-24">
+    <section id="about" className="pt-16 pb-12 lg:pt-24 lg:pb-16 bg-[#111111] text-white relative overflow-hidden scroll-mt-24">
       
-      {/* Background Architectural Grid & Ambient Halos */}
-      <div className="absolute inset-0 bg-[radial-gradient(#E6007E_1px,transparent_1px)] [background-size:40px_40px] opacity-[0.04] pointer-events-none" />
-      <div className="absolute top-1/4 -left-36 w-96 h-96 bg-[#E6007E]/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-12 -right-36 w-96 h-96 bg-[#E6007E]/10 rounded-full blur-3xl pointer-events-none" />
+      {/* React Bits High-Performance MoltenMetal Liquid Background (Matching Hero) */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-60">
+        <MoltenMetal
+          color1="#6E003B"
+          color2="#E6007E"
+          color3="#FFD1EB"
+          speed={0.25}
+          scale={3.5}
+          detail={3}
+          glow={1.6}
+          coreSize={0.1}
+          swirl={1}
+          fold={-0.2}
+          blackPoint={0.05}
+          brightness={1.3}
+          colorMode="molten"
+          grain={true}
+          grainIntensity={0.04}
+          mouseInteraction={true}
+          mouseStrength={0.25}
+          opacity={0.65}
+        />
+      </div>
+
+      {/* Ambient Glow Effects Overlay */}
+      <motion.div
+        animate={{
+          scale: [1, 1.25, 1],
+          opacity: [0.2, 0.35, 0.2],
+        }}
+        transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute top-1/4 -left-20 w-96 h-96 bg-[#E6007E]/30 rounded-full blur-3xl pointer-events-none z-0"
+      />
+      <motion.div
+        animate={{
+          scale: [1, 1.3, 1],
+          opacity: [0.15, 0.3, 0.15],
+        }}
+        transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+        className="absolute bottom-10 right-0 w-96 h-96 bg-[#E6007E]/25 rounded-full blur-3xl pointer-events-none z-0"
+      />
+      <div className="absolute inset-0 bg-[radial-gradient(#E6007E_1px,transparent_1px)] [background-size:36px_36px] opacity-[0.06] pointer-events-none z-0" />
 
       {/* Massive Background Typographic Watermark (Drake OVO / Luxury Noir Aesthetic) */}
-      <div className="absolute right-4 top-1/2 -translate-y-1/2 rotate-90 origin-right pointer-events-none select-none opacity-[0.018] hidden 2xl:block">
+      <div className="absolute right-4 top-1/2 -translate-y-1/2 rotate-90 origin-right pointer-events-none select-none opacity-[0.018] hidden 2xl:block z-0">
         <span className="font-display font-black text-[12rem] tracking-widest text-white uppercase whitespace-nowrap">
           MONTRÉAL
         </span>

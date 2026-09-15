@@ -27,7 +27,7 @@ export default function AboutSection() {
   };
 
   return (
-    <section id="about" className="py-24 lg:py-36 bg-[#0E0E10] text-white relative overflow-hidden border-b border-white/10 scroll-mt-24">
+    <section id="about" className="pt-16 pb-12 lg:pt-24 lg:pb-16 bg-[#0E0E10] text-white relative overflow-hidden scroll-mt-24">
       
       {/* Background Architectural Grid & Ambient Halos */}
       <div className="absolute inset-0 bg-[radial-gradient(#E6007E_1px,transparent_1px)] [background-size:40px_40px] opacity-[0.04] pointer-events-none" />

@@ -40,16 +40,16 @@ export default function MusicSection() {
   };
 
   return (
-    <section id="music" className="py-20 lg:py-32 bg-[#FAF7F2] text-[#111111] relative overflow-hidden">
+    <section id="music" className="pt-0 pb-20 lg:pb-28 bg-[#FAF7F2] text-[#111111] relative overflow-hidden scroll-mt-20 sm:scroll-mt-24">
       
       {/* Hot Pink Full-Bleed Accent Divider Banner */}
-      <div className="w-full bg-[#E6007E] text-white py-4 px-4 shadow-xl mb-16 overflow-hidden">
-        <div className="max-w-7xl mx-auto flex items-center justify-between font-display font-black text-sm sm:text-base tracking-widest uppercase">
-          <span className="flex items-center gap-2.5">
-            <Disc className="w-5 h-5 animate-spin-slow text-white" />
-            DISCOGRAPHY & OFFICIAL RELEASES
+      <div className="w-full bg-[#E6007E] text-white py-3.5 sm:py-4 shadow-xl mb-12 lg:mb-16 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between font-display font-black text-xs sm:text-sm lg:text-base tracking-wider sm:tracking-widest uppercase">
+          <span className="flex items-center gap-2 sm:gap-2.5">
+            <Disc className="w-4 h-4 sm:w-5 sm:h-5 animate-spin-slow text-white shrink-0" />
+            <span>DISCOGRAPHY & OFFICIAL RELEASES</span>
           </span>
-          <span className="hidden md:inline font-script font-normal text-2xl text-pink-100 normal-case">
+          <span className="hidden md:inline font-script font-normal text-2xl text-pink-100 normal-case translate-y-0.5">
             Listen on Spotify
           </span>
           <motion.a
@@ -58,7 +58,7 @@ export default function MusicSection() {
             href={SPOTIFY_ARTIST_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white text-[#E6007E] hover:bg-pink-50 text-xs font-mono font-bold px-5 py-2 rounded-full transition-all duration-200 flex items-center gap-1.5 shadow-md"
+            className="bg-white text-[#E6007E] hover:bg-pink-50 text-xs font-mono font-bold px-4 sm:px-5 py-2 rounded-full transition-all duration-200 flex items-center gap-1.5 shadow-md shrink-0"
           >
             <SpotifyLogo className="w-3.5 h-3.5" />
             <span>Open Spotify</span>

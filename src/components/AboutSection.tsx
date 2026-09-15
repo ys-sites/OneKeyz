@@ -134,36 +134,25 @@ export default function AboutSection() {
 
             </div>
 
-            {/* Musical Profile Spec Card */}
-            <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md space-y-3">
-              <div className="flex items-center justify-between border-b border-white/10 pb-2.5">
-                <span className="font-mono text-[11px] font-bold text-pink-300 uppercase tracking-wider flex items-center gap-1.5">
-                  <Mic2 className="w-3.5 h-3.5 text-[#E6007E]" />
-                  <span>Musical Profile</span>
-                </span>
-                <span className="font-mono text-[10px] text-gray-400 uppercase">
-                  OVERVIEW
-                </span>
-              </div>
+            {/* Navigation & Connect Actions */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
+              <a
+                href="#music"
+                className="flex-1 inline-flex items-center justify-center gap-2.5 bg-[#E6007E] hover:bg-[#C8006E] text-white font-mono font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full shadow-xl shadow-pink-500/20 border border-pink-400/30 transition-all transform hover:-translate-y-0.5 text-center"
+              >
+                <span>Listen to Music</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
+              </a>
 
-              <div className="grid grid-cols-2 gap-3 text-xs font-mono">
-                <div>
-                  <span className="text-gray-500 block text-[10px]">GENRE</span>
-                  <span className="text-white font-bold">R&B / SOUL</span>
-                </div>
-                <div>
-                  <span className="text-gray-500 block text-[10px]">VOCALS</span>
-                  <span className="text-pink-300 font-bold">LEAD & HARMONIES</span>
-                </div>
-                <div>
-                  <span className="text-gray-500 block text-[10px]">ORIGIN</span>
-                  <span className="text-white font-bold">MONTRÉAL, QC</span>
-                </div>
-                <div>
-                  <span className="text-gray-500 block text-[10px]">SONGWRITING</span>
-                  <span className="text-[#E6007E] font-bold">100% ORIGINAL</span>
-                </div>
-              </div>
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-mono font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full border border-white/15 transition-all text-center"
+              >
+                <Instagram className="w-4 h-4 text-pink-400 shrink-0" />
+                <span>Follow on Instagram</span>
+              </a>
             </div>
 
           </motion.div>
@@ -260,27 +249,6 @@ export default function AboutSection() {
                   Original songwriting, vocal arrangements, and releases.
                 </p>
               </div>
-            </motion.div>
-
-            {/* Navigation & Connect Actions */}
-            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 pt-4">
-              <a
-                href="#music"
-                className="inline-flex items-center gap-2.5 bg-[#E6007E] hover:bg-[#C8006E] text-white font-mono font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full shadow-xl shadow-pink-500/20 border border-pink-400/30 transition-all transform hover:-translate-y-0.5"
-              >
-                <span>Listen to Music</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
-
-              <a
-                href={INSTAGRAM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-mono font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-full border border-white/15 transition-all"
-              >
-                <Instagram className="w-4 h-4 text-pink-400" />
-                <span>Follow on Instagram</span>
-              </a>
             </motion.div>
 
             {/* Pre-launch Status Chip */}

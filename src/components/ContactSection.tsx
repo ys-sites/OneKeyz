@@ -42,7 +42,7 @@ export default function ContactSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto space-y-3 mb-16"
         >
-          <p className="font-script text-3xl sm:text-4xl text-[#E6007E]">
+          <p className="font-signature text-3xl sm:text-4xl text-[#E6007E] signature-stamp tracking-wide">
             For bookings & press
           </p>
           <h2 className="text-4xl sm:text-6xl font-display font-black text-[#111111] uppercase tracking-tight">
@@ -72,7 +72,7 @@ export default function ContactSection() {
               </div>
 
               <div className="space-y-2">
-                <span className="text-xs font-mono font-bold text-[#E6007E] uppercase tracking-wider block">
+                <span className="text-xs font-sleek font-bold text-[#E6007E] uppercase tracking-[0.2em] block">
                   Official Inquiries
                 </span>
                 <h3 className="text-2xl font-display font-bold text-[#111111] uppercase">
@@ -82,12 +82,12 @@ export default function ContactSection() {
 
               {/* Booking Email Box */}
               <div className="p-4 bg-[#FAF7F2] border border-gray-200 rounded-2xl space-y-2">
-                <div className="flex items-center justify-between text-xs text-gray-500 font-mono">
+                <div className="flex items-center justify-between text-xs text-gray-500 font-sleek uppercase tracking-wider">
                   <span>Booking Email:</span>
                 </div>
 
                 <div className="flex items-center justify-between gap-2">
-                  <span className="font-mono text-sm sm:text-base font-bold text-[#111111] break-all">
+                  <span className="font-sleek text-sm sm:text-base font-bold text-[#111111] break-all tracking-wide">
                     {bookingEmail}
                   </span>
                   <button
@@ -113,7 +113,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-display font-bold uppercase text-lg">Direct Instagram DM</h4>
-                  <p className="text-xs text-pink-300 font-mono">Fallback Channel</p>
+                  <p className="text-xs text-pink-300 font-sleek uppercase tracking-wider">Fallback Channel</p>
                 </div>
               </div>
 
@@ -125,7 +125,7 @@ export default function ContactSection() {
                 href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 w-full bg-[#E6007E] hover:bg-[#C8006E] text-white font-mono font-bold text-xs uppercase tracking-wider py-4 px-6 rounded-full shadow-lg transition-colors"
+                className="inline-flex items-center justify-center gap-2.5 w-full bg-[#E6007E] hover:bg-[#C8006E] text-white font-sleek font-bold text-xs uppercase tracking-[0.16em] py-4 px-6 rounded-full shadow-lg transition-colors"
               >
                 <InstagramLogo className="w-4 h-4" />
                 <span>Message @one_keyz on Instagram</span>
@@ -170,7 +170,7 @@ export default function ContactSection() {
                       message: ''
                     });
                   }}
-                  className="bg-[#111111] text-white text-xs font-mono font-bold uppercase px-6 py-3 rounded-full hover:bg-[#E6007E] transition-colors shadow-md"
+                  className="bg-[#111111] text-white text-xs font-sleek font-bold uppercase tracking-[0.16em] px-6 py-3 rounded-full hover:bg-[#E6007E] transition-colors shadow-md"
                 >
                   Submit Another Inquiry
                 </button>
@@ -181,7 +181,7 @@ export default function ContactSection() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Name */}
                   <div className="space-y-1.5">
-                    <label className="block text-xs font-mono font-bold text-gray-800 uppercase">
+                    <label className="block text-xs font-sleek font-bold text-gray-800 uppercase tracking-[0.14em]">
                       Name / Organization *
                     </label>
                     <input
@@ -191,13 +191,13 @@ export default function ContactSection() {
                       placeholder="e.g. Jane Doe / Venue Manager"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 bg-[#FAF7F2] border border-gray-200 rounded-2xl text-sm focus:outline-none focus:border-[#E6007E] focus:ring-2 focus:ring-[#E6007E]/20 transition-all"
+                      className="w-full px-4 py-3 bg-[#FAF7F2] border border-gray-200 rounded-2xl text-sm font-sans focus:outline-none focus:border-[#E6007E] focus:ring-2 focus:ring-[#E6007E]/20 transition-all"
                     />
                   </div>
 
                   {/* Email */}
                   <div className="space-y-1.5">
-                    <label className="block text-xs font-mono font-bold text-gray-800 uppercase">
+                    <label className="block text-xs font-sleek font-bold text-gray-800 uppercase tracking-[0.14em]">
                       Email Address *
                     </label>
                     <input
@@ -207,7 +207,7 @@ export default function ContactSection() {
                       placeholder="name@organization.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 bg-[#FAF7F2] border border-gray-200 rounded-2xl text-sm focus:outline-none focus:border-[#E6007E] focus:ring-2 focus:ring-[#E6007E]/20 transition-all"
+                      className="w-full px-4 py-3 bg-[#FAF7F2] border border-gray-200 rounded-2xl text-sm font-sans focus:outline-none focus:border-[#E6007E] focus:ring-2 focus:ring-[#E6007E]/20 transition-all"
                     />
                   </div>
                 </div>
@@ -215,13 +215,13 @@ export default function ContactSection() {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {/* Inquiry Type */}
                   <div className="space-y-1.5">
-                    <label className="block text-xs font-mono font-bold text-gray-800 uppercase">
+                    <label className="block text-xs font-sleek font-bold text-gray-800 uppercase tracking-[0.14em]">
                       Inquiry Type
                     </label>
                     <select
                       value={formData.inquiryType}
                       onChange={(e) => setFormData({ ...formData, inquiryType: e.target.value as any })}
-                      className="w-full px-4 py-3 bg-[#FAF7F2] border border-gray-200 rounded-2xl text-sm focus:outline-none focus:border-[#E6007E]"
+                      className="w-full px-4 py-3 bg-[#FAF7F2] border border-gray-200 rounded-2xl text-sm font-sans focus:outline-none focus:border-[#E6007E]"
                     >
                       <option value="Booking">Live Performance / Booking</option>
                       <option value="Press / PR">Press / Interview / PR</option>
@@ -232,20 +232,20 @@ export default function ContactSection() {
 
                   {/* Date */}
                   <div className="space-y-1.5">
-                    <label className="block text-xs font-mono font-bold text-gray-800 uppercase flex items-center gap-1">
+                    <label className="block text-xs font-sleek font-bold text-gray-800 uppercase tracking-[0.14em] flex items-center gap-1">
                       <Calendar className="w-3.5 h-3.5 text-gray-400" /> Proposed Date
                     </label>
                     <input
                       type="date"
                       value={formData.eventDate}
                       onChange={(e) => setFormData({ ...formData, eventDate: e.target.value })}
-                      className="w-full px-4 py-3 bg-[#FAF7F2] border border-gray-200 rounded-2xl text-sm focus:outline-none focus:border-[#E6007E]"
+                      className="w-full px-4 py-3 bg-[#FAF7F2] border border-gray-200 rounded-2xl text-sm font-sans focus:outline-none focus:border-[#E6007E]"
                     />
                   </div>
 
                   {/* Location */}
                   <div className="space-y-1.5">
-                    <label className="block text-xs font-mono font-bold text-gray-800 uppercase flex items-center gap-1">
+                    <label className="block text-xs font-sleek font-bold text-gray-800 uppercase tracking-[0.14em] flex items-center gap-1">
                       <MapPin className="w-3.5 h-3.5 text-gray-400" /> City / Venue
                     </label>
                     <input
@@ -253,14 +253,14 @@ export default function ContactSection() {
                       placeholder="e.g. Los Angeles, CA"
                       value={formData.location}
                       onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                      className="w-full px-4 py-3 bg-[#FAF7F2] border border-gray-200 rounded-2xl text-sm focus:outline-none focus:border-[#E6007E]"
+                      className="w-full px-4 py-3 bg-[#FAF7F2] border border-gray-200 rounded-2xl text-sm font-sans focus:outline-none focus:border-[#E6007E]"
                     />
                   </div>
                 </div>
 
                 {/* Message */}
                 <div className="space-y-1.5">
-                  <label className="block text-xs font-mono font-bold text-gray-800 uppercase flex items-center gap-1">
+                  <label className="block text-xs font-sleek font-bold text-gray-800 uppercase tracking-[0.14em] flex items-center gap-1">
                     <MessageSquare className="w-3.5 h-3.5 text-gray-400" /> Project / Event Details *
                   </label>
                   <textarea
@@ -269,14 +269,14 @@ export default function ContactSection() {
                     placeholder="Provide details regarding venue capacity, set length, budget parameters, or press questions..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full p-4 bg-[#FAF7F2] border border-gray-200 rounded-2xl text-sm focus:outline-none focus:border-[#E6007E]"
+                    className="w-full p-4 bg-[#FAF7F2] border border-gray-200 rounded-2xl text-sm font-sans focus:outline-none focus:border-[#E6007E]"
                   />
                 </div>
 
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-[#E6007E] hover:bg-[#C8006E] text-white font-mono font-bold text-xs uppercase tracking-widest py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                  className="w-full bg-[#E6007E] hover:bg-[#C8006E] text-white font-sleek font-bold text-xs uppercase tracking-[0.18em] py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
                 >
                   <Send className="w-4 h-4" />
                   <span>Send Inquiry to ONEKEYZ Management</span>

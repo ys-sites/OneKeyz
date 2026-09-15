@@ -28,11 +28,11 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       {/* Top Banner Notice */}
       <div className="bg-[#111111] text-white py-1.5 px-4 text-xs border-b border-[#E6007E]/30 hidden md:block">
-        <div className="max-w-7xl mx-auto flex items-center justify-between font-mono">
+        <div className="max-w-7xl mx-auto flex items-center justify-between font-sleek text-[11px] tracking-wider">
           <div className="flex items-center gap-4 text-gray-300">
             <a
               href="mailto:onekeyzmusic1@gmail.com"
-              className="flex items-center gap-1.5 text-pink-300 font-bold hover:text-white transition-colors"
+              className="flex items-center gap-1.5 text-pink-300 font-semibold hover:text-white transition-colors"
             >
               <Mail className="w-3.5 h-3.5 text-[#E6007E]" />
               BOOKINGS & PRESS: <span className="underline decoration-[#E6007E]">onekeyzmusic1@gmail.com</span>
@@ -44,7 +44,7 @@ export default function Navbar() {
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#E6007E] transition-colors flex items-center gap-1 text-xs"
+              className="hover:text-[#E6007E] transition-colors flex items-center gap-1.5 font-medium"
             >
               <InstagramLogo className="w-3.5 h-3.5 text-[#E6007E]" />
               <span>@one_keyz</span>
@@ -53,7 +53,7 @@ export default function Navbar() {
               href={SPOTIFY_ARTIST_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#E6007E] transition-colors flex items-center gap-1 text-xs"
+              className="hover:text-[#E6007E] transition-colors flex items-center gap-1.5 font-medium"
             >
               <SpotifyLogo className="w-3.5 h-3.5 text-[#E6007E]" />
               <span>Spotify</span>
@@ -72,16 +72,21 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           
-          {/* Brand Wordmark Logo */}
+          {/* Brand Wordmark Logo with Signature Accent */}
           <motion.a
             href="#"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
-            className="font-display font-black text-2xl sm:text-3xl tracking-tight uppercase leading-none select-none group"
+            className="font-display font-black text-2xl sm:text-3xl tracking-tight uppercase leading-none select-none group flex items-center gap-2"
             aria-label="ONEKEYZ Home"
           >
-            <span className="text-white group-hover:text-pink-100 transition-colors">ONE</span>
-            <span className="text-[#E6007E]">KEYZ</span>
+            <span>
+              <span className="text-white group-hover:text-pink-100 transition-colors">ONE</span>
+              <span className="text-[#E6007E]">KEYZ</span>
+            </span>
+            <span className="font-signature text-xl text-pink-300/80 font-normal lowercase tracking-normal -rotate-6 hidden sm:inline-block">
+              official
+            </span>
           </motion.a>
 
           {/* Desktop Nav Links */}
@@ -90,7 +95,7 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-xs font-mono font-bold tracking-widest text-gray-300 hover:text-[#E6007E] transition-colors uppercase py-1 relative group"
+                className="text-xs font-sleek font-semibold tracking-[0.2em] text-gray-300 hover:text-[#E6007E] transition-colors uppercase py-1 relative group"
               >
                 {link.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#E6007E] transition-all duration-200 group-hover:w-full" />
@@ -130,7 +135,7 @@ export default function Navbar() {
               href={SPOTIFY_ARTIST_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#E6007E] hover:bg-[#C8006E] text-white text-xs font-mono font-bold uppercase tracking-widest px-6 py-2.5 rounded-full shadow-lg hover:shadow-pink-500/30 transition-all duration-200 border border-pink-400/30 flex items-center gap-2"
+              className="bg-[#E6007E] hover:bg-[#C8006E] text-white text-xs font-sleek font-bold uppercase tracking-[0.16em] px-6 py-2.5 rounded-full shadow-lg hover:shadow-pink-500/30 transition-all duration-200 border border-pink-400/30 flex items-center gap-2"
             >
               <SpotifyLogo className="w-4 h-4 text-white" />
               <span>Listen Now</span>
@@ -195,7 +200,7 @@ export default function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="bg-[#E6007E] text-white text-center text-xs font-mono font-bold uppercase py-3 rounded-full mt-2 shadow-md flex items-center justify-center gap-2"
+                  className="bg-[#E6007E] text-white text-center text-xs font-sleek font-bold uppercase tracking-[0.16em] py-3 rounded-full mt-2 shadow-md flex items-center justify-center gap-2"
                 >
                   <SpotifyLogo className="w-4 h-4" />
                   <span>Listen Now on Spotify</span>

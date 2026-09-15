@@ -55,12 +55,12 @@ export default function MerchSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto space-y-3 mb-16"
         >
-          <div className="inline-flex items-center gap-2 bg-[#E6007E]/10 border border-[#E6007E]/30 px-4 py-1.5 rounded-full text-xs font-mono font-bold text-[#E6007E] uppercase tracking-wider mb-1 shadow-xs">
+          <div className="inline-flex items-center gap-2 bg-[#E6007E]/10 border border-[#E6007E]/30 px-4 py-1.5 rounded-full text-xs font-sleek font-bold text-[#E6007E] uppercase tracking-[0.2em] mb-1 shadow-xs">
             <ShoppingBag className="w-3.5 h-3.5" />
             <span>Official Goods & Apparel</span>
           </div>
 
-          <p className="font-script text-3xl sm:text-4xl text-[#E6007E]">
+          <p className="font-signature text-3xl sm:text-4xl text-[#E6007E] signature-stamp tracking-wide">
             Exclusive drops
           </p>
           <h2 className="text-4xl sm:text-6xl font-display font-black text-[#111111] uppercase tracking-tight">
@@ -86,10 +86,10 @@ export default function MerchSection() {
               <div className="space-y-4">
                 {/* Top Badge */}
                 <div className="flex items-center justify-between">
-                  <span className="bg-[#E6007E] text-white text-[10px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-xs">
+                  <span className="bg-[#E6007E] text-white text-[10px] font-sleek font-bold uppercase tracking-[0.16em] px-3 py-1 rounded-full shadow-xs">
                     {item.badge}
                   </span>
-                  <span className="text-[11px] font-mono text-gray-500 uppercase">
+                  <span className="text-[11px] font-sleek text-gray-500 uppercase tracking-wider">
                     {item.category}
                   </span>
                 </div>
@@ -101,7 +101,7 @@ export default function MerchSection() {
                   <span className="font-display font-bold text-sm tracking-wider uppercase text-white">
                     {item.name}
                   </span>
-                  <span className="text-[10px] font-mono text-pink-300 mt-1 uppercase tracking-widest">
+                  <span className="text-[10px] font-sleek text-pink-300 mt-1 uppercase tracking-[0.16em]">
                     Drop 01 Preview
                   </span>
                 </div>
@@ -119,13 +119,13 @@ export default function MerchSection() {
 
               {/* Card Footer */}
               <div className="pt-6 mt-6 border-t border-gray-100 flex items-center justify-between">
-                <span className="font-mono text-xs font-bold text-[#E6007E] uppercase flex items-center gap-1.5">
+                <span className="font-sleek text-xs font-bold text-[#E6007E] uppercase tracking-wider flex items-center gap-1.5">
                   <Sparkles className="w-3.5 h-3.5" />
                   Coming Soon
                 </span>
                 <a
                   href="#newsletter"
-                  className="inline-flex items-center gap-1 text-xs font-mono font-bold text-gray-800 hover:text-[#E6007E] transition-colors uppercase"
+                  className="inline-flex items-center gap-1 text-xs font-sleek font-bold text-gray-800 hover:text-[#E6007E] transition-colors uppercase tracking-wider"
                 >
                   <span>Notify Me</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -144,7 +144,7 @@ export default function MerchSection() {
           className="bg-[#111111] text-white rounded-3xl p-8 sm:p-10 border-2 border-[#E6007E] shadow-2xl max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6"
         >
           <div className="space-y-2 text-center sm:text-left">
-            <div className="inline-flex items-center gap-2 text-pink-300 text-xs font-mono font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 text-pink-300 text-xs font-sleek font-bold uppercase tracking-[0.16em]">
               <ShieldCheck className="w-4 h-4 text-[#E6007E]" />
               <span>VIP Pre-Order Guarantee</span>
             </div>
@@ -158,7 +158,7 @@ export default function MerchSection() {
 
           <a
             href="#newsletter"
-            className="shrink-0 inline-flex items-center gap-2 bg-[#E6007E] hover:bg-[#C8006E] text-white font-mono font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full shadow-lg hover:shadow-pink-500/30 transition-all border border-pink-400/30"
+            className="shrink-0 inline-flex items-center gap-2 bg-[#E6007E] hover:bg-[#C8006E] text-white font-sleek font-bold text-xs uppercase tracking-[0.16em] px-8 py-4 rounded-full shadow-lg hover:shadow-pink-500/30 transition-all border border-pink-400/30"
           >
             <Bell className="w-4 h-4" />
             <span>Join VIP Waitlist</span>

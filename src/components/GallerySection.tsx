@@ -66,12 +66,12 @@ export default function GallerySection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto space-y-3 mb-12"
         >
-          <div className="inline-flex items-center gap-2 bg-[#E6007E]/10 border border-[#E6007E]/30 px-4 py-1.5 rounded-full text-xs font-mono font-bold text-[#E6007E] uppercase tracking-wider mb-1 shadow-xs">
+          <div className="inline-flex items-center gap-2 bg-[#E6007E]/10 border border-[#E6007E]/30 px-4 py-1.5 rounded-full text-xs font-sleek font-bold text-[#E6007E] uppercase tracking-[0.2em] mb-1 shadow-xs">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Official Visual & Video Portfolio</span>
           </div>
 
-          <p className="font-script text-3xl sm:text-4xl text-[#E6007E]">
+          <p className="font-signature text-3xl sm:text-4xl text-[#E6007E] signature-stamp tracking-wide">
             Visual moments
           </p>
           <h2 className="text-4xl sm:text-6xl font-display font-black text-[#111111] uppercase tracking-tight">
@@ -114,7 +114,7 @@ export default function GallerySection() {
 
                       {/* Header Badge */}
                       <div className="relative z-10 flex items-center justify-between pointer-events-none">
-                        <span className="bg-[#E6007E] text-white text-[10px] font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                        <span className="bg-[#E6007E] text-white text-[10px] font-sleek font-bold uppercase tracking-[0.16em] px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
                           <ImageIcon className="w-3 h-3" />
                           <span>Editorial Photo</span>
                         </span>
@@ -123,7 +123,7 @@ export default function GallerySection() {
                           href={INSTAGRAM_URL}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="bg-black/60 hover:bg-[#E6007E] text-white p-2 rounded-full backdrop-blur-md transition-colors shadow-md flex items-center gap-1 text-[10px] font-mono font-bold pointer-events-auto"
+                          className="bg-black/60 hover:bg-[#E6007E] text-white p-2 rounded-full backdrop-blur-md transition-colors shadow-md flex items-center gap-1 text-[10px] font-sleek font-bold pointer-events-auto"
                           title="View Post on Instagram @one_keyz"
                         >
                           <InstagramLogo className="w-3.5 h-3.5" />
@@ -135,7 +135,7 @@ export default function GallerySection() {
                         <h3 className="font-display font-black text-lg uppercase tracking-wide text-white leading-tight">
                           {item.title}
                         </h3>
-                        <p className="text-xs text-pink-300 font-mono flex items-center gap-1">
+                        <p className="text-xs text-pink-300 font-sleek font-medium tracking-wide flex items-center gap-1">
                           <InstagramLogo className="w-3 h-3" />
                           <span>@one_keyz • {item.subtitle}</span>
                         </p>
@@ -146,7 +146,7 @@ export default function GallerySection() {
                         onClick={() => setSelectedImage(item)}
                         className="absolute inset-0 bg-black/40 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-20 cursor-pointer"
                       >
-                        <span className="bg-white text-black font-mono font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full shadow-2xl flex items-center gap-2 transform group-hover:scale-105 transition-transform">
+                        <span className="bg-white text-black font-sleek font-bold text-xs uppercase tracking-[0.16em] px-5 py-2.5 rounded-full shadow-2xl flex items-center gap-2 transform group-hover:scale-105 transition-transform">
                           <ZoomIn className="w-4 h-4 text-[#E6007E]" />
                           <span>Expand Photo</span>
                         </span>
@@ -166,7 +166,7 @@ export default function GallerySection() {
 
                       {/* Header Badge Strip Overlaid Top */}
                       <div className="relative z-10 flex items-center justify-between p-1 pointer-events-none">
-                        <span className="bg-[#E6007E] text-white text-[10px] font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                        <span className="bg-[#E6007E] text-white text-[10px] font-sleek font-bold uppercase tracking-[0.16em] px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
                           <Film className="w-3 h-3" />
                           <span>Studio Video Reel</span>
                         </span>
@@ -177,7 +177,7 @@ export default function GallerySection() {
                             href={INSTAGRAM_URL}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="bg-black/80 hover:bg-[#E6007E] text-white p-2 rounded-full backdrop-blur-md transition-colors shadow-md flex items-center gap-1 text-[10px] font-mono font-bold"
+                            className="bg-black/80 hover:bg-[#E6007E] text-white p-2 rounded-full backdrop-blur-md transition-colors shadow-md flex items-center gap-1 text-[10px] font-sleek font-bold"
                             title="View Post on Instagram @one_keyz"
                           >
                             <InstagramLogo className="w-3.5 h-3.5" />
@@ -187,10 +187,10 @@ export default function GallerySection() {
 
                       {/* Video Title Label Bar Overlaid Bottom */}
                       <div className="relative z-10 bg-black/80 backdrop-blur-md p-2.5 rounded-xl border border-white/10 mt-auto text-left pointer-events-none">
-                        <h3 className="font-display font-bold text-xs uppercase tracking-wide text-white truncate">
+                        <h3 className="font-sleek font-bold text-xs uppercase tracking-[0.14em] text-white truncate">
                           {item.title}
                         </h3>
-                        <p className="text-[10px] text-pink-300 font-mono flex items-center gap-1">
+                        <p className="text-[10px] text-pink-300 font-sleek tracking-wide flex items-center gap-1">
                           <InstagramLogo className="w-3 h-3" />
                           <span>@one_keyz • Watch Reel Above</span>
                         </p>
@@ -210,7 +210,7 @@ export default function GallerySection() {
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-[#111111] hover:bg-[#E6007E] text-white font-mono font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 border border-white/10"
+            className="inline-flex items-center gap-3 bg-[#111111] hover:bg-[#E6007E] text-white font-sleek font-bold text-xs uppercase tracking-[0.18em] px-8 py-4 rounded-full shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 border border-white/10"
           >
             <InstagramLogo className="w-4 h-4 text-pink-400" />
             <span>View Full Feed & Profile Posts @one_keyz</span>
@@ -251,7 +251,7 @@ export default function GallerySection() {
                 />
               </div>
 
-              <div className="flex flex-col sm:flex-row items-center justify-between pt-2 text-xs text-gray-300 border-t border-white/10 font-mono gap-3 text-left">
+              <div className="flex flex-col sm:flex-row items-center justify-between pt-2 text-xs text-gray-300 border-t border-white/10 font-sleek gap-3 text-left">
                 <div>
                   <h4 className="font-display font-black text-base text-white uppercase">
                     {selectedImage.title}
@@ -264,7 +264,7 @@ export default function GallerySection() {
                     href={INSTAGRAM_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-[#E6007E] hover:bg-[#C8006E] text-white px-4 py-2 rounded-full text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-2 shadow-md transition-colors"
+                    className="bg-[#E6007E] hover:bg-[#C8006E] text-white px-5 py-2.5 rounded-full text-xs font-sleek font-bold uppercase tracking-[0.14em] flex items-center gap-2 shadow-md transition-colors"
                   >
                     <InstagramLogo className="w-3.5 h-3.5" />
                     <span>View Post on Instagram</span>

@@ -49,7 +49,7 @@ export default function MusicSection() {
             <Disc className="w-4 h-4 sm:w-5 sm:h-5 animate-spin-slow text-white shrink-0" />
             <span>DISCOGRAPHY & OFFICIAL RELEASES</span>
           </span>
-          <span className="hidden md:inline font-script font-normal text-2xl text-pink-100 normal-case translate-y-0.5">
+          <span className="hidden md:inline font-signature font-normal text-3xl text-pink-100 normal-case translate-y-0.5 signature-stamp">
             Listen on Spotify
           </span>
           <motion.a
@@ -58,7 +58,7 @@ export default function MusicSection() {
             href={SPOTIFY_ARTIST_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white text-[#E6007E] hover:bg-pink-50 text-xs font-mono font-bold px-4 sm:px-5 py-2 rounded-full transition-all duration-200 flex items-center gap-1.5 shadow-md shrink-0"
+            className="bg-white text-[#E6007E] hover:bg-pink-50 text-xs font-sleek font-bold px-4 sm:px-5 py-2 rounded-full transition-all duration-200 flex items-center gap-1.5 shadow-md shrink-0 tracking-wider"
           >
             <SpotifyLogo className="w-3.5 h-3.5" />
             <span>Open Spotify</span>
@@ -77,7 +77,7 @@ export default function MusicSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto space-y-3 mb-14"
         >
-          <p className="font-script text-3xl sm:text-4xl text-[#E6007E]">
+          <p className="font-signature text-3xl sm:text-4xl text-[#E6007E] signature-stamp tracking-wide">
             Now streaming
           </p>
           <h2 className="text-4xl sm:text-6xl font-display font-black text-[#111111] uppercase tracking-tight">
@@ -94,7 +94,7 @@ export default function MusicSection() {
           <div className="bg-white p-1.5 rounded-full border-2 border-gray-200 shadow-md inline-flex gap-1">
             <button
               onClick={() => setActiveTab('releases')}
-              className={`px-6 py-2.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider transition-all ${
+              className={`px-6 py-2.5 rounded-full text-xs font-sleek font-bold uppercase tracking-[0.16em] transition-all ${
                 activeTab === 'releases'
                   ? 'bg-[#E6007E] text-white shadow-md'
                   : 'text-gray-800 hover:text-black'
@@ -104,7 +104,7 @@ export default function MusicSection() {
             </button>
             <button
               onClick={() => setActiveTab('profile')}
-              className={`px-6 py-2.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider transition-all ${
+              className={`px-6 py-2.5 rounded-full text-xs font-sleek font-bold uppercase tracking-[0.16em] transition-all ${
                 activeTab === 'profile'
                   ? 'bg-[#111111] text-white shadow-md'
                   : 'text-gray-800 hover:text-black'
@@ -133,7 +133,7 @@ export default function MusicSection() {
                   {/* Card Header Bar */}
                   <div className={`${theme.badgeBg} ${theme.badgeText} p-5 -mx-6 -mt-6 mb-6 rounded-t-3xl flex items-center justify-between shadow-lg`}>
                     <div>
-                      <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-white/90 flex items-center gap-1.5">
+                      <span className="text-[10px] font-sleek font-bold tracking-[0.18em] uppercase text-white/90 flex items-center gap-1.5">
                         <Radio className="w-3 h-3 text-pink-200" />
                         {release.type} • {release.year}
                       </span>
@@ -175,7 +175,7 @@ export default function MusicSection() {
 
                   {/* Card Footer Link */}
                   <div className="pt-3 border-t border-white/10 flex items-center justify-between mt-auto">
-                    <span className="font-script text-xl text-[#E6007E]">
+                    <span className="font-signature text-2xl text-[#E6007E] font-bold signature-stamp">
                       ONEKEYZ
                     </span>
                     <motion.a
@@ -184,7 +184,7 @@ export default function MusicSection() {
                       href={release.spotifyUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#E6007E] hover:text-white transition-colors bg-[#E6007E]/10 hover:bg-[#E6007E] px-3.5 py-1.5 rounded-full border border-[#E6007E]/40"
+                      className="inline-flex items-center gap-2 text-xs font-sleek font-bold uppercase tracking-[0.14em] text-[#E6007E] hover:text-white transition-colors bg-[#E6007E]/10 hover:bg-[#E6007E] px-4 py-1.5 rounded-full border border-[#E6007E]/40"
                     >
                       <span>Play Track</span>
                       <Play className="w-3.5 h-3.5 fill-current text-[#E6007E] group-hover:text-white" />
@@ -214,7 +214,7 @@ export default function MusicSection() {
                       <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#1DB954]" />
                     </span>
                   </h3>
-                  <p className="text-xs text-pink-300 font-mono">
+                  <p className="text-xs text-pink-300 font-sleek tracking-wider">
                     Official Artist Page & Full Discography
                   </p>
                 </div>
@@ -225,7 +225,7 @@ export default function MusicSection() {
                 href={SPOTIFY_ARTIST_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#E6007E] text-white hover:bg-[#C8006E] text-xs font-mono font-bold uppercase px-5 py-2.5 rounded-full transition-all duration-200 flex items-center gap-1.5 shadow-md"
+                className="bg-[#E6007E] text-white hover:bg-[#C8006E] text-xs font-sleek font-bold uppercase tracking-[0.14em] px-5 py-2.5 rounded-full transition-all duration-200 flex items-center gap-1.5 shadow-md"
               >
                 <SpotifyLogo className="w-3.5 h-3.5" />
                 <span>Follow Spotify</span>
@@ -257,7 +257,7 @@ export default function MusicSection() {
             href={SPOTIFY_ARTIST_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-[#E6007E] hover:bg-[#C8006E] text-white font-mono font-bold text-xs uppercase tracking-widest px-9 py-4 rounded-full shadow-2xl shadow-pink-500/30 transition-all duration-300 border border-pink-400/30"
+            className="inline-flex items-center gap-3 bg-[#E6007E] hover:bg-[#C8006E] text-white font-sleek font-bold text-xs uppercase tracking-[0.18em] px-9 py-4 rounded-full shadow-2xl shadow-pink-500/30 transition-all duration-300 border border-pink-400/30"
           >
             <SpotifyLogo className="w-4 h-4 text-white" />
             <span>Stream ONEKEYZ Live on Spotify</span>

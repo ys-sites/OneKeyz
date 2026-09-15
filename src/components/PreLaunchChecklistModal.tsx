@@ -55,7 +55,7 @@ export default function PreLaunchChecklistModal() {
       {/* Floating Bottom Left Badge */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-4 left-4 z-40 bg-[#121212] hover:bg-[#E6007E] text-white border-2 border-[#E6007E] shadow-2xl px-4 py-2.5 rounded-full text-xs font-mono font-bold flex items-center gap-2 transition-all duration-200 transform hover:scale-105"
+        className="fixed bottom-4 left-4 z-40 bg-[#121212] hover:bg-[#E6007E] text-white border-2 border-[#E6007E] shadow-2xl px-4 py-2.5 rounded-full text-xs font-sleek font-bold tracking-wider flex items-center gap-2 transition-all duration-200 transform hover:scale-105"
       >
         <Sparkles className="w-4 h-4 text-pink-300 animate-pulse" />
         <span>Pre-Launch Checklist</span>
@@ -75,10 +75,10 @@ export default function PreLaunchChecklistModal() {
 
             <div className="space-y-1">
               <div className="flex items-center justify-between">
-                <span className="font-mono text-xs font-bold text-[#E6007E] uppercase tracking-wider block">
+                <span className="font-sleek text-xs font-bold text-[#E6007E] uppercase tracking-[0.16em] block">
                   Pre-Launch Review Panel
                 </span>
-                <span className="bg-[#E6007E]/10 border border-[#E6007E]/30 text-[#E6007E] text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full uppercase">
+                <span className="bg-[#E6007E]/10 border border-[#E6007E]/30 text-[#E6007E] text-[10px] font-sleek font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                   7 / 7 Readiness
                 </span>
               </div>
@@ -111,7 +111,7 @@ export default function PreLaunchChecklistModal() {
                   <div className="flex-1 space-y-0.5">
                     <div className="flex items-center justify-between font-bold">
                       <span>{item.title}</span>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-white border border-gray-200">
+                      <span className="text-[10px] font-sleek px-2 py-0.5 rounded bg-white border border-gray-200">
                         {item.status}
                       </span>
                     </div>
@@ -122,12 +122,12 @@ export default function PreLaunchChecklistModal() {
             </div>
 
             <div className="pt-2 border-t border-gray-100 flex items-center justify-between text-xs">
-              <span className="text-gray-500 font-mono text-[11px]">
+              <span className="text-gray-500 font-sleek text-[11px] tracking-wide">
                 Ready for staging & testing
               </span>
               <button
                 onClick={() => setIsOpen(false)}
-                className="bg-[#121212] text-white font-bold px-5 py-2 rounded-full hover:bg-[#E6007E] transition-colors uppercase text-[11px]"
+                className="bg-[#121212] text-white font-sleek font-bold px-5 py-2 rounded-full hover:bg-[#E6007E] transition-colors uppercase text-[11px] tracking-wider"
               >
                 Close Panel
               </button>

@@ -1,19 +1,40 @@
 @import "tailwindcss";
 
+@theme {
+  --font-signature: 'Caveat', 'Ephesis', cursive;
+  --font-sleek: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Syne', 'Outfit', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+}
+
 @layer utilities {
+  .font-signature {
+    font-family: 'Caveat', 'Ephesis', cursive;
+    letter-spacing: 0.01em;
+  }
+  .font-sleek {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  }
   .font-display {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Syne', 'Outfit', sans-serif;
   }
   .font-script {
-    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
-    font-style: italic;
+    font-family: 'Caveat', 'Ephesis', cursive;
+    font-style: normal;
   }
   .font-cursive {
-    font-family: 'Alex Brush', cursive;
+    font-family: 'Caveat', 'Ephesis', cursive;
   }
   .font-sans {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif;
   }
+}
+
+.signature-stamp {
+  font-family: 'Caveat', 'Ephesis', cursive;
+  display: inline-block;
+  transform: rotate(-1.5deg);
+  line-height: 1.1;
 }
 
 /* Custom animations & scrollbar */
@@ -110,8 +131,8 @@ svg {
   color: #a1a1aa;
   font-weight: 300;
   transition: color 0.3s;
-  line-height: 1;
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: 'Outfit', 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0.04em;
 }
 
 .ys-signature-btn:hover .ys-sig-text {

@@ -17,7 +17,15 @@ export default function Footer() {
           
           {/* Brand Wordmark & Tagline */}
           <div className="md:col-span-6 space-y-4">
-            
+            <div className="flex items-center gap-2">
+              <span className="font-display font-black text-2xl tracking-tight uppercase">
+                <span className="text-white">ONE</span>
+                <span className="text-[#E6007E]">KEYZ</span>
+              </span>
+              <span className="font-signature text-2xl text-pink-300 font-normal lowercase -rotate-6">
+                signature
+              </span>
+            </div>
             <p className="text-sm text-gray-400 font-sans max-w-md leading-relaxed">
               Official music portfolio and artist home base for Montreal-based independent recording artist ONEKEYZ. Stream official releases on Spotify and connect on Instagram.
             </p>
@@ -49,7 +57,7 @@ export default function Footer() {
 
           {/* Quick Navigation Links */}
           <div className="md:col-span-3 space-y-3">
-            <p className="font-mono text-xs font-bold text-[#E6007E] uppercase tracking-wider">
+            <p className="font-sleek text-xs font-bold text-[#E6007E] uppercase tracking-[0.2em]">
               Navigation
             </p>
             <ul className="space-y-2 text-sm font-sans text-gray-300">
@@ -78,7 +86,7 @@ export default function Footer() {
 
           {/* Streaming & Social Channels */}
           <div className="md:col-span-3 space-y-3">
-            <p className="font-mono text-xs font-bold text-[#E6007E] uppercase tracking-wider">
+            <p className="font-sleek text-xs font-bold text-[#E6007E] uppercase tracking-[0.2em]">
               Official Platforms
             </p>
             <ul className="space-y-2 text-sm font-sans text-gray-300">
@@ -110,7 +118,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar: Copyright, YS Marketing Solutions Signature & Back To Top */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 font-mono gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 font-sleek tracking-wider gap-4">
           <p>© {new Date().getFullYear()} {ARTIST_NAME}. All rights reserved.</p>
           
           {/* YS Marketing Solutions Signature Button */}
@@ -137,7 +145,7 @@ export default function Footer() {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={scrollToTop}
-              className="flex items-center gap-1.5 text-white hover:text-[#E6007E] font-bold uppercase transition-colors"
+              className="flex items-center gap-1.5 text-white hover:text-[#E6007E] font-sleek font-bold text-xs uppercase tracking-[0.16em] transition-colors"
             >
               <span>Back to top</span>
               <ArrowUp className="w-4 h-4 text-[#E6007E]" />

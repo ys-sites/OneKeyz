@@ -1,5 +1,5 @@
 import { useState, FormEvent } from 'react';
-import { Mail, CheckCircle2, Send, Sparkles, Music } from 'lucide-react';
+import { Mail, CheckCircle2, Send } from 'lucide-react';
 import { ARTIST_NAME } from '../data/discography';
 
 export default function NewsletterSection() {
@@ -31,7 +31,7 @@ export default function NewsletterSection() {
           
           {/* Script Accent & Headline */}
           <div className="space-y-2">
-            <span className="font-script text-3xl sm:text-4xl text-pink-200 block">
+            <span className="font-signature text-3xl sm:text-4xl lg:text-5xl text-pink-200 block signature-stamp tracking-wide">
               Stay connected
             </span>
             <h2 className="text-4xl sm:text-6xl font-display font-black uppercase tracking-tight text-white">
@@ -54,7 +54,7 @@ export default function NewsletterSection() {
               </p>
               <button
                 onClick={() => setSubscribed(false)}
-                className="text-xs font-bold text-[#E6007E] hover:underline pt-2 inline-block"
+                className="text-xs font-sleek font-bold text-[#E6007E] hover:underline pt-2 inline-block tracking-wider uppercase"
               >
                 Subscribe another email address
               </button>
@@ -76,7 +76,7 @@ export default function NewsletterSection() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="bg-[#121212] hover:bg-black text-white font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 shrink-0 flex items-center justify-center gap-2"
+                  className="bg-[#121212] hover:bg-black text-white font-sleek font-bold text-xs uppercase tracking-[0.16em] px-8 py-4 rounded-full shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 shrink-0 flex items-center justify-center gap-2"
                 >
                   {loading ? (
                     <span className="animate-spin text-sm">↻</span>
@@ -89,7 +89,7 @@ export default function NewsletterSection() {
                 </button>
               </div>
 
-              <p className="text-[11px] text-pink-200/90 font-mono pt-1">
+              <p className="text-[11px] text-pink-200/90 font-sleek pt-1 tracking-wide">
                 Zero spam. Only genuine music updates directly from {ARTIST_NAME}. Unsubscribe anytime.
               </p>
             </form>

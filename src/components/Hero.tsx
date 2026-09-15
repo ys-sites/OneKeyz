@@ -90,7 +90,7 @@ export default function Hero() {
               
               {/* Category Eyebrow Pill */}
               <motion.div variants={itemVariants}>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-md text-[11px] font-mono tracking-widest text-pink-300 uppercase shadow-xs">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-md text-[11px] font-sleek tracking-[0.2em] font-semibold text-pink-300 uppercase shadow-xs">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E6007E] opacity-75" />
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-[#E6007E]" />
@@ -99,13 +99,13 @@ export default function Hero() {
                 </div>
               </motion.div>
 
-              {/* Artist Name Wordmark Headline & Genre Accent Line */}
-              <motion.div variants={itemVariants} className="space-y-2">
+              {/* Artist Name Wordmark Headline & Signature Genre Accent */}
+              <motion.div variants={itemVariants} className="space-y-3">
                 <h1 className="text-5xl sm:text-7xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-display font-black tracking-normal uppercase leading-[0.9] drop-shadow-2xl">
                   <span className="text-white">ONE</span>
                   <span className="text-[#E6007E]">KEYZ</span>
                 </h1>
-                <p className="font-script text-2xl sm:text-3xl lg:text-4xl text-pink-200/90 font-normal pt-1">
+                <p className="font-signature text-3xl sm:text-4xl lg:text-5xl text-pink-200/95 font-medium pt-1 signature-stamp tracking-wide">
                   Contemporary R&B • Soul
                 </p>
               </motion.div>
@@ -118,7 +118,7 @@ export default function Hero() {
                   href={SPOTIFY_ARTIST_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 bg-[#E6007E] hover:bg-[#C8006E] text-white border-2 border-[#E6007E] font-mono font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full shadow-2xl shadow-pink-500/30 transition-all group"
+                  className="inline-flex items-center gap-2.5 bg-[#E6007E] hover:bg-[#C8006E] text-white border-2 border-[#E6007E] font-sleek font-bold text-xs uppercase tracking-[0.16em] px-8 py-4 rounded-full shadow-2xl shadow-pink-500/30 transition-all group"
                 >
                   <SpotifyLogo className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
                   <span>Listen on Spotify</span>
@@ -130,7 +130,7 @@ export default function Hero() {
                   href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 bg-black/40 backdrop-blur-md hover:bg-white/10 text-white border-2 border-white/70 hover:border-[#E6007E] font-mono font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full transition-all shadow-xl"
+                  className="inline-flex items-center gap-2.5 bg-black/40 backdrop-blur-md hover:bg-white/10 text-white border-2 border-white/70 hover:border-[#E6007E] font-sleek font-bold text-xs uppercase tracking-[0.16em] px-8 py-4 rounded-full transition-all shadow-xl"
                 >
                   <InstagramLogo className="w-4 h-4 text-pink-300" />
                   <span>Follow @one_keyz</span>
@@ -140,22 +140,22 @@ export default function Hero() {
               {/* Drake/OVO Studio Session Acoustic Ribbon */}
               <motion.div
                 variants={itemVariants}
-                className="pt-4 border-t border-white/10 flex flex-wrap items-center gap-y-2 gap-x-6 text-[11px] font-mono text-gray-400"
+                className="pt-4 border-t border-white/10 flex flex-wrap items-center gap-y-2 gap-x-6 text-[11px] font-sleek tracking-wider text-gray-400"
               >
                 <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#E6007E]" />
-                  <span className="text-gray-500 uppercase">Session:</span>
-                  <span className="text-white font-medium">LIVE MASTER</span>
+                  <span className="text-gray-500 uppercase tracking-widest text-[10px]">Session:</span>
+                  <span className="text-white font-semibold tracking-wider">LIVE MASTER</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-pink-400" />
-                  <span className="text-gray-500 uppercase">Catalog:</span>
-                  <span className="text-white font-medium">3 RELEASES</span>
+                  <span className="text-gray-500 uppercase tracking-widest text-[10px]">Catalog:</span>
+                  <span className="text-white font-semibold tracking-wider">3 RELEASES</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#1DB954]" />
-                  <span className="text-gray-500 uppercase">Latest:</span>
-                  <a href="#music" className="text-[#E6007E] hover:text-white transition-colors font-bold underline decoration-[#E6007E]/50">
+                  <span className="text-gray-500 uppercase tracking-widest text-[10px]">Latest:</span>
+                  <a href="#music" className="text-[#E6007E] hover:text-white transition-colors font-bold underline decoration-[#E6007E]/50 tracking-wider">
                     "REAL" (2025)
                   </a>
                 </div>
@@ -178,10 +178,10 @@ export default function Hero() {
                 className="relative p-3 bg-gradient-to-tr from-[#E6007E] via-pink-600/40 to-black rounded-3xl shadow-2xl group"
               >
                 {/* Corner Crosshair Accents (+) — Haute Horlogerie / OVO Streetwear Signature */}
-                <span className="absolute -top-1.5 -left-1.5 font-mono text-[10px] text-pink-400/80 pointer-events-none select-none">+</span>
-                <span className="absolute -top-1.5 -right-1.5 font-mono text-[10px] text-pink-400/80 pointer-events-none select-none">+</span>
-                <span className="absolute -bottom-1.5 -left-1.5 font-mono text-[10px] text-pink-400/80 pointer-events-none select-none">+</span>
-                <span className="absolute -bottom-1.5 -right-1.5 font-mono text-[10px] text-pink-400/80 pointer-events-none select-none">+</span>
+                <span className="absolute -top-1.5 -left-1.5 font-sleek text-[10px] text-pink-400/80 pointer-events-none select-none">+</span>
+                <span className="absolute -top-1.5 -right-1.5 font-sleek text-[10px] text-pink-400/80 pointer-events-none select-none">+</span>
+                <span className="absolute -bottom-1.5 -left-1.5 font-sleek text-[10px] text-pink-400/80 pointer-events-none select-none">+</span>
+                <span className="absolute -bottom-1.5 -right-1.5 font-sleek text-[10px] text-pink-400/80 pointer-events-none select-none">+</span>
 
                 {/* Photo Showcase Container */}
                 <div className="relative aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] rounded-2xl overflow-hidden bg-zinc-900 flex flex-col items-center justify-center text-center text-white group shadow-inner border border-white/10">
@@ -205,12 +205,12 @@ export default function Hero() {
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E6007E] opacity-75" />
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-[#E6007E]" />
                           </span>
-                          <span className="font-mono text-[10px] font-bold tracking-widest text-pink-200 uppercase">
+                          <span className="font-sleek text-[10px] font-bold tracking-[0.2em] text-pink-200 uppercase">
                             STUDIO SESSION REEL
                           </span>
                         </div>
 
-                        <span className="bg-white/10 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 text-[10px] font-mono text-gray-300 uppercase">
+                        <span className="bg-white/10 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 text-[10px] font-sleek font-semibold tracking-[0.16em] text-gray-300 uppercase">
                           ONEKEYZ
                         </span>
                       </div>
@@ -218,10 +218,10 @@ export default function Hero() {
                       {/* Bottom Overlay Strip: Live Audio EQ & Master Track Tag */}
                       <div className="absolute bottom-4 inset-x-4 p-3.5 bg-black/80 backdrop-blur-md rounded-xl border border-white/15 z-10 flex items-center justify-between shadow-2xl">
                         <div className="space-y-0.5 text-left">
-                          <p className="font-display font-bold text-xs uppercase tracking-wider text-white">
+                          <p className="font-sleek font-bold text-xs uppercase tracking-[0.16em] text-white">
                             VOCAL SESSION TAPE
                           </p>
-                          <p className="font-mono text-[10px] text-pink-300 flex items-center gap-1.5">
+                          <p className="font-sleek text-[10px] font-medium tracking-[0.14em] text-pink-300 flex items-center gap-1.5">
                             <span>ORIGINAL R&B / SOUL ARRANGEMENT</span>
                           </p>
                         </div>
@@ -232,7 +232,7 @@ export default function Hero() {
                     <div className="relative z-10 space-y-3 p-6">
                       <ImageIcon className="w-12 h-12 mx-auto text-pink-300" />
                       <div className="space-y-1">
-                        <span className="font-script text-2xl text-pink-200 block">
+                        <span className="font-signature text-3xl text-pink-200 block">
                           Featured Artist
                         </span>
                         <h3 className="font-display font-black text-xl uppercase tracking-wider text-white">

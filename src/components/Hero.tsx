@@ -1,6 +1,7 @@
 import { Instagram, Image as ImageIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { ARTIST_NAME, INSTAGRAM_URL } from '../data/discography';
+import { ARTIST_NAME, INSTAGRAM_URL, SPOTIFY_ARTIST_URL } from '../data/discography';
+import { SpotifyLogo } from './icons/SpotifyLogo';
 import MoltenMetal from './MoltenMetal';
 
 export default function Hero() {
@@ -93,15 +94,27 @@ export default function Hero() {
                 </h1>
               </motion.div>
 
-              {/* CTA: Follow on Instagram */}
+              {/* Action Buttons: Listen on Spotify + Follow on Instagram */}
               <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 pt-2">
+                <motion.a
+                  whileHover={{ scale: 1.06, y: -3 }}
+                  whileTap={{ scale: 0.95 }}
+                  href={SPOTIFY_ARTIST_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 bg-[#E6007E] hover:bg-[#C8006E] text-white border-2 border-[#E6007E] font-mono font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full shadow-2xl shadow-pink-500/30 transition-all"
+                >
+                  <SpotifyLogo className="w-4 h-4 text-white" />
+                  <span>Listen on Spotify</span>
+                </motion.a>
+
                 <motion.a
                   whileHover={{ scale: 1.06, y: -3 }}
                   whileTap={{ scale: 0.95 }}
                   href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 bg-black/40 backdrop-blur-md hover:bg-[#E6007E] text-white border-2 border-white/80 hover:border-[#E6007E] font-mono font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full transition-all shadow-xl"
+                  className="inline-flex items-center gap-2.5 bg-black/40 backdrop-blur-md hover:bg-white/10 text-white border-2 border-white/80 hover:border-[#E6007E] font-mono font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full transition-all shadow-xl"
                 >
                   <Instagram className="w-4 h-4 text-pink-300" />
                   <span>Follow @one_keyz</span>

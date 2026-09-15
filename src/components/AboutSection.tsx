@@ -43,28 +43,27 @@ export default function AboutSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header: Cursive Accent + Heavyweight Display Title */}
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto space-y-3 mb-16 lg:mb-24"
+          className="text-center max-w-3xl mx-auto space-y-3 mb-16 lg:mb-20"
         >
-          {/* Studio Archive Eyebrow Tag */}
           <div className="inline-flex items-center gap-2 bg-[#E6007E]/10 border border-[#E6007E]/30 px-4 py-1.5 rounded-full text-xs font-mono font-bold text-[#E6007E] uppercase tracking-wider mb-1 shadow-xs">
-            <Disc3 className="w-3.5 h-3.5 text-[#E6007E] animate-spin-slow" />
-            <span>Studio Dossier • Archive Ref 514</span>
+            <Mic2 className="w-3.5 h-3.5 text-[#E6007E]" />
+            <span>Artist Biography • R&B / Soul</span>
           </div>
 
           <p className="font-script text-3xl sm:text-4xl text-[#E6007E]">
-            The Midnight Sessions
+            The music & the voice
           </p>
           <h2 className="text-4xl sm:text-6xl font-display font-black text-white uppercase tracking-tight">
-            BEHIND THE <span className="text-[#E6007E]">ATMOSPHERE</span>
+            ABOUT <span className="text-[#E6007E]">ONEKEYZ</span>
           </h2>
           <p className="text-gray-400 font-sans text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
-            The creative DNA, sonic discipline, and unapologetic vision powering the world of {ARTIST_NAME}.
+            Singer, songwriter, and independent recording artist from Montréal, Canada.
           </p>
           <div className="w-20 h-1 bg-[#E6007E] mx-auto rounded-full mt-3" />
         </motion.div>
@@ -135,34 +134,34 @@ export default function AboutSection() {
 
             </div>
 
-            {/* Executive Studio Memo Card (French Montana Luxury meets Drake Engineering) */}
+            {/* Musical Profile Spec Card */}
             <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md space-y-3">
               <div className="flex items-center justify-between border-b border-white/10 pb-2.5">
                 <span className="font-mono text-[11px] font-bold text-pink-300 uppercase tracking-wider flex items-center gap-1.5">
                   <Mic2 className="w-3.5 h-3.5 text-[#E6007E]" />
-                  <span>Acoustic Profile</span>
+                  <span>Musical Profile</span>
                 </span>
                 <span className="font-mono text-[10px] text-gray-400 uppercase">
-                  MASTER SPEC
+                  OVERVIEW
                 </span>
               </div>
 
               <div className="grid grid-cols-2 gap-3 text-xs font-mono">
                 <div>
+                  <span className="text-gray-500 block text-[10px]">GENRE</span>
+                  <span className="text-white font-bold">R&B / SOUL</span>
+                </div>
+                <div>
+                  <span className="text-gray-500 block text-[10px]">VOCALS</span>
+                  <span className="text-pink-300 font-bold">LEAD & HARMONIES</span>
+                </div>
+                <div>
                   <span className="text-gray-500 block text-[10px]">ORIGIN</span>
                   <span className="text-white font-bold">MONTRÉAL, QC</span>
                 </div>
                 <div>
-                  <span className="text-gray-500 block text-[10px]">CADENCE</span>
-                  <span className="text-pink-300 font-bold">ATMOSPHERIC SOUL</span>
-                </div>
-                <div>
-                  <span className="text-gray-500 block text-[10px]">VOCAL CHAIN</span>
-                  <span className="text-white font-bold">PURE HARMONIC RANGE</span>
-                </div>
-                <div>
-                  <span className="text-gray-500 block text-[10px]">CATALOG RIGHT</span>
-                  <span className="text-[#E6007E] font-bold">100% INDEPENDENT</span>
+                  <span className="text-gray-500 block text-[10px]">SONGWRITING</span>
+                  <span className="text-[#E6007E] font-bold">100% ORIGINAL</span>
                 </div>
               </div>
             </div>
@@ -178,18 +177,18 @@ export default function AboutSection() {
             className="lg:col-span-7 space-y-6 text-left"
           >
             
-            {/* Core Lead Copy (incorporating client's mandatory revision text) */}
+            {/* Straightforward Musical Bio Copy */}
             <motion.div variants={itemVariants} className="space-y-4">
               <p className="text-lg sm:text-2xl font-sans text-gray-100 font-medium leading-relaxed">
                 {coreBioIntro}
               </p>
               
               <p className="text-sm sm:text-base font-sans text-gray-300 leading-relaxed">
-                Born out of Montréal’s bilingual creative underground, {ARTIST_NAME} exists in the nocturnal stillness where raw introspection meets world-class songwriting. Blending the hypnotic cadences of modern R&B with cinematic synth textures and heavy low-end rhythm, she crafts soundscapes designed to be felt as much as heard.
+                {ARTIST_NAME} creates contemporary R&B defined by smooth melodic vocal delivery, layered harmonies, and atmospheric production. Her sound blends soulful toplines with deep basslines, ambient synthesizers, and slow-tempo R&B grooves—capturing honest themes of love, vulnerability, and self-worth.
               </p>
 
               <p className="text-sm sm:text-base font-sans text-gray-300 leading-relaxed">
-                From intimate vocal arrangements tracked at 3:00 AM to expansive, stadium-ready hooks, every frequency is guided by an uncompromising commitment to artistic sovereignty. No ghostwriters, no artificial fillers—just pure vocal range and undeniable emotional resonance.
+                With official releases including "Real" (2025), "Come" (2021), and "Poison" (2018), she writes and directs her own material as a fully independent artist. From writing the initial hook and vocal arrangements to the final master, her music focuses on pure vocal tone and real musicality.
               </p>
             </motion.div>
 
@@ -224,41 +223,41 @@ export default function AboutSection() {
               </div>
             </motion.div>
 
-            {/* Three Executive Sonic Identity Tiles (French Montana Grandeur x OVO Precision) */}
+            {/* Three Musical Overview Tiles */}
             <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#E6007E]/50 transition-colors space-y-1">
-                <span className="text-2xl font-display font-black text-white block">
-                  514
-                </span>
-                <span className="text-xs font-mono font-bold uppercase text-pink-300 tracking-wider block">
-                  MONTRÉAL ROOTS
-                </span>
-                <p className="text-[11px] text-gray-400 font-sans leading-tight">
-                  Nocturnal, cosmopolitan soundscapes inspired by Canada's cultural capital.
-                </p>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#E6007E]/50 transition-colors space-y-1">
-                <span className="text-2xl font-display font-black text-white block">
-                  100%
-                </span>
-                <span className="text-xs font-mono font-bold uppercase text-pink-300 tracking-wider block">
-                  INDIE OWNERSHIP
-                </span>
-                <p className="text-[11px] text-gray-400 font-sans leading-tight">
-                  Complete master sovereignty and uncompromised executive control.
-                </p>
-              </div>
-
               <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#E6007E]/50 transition-colors space-y-1">
                 <span className="text-2xl font-display font-black text-white block">
                   R&B / SOUL
                 </span>
                 <span className="text-xs font-mono font-bold uppercase text-pink-300 tracking-wider block">
-                  HYPNOTIC CADENCE
+                  GENRE & STYLE
                 </span>
                 <p className="text-[11px] text-gray-400 font-sans leading-tight">
-                  Velvet harmonies layered over atmospheric trap-soul production.
+                  Atmospheric R&B melodies with rich vocal harmonies.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#E6007E]/50 transition-colors space-y-1">
+                <span className="text-2xl font-display font-black text-white block">
+                  3 SINGLES
+                </span>
+                <span className="text-xs font-mono font-bold uppercase text-pink-300 tracking-wider block">
+                  DISCOGRAPHY
+                </span>
+                <p className="text-[11px] text-gray-400 font-sans leading-tight">
+                  Official catalog: "Real", "Come", and "Poison".
+                </p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#E6007E]/50 transition-colors space-y-1">
+                <span className="text-2xl font-display font-black text-white block">
+                  100% INDIE
+                </span>
+                <span className="text-xs font-mono font-bold uppercase text-pink-300 tracking-wider block">
+                  INDEPENDENT ARTIST
+                </span>
+                <p className="text-[11px] text-gray-400 font-sans leading-tight">
+                  Original songwriting, vocal arrangements, and releases.
                 </p>
               </div>
             </motion.div>
@@ -269,7 +268,7 @@ export default function AboutSection() {
                 href="#music"
                 className="inline-flex items-center gap-2.5 bg-[#E6007E] hover:bg-[#C8006E] text-white font-mono font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full shadow-xl shadow-pink-500/20 border border-pink-400/30 transition-all transform hover:-translate-y-0.5"
               >
-                <span>Experience The Catalog</span>
+                <span>Listen to Music</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
@@ -280,7 +279,7 @@ export default function AboutSection() {
                 className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-mono font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-full border border-white/15 transition-all"
               >
                 <Instagram className="w-4 h-4 text-pink-400" />
-                <span>Follow Behind-The-Scenes</span>
+                <span>Follow on Instagram</span>
               </a>
             </motion.div>
 

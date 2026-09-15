@@ -84,11 +84,18 @@ html, body {
   transform: translateY(-1px);
 }
 
+svg {
+  shape-rendering: geometricPrecision;
+  text-rendering: geometricPrecision;
+}
+
 .ys-sig-logo {
   height: 16px;
   width: auto;
   object-fit: contain;
   filter: brightness(0.95);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
   transition: transform 0.3s;
   will-change: transform;
 }

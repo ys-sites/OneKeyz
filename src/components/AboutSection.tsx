@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { Sparkles, Disc3, Quote, ArrowRight, Instagram, Mic2, Compass, Radio } from 'lucide-react';
+import { Sparkles, Disc3, Quote, ArrowRight, Mic2, Compass, Radio } from 'lucide-react';
 import { ARTIST_NAME, INSTAGRAM_URL } from '../data/discography';
+import { InstagramLogo } from './icons/InstagramLogo';
 import { SoundwaveVisualizer } from './SoundwaveVisualizer';
 
 export default function AboutSection() {
@@ -150,7 +151,7 @@ export default function AboutSection() {
                 rel="noopener noreferrer"
                 className="flex-1 inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-mono font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full border border-white/15 transition-all text-center"
               >
-                <Instagram className="w-4 h-4 text-pink-400 shrink-0" />
+                <InstagramLogo className="w-4 h-4 text-pink-400 shrink-0" />
                 <span>Follow on Instagram</span>
               </a>
             </div>

@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { X, ZoomIn, Film, Image as ImageIcon, Sparkles, Instagram, ExternalLink } from 'lucide-react';
+import { X, ZoomIn, Film, Image as ImageIcon, Sparkles, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { INSTAGRAM_URL } from '../data/discography';
+import { InstagramLogo } from './icons/InstagramLogo';
 import { SoundwaveVisualizer } from './SoundwaveVisualizer';
 
 interface MediaItem {
@@ -125,7 +126,7 @@ export default function GallerySection() {
                           className="bg-black/60 hover:bg-[#E6007E] text-white p-2 rounded-full backdrop-blur-md transition-colors shadow-md flex items-center gap-1 text-[10px] font-mono font-bold pointer-events-auto"
                           title="View Post on Instagram @one_keyz"
                         >
-                          <Instagram className="w-3.5 h-3.5" />
+                          <InstagramLogo className="w-3.5 h-3.5" />
                         </a>
                       </div>
 
@@ -135,7 +136,7 @@ export default function GallerySection() {
                           {item.title}
                         </h3>
                         <p className="text-xs text-pink-300 font-mono flex items-center gap-1">
-                          <Instagram className="w-3 h-3" />
+                          <InstagramLogo className="w-3 h-3" />
                           <span>@one_keyz • {item.subtitle}</span>
                         </p>
                       </div>
@@ -179,7 +180,7 @@ export default function GallerySection() {
                             className="bg-black/80 hover:bg-[#E6007E] text-white p-2 rounded-full backdrop-blur-md transition-colors shadow-md flex items-center gap-1 text-[10px] font-mono font-bold"
                             title="View Post on Instagram @one_keyz"
                           >
-                            <Instagram className="w-3.5 h-3.5" />
+                            <InstagramLogo className="w-3.5 h-3.5" />
                           </a>
                         </div>
                       </div>
@@ -190,7 +191,7 @@ export default function GallerySection() {
                           {item.title}
                         </h3>
                         <p className="text-[10px] text-pink-300 font-mono flex items-center gap-1">
-                          <Instagram className="w-3 h-3" />
+                          <InstagramLogo className="w-3 h-3" />
                           <span>@one_keyz • Watch Reel Above</span>
                         </p>
                       </div>
@@ -211,7 +212,7 @@ export default function GallerySection() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-[#111111] hover:bg-[#E6007E] text-white font-mono font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 border border-white/10"
           >
-            <Instagram className="w-4 h-4 text-pink-400" />
+            <InstagramLogo className="w-4 h-4 text-pink-400" />
             <span>View Full Feed & Profile Posts @one_keyz</span>
             <ExternalLink className="w-3.5 h-3.5" />
           </a>
@@ -265,7 +266,7 @@ export default function GallerySection() {
                     rel="noopener noreferrer"
                     className="bg-[#E6007E] hover:bg-[#C8006E] text-white px-4 py-2 rounded-full text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-2 shadow-md transition-colors"
                   >
-                    <Instagram className="w-3.5 h-3.5" />
+                    <InstagramLogo className="w-3.5 h-3.5" />
                     <span>View Post on Instagram</span>
                     <ExternalLink className="w-3 h-3" />
                   </a>

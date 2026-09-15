@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Instagram, Menu, X, ExternalLink, Mail } from 'lucide-react';
+import { Menu, X, ExternalLink, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ARTIST_NAME, INSTAGRAM_URL, SPOTIFY_ARTIST_URL } from '../data/discography';
 import { SpotifyLogo } from './icons/SpotifyLogo';
+import { InstagramLogo } from './icons/InstagramLogo';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,7 +46,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="hover:text-[#E6007E] transition-colors flex items-center gap-1 text-xs"
             >
-              <Instagram className="w-3.5 h-3.5 text-[#E6007E]" />
+              <InstagramLogo className="w-3.5 h-3.5 text-[#E6007E]" />
               <span>@one_keyz</span>
             </a>
             <a
@@ -108,7 +109,7 @@ export default function Navbar() {
               className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#E6007E] text-white flex items-center justify-center transition-colors"
               title="Instagram @one_keyz"
             >
-              <Instagram className="w-4 h-4" />
+              <InstagramLogo className="w-4 h-4" />
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.1, rotate: -5 }}
@@ -179,7 +180,7 @@ export default function Navbar() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-gray-300 hover:text-[#E6007E]"
                 >
-                  <Instagram className="w-4 h-4 text-[#E6007E]" /> @one_keyz on Instagram
+                  <InstagramLogo className="w-4 h-4 text-[#E6007E]" /> @one_keyz on Instagram
                 </a>
                 <a
                   href={SPOTIFY_ARTIST_URL}

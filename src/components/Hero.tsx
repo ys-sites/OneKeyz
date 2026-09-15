@@ -1,7 +1,8 @@
-import { Instagram, Image as ImageIcon } from 'lucide-react';
+import { Image as ImageIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { ARTIST_NAME, INSTAGRAM_URL, SPOTIFY_ARTIST_URL } from '../data/discography';
 import { SpotifyLogo } from './icons/SpotifyLogo';
+import { InstagramLogo } from './icons/InstagramLogo';
 import { SoundwaveVisualizer } from './SoundwaveVisualizer';
 import MoltenMetal from './MoltenMetal';
 
@@ -131,7 +132,7 @@ export default function Hero() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 bg-black/40 backdrop-blur-md hover:bg-white/10 text-white border-2 border-white/70 hover:border-[#E6007E] font-mono font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full transition-all shadow-xl"
                 >
-                  <Instagram className="w-4 h-4 text-pink-300" />
+                  <InstagramLogo className="w-4 h-4 text-pink-300" />
                   <span>Follow @one_keyz</span>
                 </motion.a>
               </motion.div>

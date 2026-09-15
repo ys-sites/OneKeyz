@@ -1,7 +1,8 @@
-import { Instagram, ArrowUp } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { ARTIST_NAME, INSTAGRAM_URL, SPOTIFY_ARTIST_URL } from '../data/discography';
 import { SpotifyLogo } from './icons/SpotifyLogo';
+import { InstagramLogo } from './icons/InstagramLogo';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -30,7 +31,7 @@ export default function Footer() {
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#E6007E] text-white flex items-center justify-center transition-colors shadow-md"
                 title="Instagram @one_keyz"
               >
-                <Instagram className="w-5 h-5" />
+                <InstagramLogo className="w-5 h-5" />
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.1, rotate: -5 }}
@@ -99,7 +100,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-[#E6007E] transition-colors flex items-center gap-2"
                 >
-                  <Instagram className="w-4 h-4 text-[#E6007E]" />
+                  <InstagramLogo className="w-4 h-4 text-[#E6007E]" />
                   <span>Instagram @one_keyz</span>
                 </a>
               </li>

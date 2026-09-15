@@ -1,7 +1,8 @@
 import { useState, FormEvent } from 'react';
-import { Mail, Instagram, Copy, Check, Send, Calendar, MapPin, MessageSquare } from 'lucide-react';
+import { Mail, Copy, Check, Send, Calendar, MapPin, MessageSquare } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { INSTAGRAM_URL } from '../data/discography';
+import { InstagramLogo } from './icons/InstagramLogo';
 import { BookingFormData } from '../types';
 
 export default function ContactSection() {
@@ -108,7 +109,7 @@ export default function ContactSection() {
             <div className="bg-[#111111] text-white p-8 sm:p-10 rounded-3xl shadow-2xl space-y-6 border border-white/10">
               <div className="flex items-center gap-3">
                 <div className="w-11 h-11 rounded-full bg-[#E6007E] flex items-center justify-center text-white shadow-md">
-                  <Instagram className="w-5 h-5" />
+                  <InstagramLogo className="w-5 h-5" />
                 </div>
                 <div>
                   <h4 className="font-display font-bold uppercase text-lg">Direct Instagram DM</h4>
@@ -126,7 +127,7 @@ export default function ContactSection() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2.5 w-full bg-[#E6007E] hover:bg-[#C8006E] text-white font-mono font-bold text-xs uppercase tracking-wider py-4 px-6 rounded-full shadow-lg transition-colors"
               >
-                <Instagram className="w-4 h-4" />
+                <InstagramLogo className="w-4 h-4" />
                 <span>Message @one_keyz on Instagram</span>
               </a>
             </div>
